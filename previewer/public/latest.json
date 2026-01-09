@@ -1,0 +1,373 @@
+{
+  "sceneId": "you-are-thrust-into-a-room-with-no-preperation-and-are-questioned-about-a-robbery-of-a-large-bank",
+  "variantId": "Government-interrogation",
+  "title": "The Bank Heist Interrogation: A Race Against Time",
+  "intro": {
+    "narration": "In the cold, sterile confines of a government interrogation room, you find yourself cornered. Accused of a bank heist that has left the city in chaos, you must navigate a web of lies and truths to clear your name."
+  },
+  "initialState": {
+    "tags": [],
+    "stats": {},
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "1",
+      "narration": "The interrogator slams the door shut, his cold eyes piercing through you. 'Tell me everything about the robbery,' he growls.",
+      "choices": [
+        {
+          "choiceId": "1A",
+          "text": "I don't know anything about it.",
+          "to": "2",
+          "guards": [
+            "tag:!suspicious"
+          ],
+          "moveType": "Guard"
+        },
+        {
+          "choiceId": "1B",
+          "text": "I was there, but I didn't participate.",
+          "to": "2",
+          "effects": [
+            "fact:present-at-the-bank=verified"
+          ],
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "2",
+      "narration": "The interrogator leans forward, his expression unreadable. 'Prove it.', he says.",
+      "choices": [
+        {
+          "choiceId": "2A",
+          "text": "I can't prove it without incriminating myself.",
+          "to": "3",
+          "guards": [
+            "stat:trust<2"
+          ],
+          "moveType": "Guard"
+        },
+        {
+          "choiceId": "2B",
+          "text": "I can provide an alibi.",
+          "to": "3",
+          "guards": [
+            "stat:trust>=2"
+          ],
+          "effects": [
+            "fact:alibi=verified"
+          ],
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "3",
+      "narration": "You recount your alibi, a night spent at a friend's house. The interrogator studies you, his eyes never leaving yours.",
+      "choices": [
+        {
+          "choiceId": "3A",
+          "text": "I'm telling the truth.",
+          "to": "4",
+          "guards": [
+            "fact:alibi=verified"
+          ],
+          "moveType": "Guard"
+        },
+        {
+          "choiceId": "3B",
+          "text": "I'm lying.",
+          "to": "4",
+          "guards": [
+            "fact:alibi!=verified"
+          ],
+          "moveType": "Guard"
+        }
+      ]
+    },
+    {
+      "nodeId": "4",
+      "narration": "The interrogator slams his fist on the table, a look of frustration on his face. 'You're lying,' he growls.",
+      "choices": [
+        {
+          "choiceId": "4A",
+          "text": "I'm telling the truth.",
+          "to": "5",
+          "effects": [
+            "stat:trust-1"
+          ],
+          "moveType": "Node"
+        },
+        {
+          "choiceId": "4B",
+          "text": "I'm not lying.",
+          "to": "5",
+          "effects": [
+            "stat:trust+1"
+          ],
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "5",
+      "narration": "You feel the pressure mounting as the interrogator continues to grill you. Every word feels like a dagger, every silence a confession.",
+      "choices": [
+        {
+          "choiceId": "5A",
+          "text": "I'll confess to something small to make this stop.",
+          "to": "6",
+          "effects": [
+            "stat:trust-2",
+            "goal:confess+1"
+          ],
+          "moveType": "Node"
+        },
+        {
+          "choiceId": "5B",
+          "text": "I won't confess to anything.",
+          "to": "6",
+          "effects": [
+            "stat:trust+1"
+          ],
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "6",
+      "narration": "You stand your ground, refusing to confess to a crime you didn't commit. The interrogator's demeanor changes, his tone becoming more aggressive.",
+      "choices": [
+        {
+          "choiceId": "6A",
+          "text": "I won't back down.",
+          "to": "7",
+          "moveType": "Node"
+        },
+        {
+          "choiceId": "6B",
+          "text": "I need a break.",
+          "to": "7",
+          "guards": [
+            "stat:stress>=5"
+          ],
+          "effects": [
+            "stat:stress-2"
+          ],
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "7",
+      "narration": "The interrogator stands, towering over you. 'You're a liability,' he growls, before storming out of the room.",
+      "choices": [
+        {
+          "choiceId": "7A",
+          "text": "I need to get out of here.",
+          "to": "8",
+          "moveType": "Node"
+        },
+        {
+          "choiceId": "7B",
+          "text": "I should wait for my lawyer.",
+          "to": "8",
+          "guards": [
+            "stat:trust>=4"
+          ],
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "8",
+      "narration": "You're left alone in the room, your heart pounding in your chest. The door swings open, and a new interrogator enters.",
+      "choices": [
+        {
+          "choiceId": "8A",
+          "text": "I need to talk to my lawyer immediately.",
+          "to": "9",
+          "moveType": "Node"
+        },
+        {
+          "choiceId": "8B",
+          "text": "I'll cooperate, but only with this new interrogator.",
+          "to": "9",
+          "guards": [
+            "stat:trust>=6"
+          ],
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "9",
+      "narration": "The new interrogator offers you a deal: cooperate fully, and they'll drop the charges. But you know that to do so would mean admitting to things you didn't do.",
+      "choices": [
+        {
+          "choiceId": "9A",
+          "text": "I'll take the deal.",
+          "to": "ending1",
+          "moveType": "Ending"
+        },
+        {
+          "choiceId": "9B",
+          "text": "I won't betray myself.",
+          "to": "10",
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "10",
+      "narration": "You stand your ground, refusing to admit to a crime you didn't commit. The new interrogator's demeanor changes, his tone becoming more aggressive.",
+      "choices": [
+        {
+          "choiceId": "10A",
+          "text": "I won't back down.",
+          "to": "11",
+          "moveType": "Node"
+        },
+        {
+          "choiceId": "10B",
+          "text": "I need a break.",
+          "to": "11",
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "11",
+      "narration": "The new interrogator slams his fist on the table, a look of frustration on his face. 'You're a liability,' he growls.",
+      "choices": [
+        {
+          "choiceId": "11A",
+          "text": "I need to get out of here.",
+          "to": "12",
+          "moveType": "Node"
+        },
+        {
+          "choiceId": "11B",
+          "text": "I should wait for my lawyer.",
+          "to": "12",
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "12",
+      "narration": "You're left alone in the room, your heart pounding in your chest. The door swings open, and a new interrogator enters.",
+      "choices": [
+        {
+          "choiceId": "12A",
+          "text": "I need to talk to my lawyer immediately.",
+          "to": "13",
+          "moveType": "Node"
+        },
+        {
+          "choiceId": "12B",
+          "text": "I'll cooperate, but only with this new interrogator.",
+          "to": "13",
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "13",
+      "narration": "The new interrogator offers you a deal: cooperate fully, and they'll drop the charges. But you know that to do so would mean admitting to things you didn't do.",
+      "choices": [
+        {
+          "choiceId": "13A",
+          "text": "I'll take the deal.",
+          "to": "ending2",
+          "moveType": "Ending"
+        },
+        {
+          "choiceId": "13B",
+          "text": "I won't betray myself.",
+          "to": "14",
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "14",
+      "narration": "You stand your ground, refusing to admit to a crime you didn't commit. The new interrogator's demeanor changes, his tone becoming more aggressive.",
+      "choices": [
+        {
+          "choiceId": "14A",
+          "text": "I won't back down.",
+          "to": "15",
+          "moveType": "Node"
+        },
+        {
+          "choiceId": "14B",
+          "text": "I need a break.",
+          "to": "15",
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "15",
+      "narration": "The new interrogator slams his fist on the table, a look of frustration on his face. 'You're a liability,' he growls.",
+      "choices": [
+        {
+          "choiceId": "15A",
+          "text": "I need to get out of here.",
+          "to": "16",
+          "moveType": "Node"
+        },
+        {
+          "choiceId": "15B",
+          "text": "I should wait for my lawyer.",
+          "to": "16",
+          "moveType": "Node"
+        }
+      ]
+    },
+    {
+      "nodeId": "16",
+      "narration": "You're left alone in the room, your heart pounding in your chest. The door swings open, and a new interrogator enters.",
+      "choices": [
+        {
+          "choiceId": "16A",
+          "text": "I need to talk to my lawyer immediately.",
+          "to": "17",
+          "moveType": "Node"
+        },
+        {
+          "choiceId": "16B",
+          "text": "I'll cooperate, but only with this new interrogator.",
+          "to": "ending3",
+          "moveType": "Ending"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "id": "ending1",
+      "narration": "You take the deal, admitting to things you didn't do. The charges are dropped, but your reputation is tarnished.",
+      "endingId": "ending1",
+      "title": "Ending 1",
+      "type": "mixed"
+    },
+    {
+      "id": "ending2",
+      "narration": "You refuse to betray yourself, standing firm in your innocence. The charges are eventually dropped due to lack of evidence.",
+      "endingId": "ending2",
+      "title": "Ending 2",
+      "type": "mixed"
+    },
+    {
+      "id": "ending3",
+      "narration": "You cooperate with the new interrogator, but only to a point. You manage to clear your name and bring the real culprits to justice.",
+      "endingId": "ending3",
+      "title": "Ending 3",
+      "type": "mixed"
+    }
+  ]
+}
