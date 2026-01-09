@@ -1,3 +1,9 @@
+# CSC3032 Software Engineering Project – Interim Demo
+
+**Project Title:** [Scene Lab]  
+**Name:** [Ethan Campbell]  
+**Student Number:** 40364043
+
 # Scene Lab — CYOA / Visual Novel Workspace
 
 This repo contains everything you need to:
