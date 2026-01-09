@@ -1,0 +1,24 @@
+# ===== Node / React / Vite =====
+node_modules/
+dist/
+build/
+.vite/
+.vscode/
+.DS_Store
+
+# ===== Logs =====
+*.log
+
+# ===== Python =====
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ===== Scene-kit outputs =====
+scene-kit/output/
+previewer/public/latest.json
+scene-kit/output/BAD_MODEL_OUTPUT_*.txt
+
+# ===== OS =====
+Thumbs.db
