@@ -116,6 +116,13 @@ Allow facts, tags, or decisions to persist across scenes and influence future ge
 **Status:** Partially explored  
 **Risks:** Increased complexity, reduced controllability
 
+## Exploration of Alternative LLM Providers
+**Description:**
+Explore the feasibility of migrating from the current locally hosted Ollama-based language model to a more capable hosted model accessed via a provider such as OpenRouter.
+
+**Status:** Planned / Exploratory
+**Risks:** Increased reliance on external services, cost considerations
+**Value:** Potential improvement in generation quality and reliability
 ---
 
 ### 8. Author-Guided Constraints
@@ -148,6 +155,8 @@ Support multi-act narrative structures with pacing, escalation, and resolution.
 **Value:** High, but non-trivial
 
 ---
+
+
 
 ## Notes on Project Scope
 
