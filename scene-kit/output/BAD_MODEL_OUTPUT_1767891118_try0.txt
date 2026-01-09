@@ -1,0 +1,380 @@
+{
+  "sceneId": "you-have-been-drugged-and-coerced-into-going-to-a-party-hosted-by-an-incredibly-skethcy-uindividual-you-need-to-find-a-way-to-break-the-story-and-free-yourself-from-this-life",
+  "variantId": "luxurious-mansion",
+  "intro": {
+    "narration": "You find yourself in a lavish mansion, disoriented and drugged. The air is thick with the scent of champagne and the sound of laughter echoes off the marble walls. You have no idea how you got here, but one thing is clear: you need to escape."
+  },
+  "initialState": {
+    "tags": [],
+    "stats": {},
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "1",
+      "narration": "As you try to stand, your legs wobble uncontrollably. You're surrounded by a sea of faces, all laughing and chatting, oblivious to your predicament.",
+      "choices": [
+        {
+          "choiceId": "1A",
+          "text": "Stumble towards the nearest exit",
+          "moveType": "move",
+          "weight": 60,
+          "guards": [],
+          "effects": [],
+          "to": "2"
+        },
+        {
+          "choiceId": "1B",
+          "text": "Search for a familiar face in the crowd",
+          "moveType": "search",
+          "weight": 40,
+          "guards": [],
+          "effects": [],
+          "to": "3"
+        }
+      ]
+    },
+    {
+      "nodeId": "2",
+      "narration": "You stumble towards the exit, your heart pounding in your chest. The crowd parts for you, revealing a grand staircase leading up to a balcony.",
+      "choices": [
+        {
+          "choiceId": "2A",
+          "text": "Take the stairs and make a run for it",
+          "moveType": "run",
+          "weight": 60,
+          "guards": [],
+          "effects": [],
+          "to": "4"
+        },
+        {
+          "choiceId": "2B",
+          "text": "Look for a hidden door or passage",
+          "moveType": "search",
+          "weight": 40,
+          "guards": [],
+          "effects": [],
+          "to": "5"
+        }
+      ]
+    },
+    {
+      "nodeId": "3",
+      "narration": "You scan the crowd, hoping to find a friendly face. Your gaze lands on a woman you vaguely recognize from a class you took last semester.",
+      "choices": [
+        {
+          "choiceId": "3A",
+          "text": "Approach her cautiously",
+          "moveType": "approach",
+          "weight": 60,
+          "guards": [],
+          "effects": [],
+          "to": "6"
+        },
+        {
+          "choiceId": "3B",
+          "text": "Ignore her and continue searching",
+          "moveType": "search",
+          "weight": 40,
+          "guards": [],
+          "effects": [],
+          "to": "7"
+        }
+      ]
+    },
+    {
+      "nodeId": "4",
+      "narration": "You take the stairs two at a time, your heart racing. You reach the top and burst through the doors onto the balcony, only to find yourself surrounded by armed guards.",
+      "choices": [
+        {
+          "choiceId": "4A",
+          "text": "Fight back",
+          "moveType": "fight",
+          "weight": 30,
+          "guards": [],
+          "effects": ["tag:!defeated"],
+          "to": "13"
+        },
+        {
+          "choiceId": "4B",
+          "text": "Surrender and plead for mercy",
+          "moveType": "surrender",
+          "weight": 70,
+          "guards": [],
+          "effects": ["tag:defeated"],
+          "to": "14"
+        }
+      ]
+    },
+    {
+      "nodeId": "5",
+      "narration": "You search the area around the woman, but find no hidden doors or passages. She seems just as trapped as you are.",
+      "choices": [
+        {
+          "choiceId": "5A",
+          "text": "Approach her and ask for help",
+          "moveType": "approach",
+          "weight": 60,
+          "guards": [],
+          "effects": ["fact:woman_recognized=verified"],
+          "to": "8"
+        },
+        {
+          "choiceId": "5B",
+          "text": "Continue searching on your own",
+          "moveType": "search",
+          "weight": 40,
+          "guards": [],
+          "effects": [],
+          "to": "9"
+        }
+      ]
+    },
+    {
+      "nodeId": "6",
+      "narration": "You approach the woman cautiously. She looks relieved to see you, but her eyes are filled with fear.",
+      "choices": [
+        {
+          "choiceId": "6A",
+          "text": "Ask her how she got here and if she has a plan",
+          "moveType": "ask",
+          "weight": 60,
+          "guards": [],
+          "effects": ["fact:woman_talked_to=verified"],
+          "to": "10"
+        },
+        {
+          "choiceId": "6B",
+          "text": "Ignore her and continue searching the crowd",
+          "moveType": "search",
+          "weight": 40,
+          "guards": [],
+          "effects": [],
+          "to": "7"
+        }
+      ]
+    },
+    {
+      "nodeId": "7",
+      "narration": "You continue searching the crowd, but find no sign of a way out. The party rages on around you, and you feel more trapped than ever.",
+      "choices": [
+        {
+          "choiceId": "7A",
+          "text": "Approach the woman again and ask for help",
+          "moveType": "approach",
+          "weight": 60,
+          "guards": [],
+          "effects": ["fact:woman_talked_to=verified"],
+          "to": "8"
+        },
+        {
+          "choiceId": "7B",
+          "text": "Give up and accept your fate",
+          "moveType": "giveup",
+          "weight": 40,
+          "guards": [],
+          "effects": ["tag:defeated"],
+          "to": "14"
+        }
+      ]
+    },
+    {
+      "nodeId": "8",
+      "narration": "The woman tells you that she was also drugged and coerced into coming to the party. She suggests working together to find a way out.",
+      "choices": [
+        {
+          "choiceId": "8A",
+          "text": "Agree to work together",
+          "moveType": "agree",
+          "weight": 70,
+          "guards": [],
+          "effects": ["fact:working_together=verified"],
+          "to": "11"
+        },
+        {
+          "choiceId": "8B",
+          "text": "Refuse to trust her and go your own way",
+          "moveType": "refuse",
+          "weight": 30,
+          "guards": [],
+          "effects": ["tag:!trust"],
+          "to": "9"
+        }
+      ]
+    },
+    {
+      "nodeId": "9",
+      "narration": "You continue searching the party on your own, feeling more isolated than ever.",
+      "choices": [
+        {
+          "choiceId": "9A",
+          "text": "Find a hidden door or passage",
+          "moveType": "search",
+          "weight": 60,
+          "guards": [],
+          "effects": [],
+          "to": "12"
+        },
+        {
+          "choiceId": "9B",
+          "text": "Give up and accept your fate",
+          "moveType": "giveup",
+          "weight": 40,
+          "guards": [],
+          "effects": ["tag:defeated"],
+          "to": "14"
+        }
+      ]
+    },
+    {
+      "nodeId": "10",
+      "narration": "The woman tells you that she overheard a conversation about a secret passage in the wine cellar. She suggests sneaking down there to escape.",
+      "choices": [
+        {
+          "choiceId": "10A",
+          "text": "Agree to go to the wine cellar",
+          "moveType": "agree",
+          "weight": 70,
+          "guards": [],
+          "effects": ["fact:wine_cellar=verified"],
+          "to": "12"
+        },
+        {
+          "choiceId": "10B",
+          "text": "Suggest another plan instead",
+          "moveType": "suggest",
+          "weight": 30,
+          "guards": [],
+          "effects": [],
+          "to": "11"
+        }
+      ]
+    },
+    {
+      "nodeId": "11",
+      "narration": "You and the woman discuss other possible escape plans, but none seem feasible. You eventually agree to go to the wine cellar.",
+      "choices": [
+        {
+          "choiceId": "11A",
+          "text": "Go to the wine cellar together",
+          "moveType": "go",
+          "weight": 60,
+          "guards": [],
+          "effects": ["fact:wine_cellar=verified"],
+          "to": "12"
+        },
+        {
+          "choiceId": "11B",
+          "text": "Stay in the crowd and continue searching for another way out",
+          "moveType": "search",
+          "weight": 40,
+          "guards": [],
+          "effects": [],
+          "to": "9"
+        }
+      ]
+    },
+    {
+      "nodeId": "12",
+      "narration": "You and the woman sneak down into the wine cellar, hoping to find a way out. The cellar is dark and filled with rows of wine barrels.",
+      "choices": [
+        {
+          "choiceId": "12A",
+          "text": "Search for a hidden door or passage",
+          "moveType": "search",
+          "weight": 60,
+          "guards": [],
+          "effects": [],
+          "to": "13"
+        },
+        {
+          "choiceId": "12B",
+          "text": "Give up and accept that you're trapped",
+          "moveType": "giveup",
+          "weight": 40,
+          "guards": [],
+          "effects": ["tag:defeated"],
+          "to": "14"
+        }
+      ]
+    },
+    {
+      "nodeId": "13",
+      "narration": "You find a hidden door in the back of the wine cellar. It leads to a narrow passage that eventually opens up into a small room.",
+      "choices": [
+        {
+          "choiceId": "13A",
+          "text": "Open the door and go through",
+          "moveType": "open",
+          "weight": 70,
+          "guards": [],
+          "effects": ["tag:escaped"],
+          "to": "win"
+        },
+        {
+          "choiceId": "13B",
+          "text": "Stay in the room and wait for help",
+          "moveType": "wait",
+          "weight": 30,
+          "guards": [],
+          "effects": [],
+          "to": "14"
+        }
+      ]
+    },
+    {
+      "nodeId": "14",
+      "narration": "You are caught by the guards and taken back to the party. You feel defeated and hopeless, but you never stop fighting for freedom.",
+      "choices": [
+        {
+          "choiceId": "14A",
+          "text": "Continue searching for a way out",
+          "moveType": "search",
+          "weight": 60,
+          "guards": [],
+          "effects": [],
+          "to": "7"
+        },
+        {
+          "choiceId": "14B",
+          "text": "Give up and accept your fate",
+          "moveType": "giveup",
+          "weight": 40,
+          "guards": [],
+          "effects": ["tag:defeated"],
+          "to": "end"
+        }
+      ]
+    },
+    {
+      "nodeId": "win",
+      "narration": "You and the woman escape from the party and make it to safety. You feel a sense of relief and accomplishment, knowing that you never gave up.",
+      "choices": [
+        {
+          "choiceId": "winA",
+          "text": "Celebrate your victory with the woman",
+          "moveType": "celebrate",
+          "weight": 70,
+          "guards": [],
+          "effects": ["tag:victory"],
+          "to": "end"
+        },
+        {
+          "choiceId": "winB",
+          "text": "Go your separate ways, grateful for each other's help",
+          "moveType": "go_separate_ways",
+          "weight": 30,
+          "guards": [],
+          "effects": ["tag:grateful"],
+          "to": "end"
+        }
+      ]
+    },
+    {
+      "nodeId": "end",
+      "narration": "Your journey through the party was filled with danger and uncertainty, but you never gave up. You learned valuable lessons about trust, perseverance, and the importance of fighting for your freedom.",
+      "choices": []
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "scene": [
+    {
+      "id": "0",
+      "nodeName": "Intro",
+      "text": "In the heart of a luxurious mansion, you find yourself bound and gagged, surrounded by the opulent belongings of the wealthy elite. A man in an expensive suit, your captor, leans against a grand piano, sipping scotch.",
+      "initialState": {
+        "stats": {
+          "trust": 0,
+          "suspicion": 5,
+          "leverage": 0
+        },
+        "goals": {
+          "interrogator": [
+            "getConfession",
+            0
+          ],
+          "suspect": [
+            "avoidIncrimination",
+            0
+          ]
+        },
+        "facts": [
+          "You have been kidnapped.",
+          "Your captor is part of an underground network of wealthy Americans.",
+          "The mansion is filled with luxury items."
+        ]
+      },
+      "choices": [
+        {
+          "id": "1",
+          "text": "You struggle against your bindings, trying to break free.",
+          "effects": {
+            "stats": {
+              "suspicion": -1
+            },
+            "facts": [
+              "Your struggle is futile."
+            ]
+          }
+        },
+        {
+          "id": "2",
+          "text": "You feign ignorance, pretending not to know anything about their activities.",
+          "effects": {
+            "stats": {
+              "trust": 1,
+              "suspicion": -1
+            },
+            "goals": {
+              "interrogator": [
+                "getConfession",
+                1
+              ]
+            },
+            "facts": [
+              "Your captor seems less suspicious of you."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "nodeName": "Interrogation",
+      "text": "The man approaches, a cold smile on his face. 'You're a valuable asset now,' he says, 'and I want to know everything.'",
+      "choices": [
+        {
+          "id": "3",
+          "text": "You remain silent, refusing to speak.",
+          "effects": {
+            "stats": {
+              "suspicion": 2
+            },
+            "goals": {
+              "interrogator": [
+                "getConfession",
+                2
+              ]
+            },
+            "facts": [
+              "Your captor becomes more aggressive."
+            ]
+          }
+        },
+        {
+          "id": "4",
+          "text": "You confess to being an undercover agent, hoping it will sway him.",
+          "effects": {
+            "stats": {
+              "trust": 3,
+              "suspicion": -2
+            },
+            "goals": {
+              "interrogator": [
+                "getConfession",
+                3
+              ]
+            },
+            "facts": [
+              "Your captor seems shocked but remains skeptical."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nodeName": "Negotiation",
+      "text": "You plead for your freedom, promising to cooperate with them in exchange.",
+      "choices": [
+        {
+          "id": "5",
+          "text": "Your captor laughs and refuses, saying you're too much of a liability.",
+          "effects": {
+            "stats": {
+              "trust": -2,
+              "suspicion": 3
+            },
+            "goals": {
+              "interrogator": [
+                "getConfession",
+                4
+              ],
+              "suspect": [
+                "avoidIncrimination",
+                1
+              ]
+            },
+            "facts": [
+              "Your captor has no intention of letting you go."
+            ]
+          }
+        },
+        {
+          "id": "6",
+          "text": "You offer valuable information about their network in exchange for your freedom.",
+          "effects": {
+            "stats": {
+              "trust": 4,
+              "suspicion": -2
+            },
+            "goals": {
+              "interrogator": [
+                "getConfession",
+                5
+              ],
+              "suspect": [
+                "avoidIncrimination",
+                2
+              ]
+            },
+            "facts": [
+              "Your captor is intrigued by the offer."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "nodeName": "Threat",
+      "text": "As your captor grows more agitated, he pulls out a gun, threatening to silence you permanently.",
+      "choices": [
+        {
+          "id": "7",
+          "text": "You beg for mercy, promising to cooperate fully.",
+          "effects": {
+            "stats": {
+              "trust": -2,
+              "suspicion": 4
+            },
+            "goals": {
+              "interrogator": [
+                "getConfession",
+                6
+              ],
+              "suspect": [
+                "avoidIncrimination",
+                3
+              ]
+            },
+            "facts": [
+              "Your captor seems to be considering your plea."
+            ]
+          }
+        },
+        {
+          "id": "8",
+          "text": "You refuse to back down, standing tall despite the gun pointed at you.",
+          "effects": {
+            "stats": {
+              "trust": 1,
+              "suspicion": 5
+            },
+            "goals": {
+              "interrogator": [
+                "getConfession",
+                7
+              ]
+            },
+            "facts": [
+              "Your captor's anger intensifies."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "nodeName": "Escape",
+      "text": "In a desperate bid for freedom, you lunge at your captor, managing to grab the gun and struggle free.",
+      "choices": [
+        {
+          "id": "9",
+          "text": "You make a run for it, escaping the mansion and alerting authorities.",
+          "effects": {
+            "stats": {
+              "trust": 5,
+              "suspicion": -3
+            },
+            "goals": {
+              "interrogator": [
+                "getConfession",
+                8
+              ],
+              "suspect": [
+                "avoidIncrimination",
+                4
+              ]
+            },
+            "facts": [
+              "You have successfully escaped."
+            ]
+          }
+        },
+        {
+          "id": "10",
+          "text": "Your captor recovers and gives chase, a deadly game of cat and mouse ensues.",
+          "effects": {
+            "stats": {
+              "trust": -2,
+              "suspicion": 5
+            },
+            "goals": {
+              "interrogator": [
+                "getConfession",
+                9
+              ],
+              "suspect": [
+                "avoidIncrimination",
+                5
+              ]
+            },
+            "facts": [
+              "The chase continues, with your fate uncertain."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "nodeName": "Ending A",
+      "text": "You manage to evade capture and provide authorities with evidence against the underground network. Your captor is arrested, and you are hailed as a hero.",
+      "effects": {
+        "stats": {
+          "trust": 5,
+          "suspicion": -3
+        },
+        "goals": {
+          "interrogator": [
+            "getConfession",
+            8
+          ],
+          "suspect": [
+            "avoidIncrimination",
+            4
+          ]
+        }
+      }
+    },
+    {
+      "id": "6",
+      "nodeName": "Ending B",
+      "text": "Despite your best efforts, you are captured and forced to cooperate with the underground network. Your fate remains uncertain as you disappear into their clutches.",
+      "effects": {
+        "stats": {
+          "trust": -5,
+          "suspicion": 3
+        },
+        "goals": {
+          "interrogator": [
+            "getConfession",
+            7
+          ],
+          "suspect": [
+            "avoidIncrimination",
+            5
+          ]
+        }
+      }
+    }
+  ],
+  "sceneId": "you-have-been-kidnapped-by-a-network-of-underground-super-wealthy-americans-who-want-to-use-you-for-their-own-benefit"
+}

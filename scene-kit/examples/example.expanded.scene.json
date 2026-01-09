@@ -1,0 +1,36 @@
+{
+  "sceneId": "interrogation.v1",
+  "variantId": "cia-safe-house",
+  "intro": {
+    "narration": "Example only \u2014 run expand.py to generate real content."
+  },
+  "nodes": [
+    {
+      "nodeId": "N1",
+      "narration": "Placeholder.",
+      "choices": [
+        {
+          "choiceId": "C1",
+          "text": "Placeholder choice",
+          "guards": [],
+          "effects": [],
+          "to": "E1"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "E1",
+      "title": "Example",
+      "type": "success",
+      "narration": "Placeholder."
+    }
+  ],
+  "uiHints": [
+    "timer-badge"
+  ],
+  "themeSignals": [
+    "mirrors"
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "sceneId": "the-halloween-fair-took-a-dangerous-turn-when-the-rides-began-to-break-and-shutdown-with-people-onboard",
+  "variantId": "spooky-campsite",
+  "title": "A Nightmare at the Fair",
+  "intro": {
+    "narration": "The Halloween fair, a night of fun and excitement, takes a terrifying turn as rides begin to malfunction, trapping terrified riders mid-air. You are a seasoned investigator, tasked with finding out what caused the chaos."
+  },
+  "initialState": {
+    "tags": [],
+    "stats": {},
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "1",
+      "narration": "You arrive at the fairgrounds, the once joyful atmosphere replaced with a sense of unease. The air is thick with the scent of burnt wires and screams.",
+      "choices": [
+        {
+          "choiceId": "1a",
+          "text": "Investigate the carousel first.",
+          "moveType": "to",
+          "weight": 5,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "1b",
+          "text": "Head to the Ferris wheel instead.",
+          "moveType": "to",
+          "weight": 7,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "2",
+      "narration": "You approach the carousel, its once colorful horses now twisted and still. The control panel is a mess of wires and sparks.",
+      "choices": [
+        {
+          "choiceId": "2a",
+          "text": "Examine the control panel for clues.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": ["fact:control_panel_damage=verified"]
+        },
+        {
+          "choiceId": "2b",
+          "text": "Check the horses for trapped riders.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["fact:trapped_riders=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "3",
+      "narration": "You find a rider trapped in the carousel, terrified but unharmed. They tell you they heard a loud bang before everything went silent.",
+      "choices": [
+        {
+          "choiceId": "3a",
+          "text": "Ask the rider if they saw anyone acting suspiciously.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": ["fact:suspicious_individuals=verified"]
+        },
+        {
+          "choiceId": "3b",
+          "text": "Offer to help the rider down.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["fact:rescued_riders=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "4",
+      "narration": "You continue your investigation, finding more evidence of sabotage. The fairgrounds are filled with the sounds of panic and fear.",
+      "choices": [
+        {
+          "choiceId": "4a",
+          "text": "Search for the source of the disturbance.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "4b",
+          "text": "Gather your team and coordinate a search party.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["tag:team_assembled"]
+        }
+      ]
+    },
+    {
+      "nodeId": "5",
+      "narration": "You locate the source of the disturbance: a group of pranksters setting off fireworks in an abandoned ride.",
+      "choices": [
+        {
+          "choiceId": "5a",
+          "text": "Confront the pranksters and arrest them.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": ["fact:pranksters_arrested=verified"]
+        },
+        {
+          "choiceId": "5b",
+          "text": "Warn the pranksters to stop and leave peacefully.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["fact:pranksters_warned=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "6",
+      "narration": "With the pranksters dealt with, you turn your attention to the malfunctioning rides. The fairgrounds are now quiet, save for the occasional scream.",
+      "choices": [
+        {
+          "choiceId": "6a",
+          "text": "Inspect the Ferris wheel next.",
+          "moveType": "to",
+          "weight": 5,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "6b",
+          "text": "Head to the roller coaster instead.",
+          "moveType": "to",
+          "weight": 7,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "7",
+      "narration": "You reach the Ferris wheel, its cars swaying ominously in the wind. The control panel is fried beyond recognition.",
+      "choices": [
+        {
+          "choiceId": "7a",
+          "text": "Search for trapped riders.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": ["fact:trapped_riders=verified"]
+        },
+        {
+          "choiceId": "7b",
+          "text": "Examine the wheel for signs of sabotage.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["fact:ferris_wheel_damage=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "8",
+      "narration": "You find a rider trapped in the Ferris wheel, their screams growing fainter by the second.",
+      "choices": [
+        {
+          "choiceId": "8a",
+          "text": "Attempt to free the rider manually.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": ["fact:rescued_riders=verified"]
+        },
+        {
+          "choiceId": "8b",
+          "text": "Call for backup to free the rider.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["fact:backup_called=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "9",
+      "narration": "With the rider freed, you continue your investigation. The fairgrounds are now eerily quiet, save for the occasional scream.",
+      "choices": [
+        {
+          "choiceId": "9a",
+          "text": "Inspect the roller coaster next.",
+          "moveType": "to",
+          "weight": 5,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "9b",
+          "text": "Head to the haunted house instead.",
+          "moveType": "to",
+          "weight": 7,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "10",
+      "narration": "You reach the roller coaster, its tracks twisted and broken. The control panel is a mess of wires and sparks.",
+      "choices": [
+        {
+          "choiceId": "10a",
+          "text": "Search for trapped riders.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": ["fact:trapped_riders=verified"]
+        },
+        {
+          "choiceId": "10b",
+          "text": "Examine the roller coaster for signs of sabotage.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["fact:roller_coaster_damage=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "11",
+      "narration": "You find a rider trapped in the roller coaster, their screams growing fainter by the second.",
+      "choices": [
+        {
+          "choiceId": "11a",
+          "text": "Attempt to free the rider manually.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": ["fact:rescued_riders=verified"]
+        },
+        {
+          "choiceId": "11b",
+          "text": "Call for backup to free the rider.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["fact:backup_called=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "12",
+      "narration": "With the rider freed, you continue your investigation. The fairgrounds are now eerily quiet, save for the occasional scream.",
+      "choices": [
+        {
+          "choiceId": "12a",
+          "text": "Inspect the haunted house next.",
+          "moveType": "to",
+          "weight": 5,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "12b",
+          "text": "Head to the ghost train instead.",
+          "moveType": "to",
+          "weight": 7,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "13",
+      "narration": "You reach the haunted house, its doors hanging off their hinges. The control panel is fried beyond recognition.",
+      "choices": [
+        {
+          "choiceId": "13a",
+          "text": "Search for trapped riders.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": ["fact:trapped_riders=verified"]
+        },
+        {
+          "choiceId": "13b",
+          "text": "Examine the haunted house for signs of sabotage.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["fact:haunted_house_damage=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "14",
+      "narration": "You find a rider trapped in the haunted house, their screams growing fainter by the second.",
+      "choices": [
+        {
+          "choiceId": "14a",
+          "text": "Attempt to free the rider manually.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": ["fact:rescued_riders=verified"]
+        },
+        {
+          "choiceId": "14b",
+          "text": "Call for backup to free the rider.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["fact:backup_called=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "15",
+      "narration": "With the rider freed, you continue your investigation. The fairgrounds are now eerily quiet, save for the occasional scream.",
+      "choices": [
+        {
+          "choiceId": "15a",
+          "text": "Inspect the ghost train next.",
+          "moveType": "to",
+          "weight": 5,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "15b",
+          "text": "Head back to the police station instead.",
+          "moveType": "end",
+          "weight": 7,
+          "guards": ["fact:all_riders_rescued"],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "16",
+      "narration": "You reach the ghost train, its tracks twisted and broken. The control panel is a mess of wires and sparks.",
+      "choices": [
+        {
+          "choiceId": "16a",
+          "text": "Search for trapped riders.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": ["fact:trapped_riders=verified"]
+        },
+        {
+          "choiceId": "16b",
+          "text": "Examine the ghost train for signs of sabotage.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["fact:ghost_train_damage=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "17",
+      "narration": "You find a rider trapped in the ghost train, their screams growing fainter by the second.",
+      "choices": [
+        {
+          "choiceId": "17a",
+          "text": "Attempt to free the rider manually.",
+          "moveType": "to",
+          "weight": 6,
+          "guards": [],
+          "effects": ["fact:rescued_riders=verified"]
+        },
+        {
+          "choiceId": "17b",
+          "text": "Call for backup to free the rider.",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["fact:backup_called=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "18",
+      "narration": "With the rider freed, you continue your investigation. The fairgrounds are now eerily quiet.",
+      "choices": [
+        {
+          "choiceId": "18a",
+          "text": "Return to the police station with your findings.",
+          "moveType": "end",
+          "weight": 5,
+          "guards": ["fact:all_riders_rescued"],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}

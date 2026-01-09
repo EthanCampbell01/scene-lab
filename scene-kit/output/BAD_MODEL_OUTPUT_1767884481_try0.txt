@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Expanded Visual Novel Scene",
+  "type": "object",
+  "required": [
+    "sceneId",
+    "variantId",
+    "intro",
+    "nodes",
+    "endings"
+  ],
+  "properties": {
+    "sceneId": {
+      "const": "the-halloween-fair-took-a-dangerous-turn-when-the-rides-began-to-break-and-shutdown-with-people-onboard"
+    },
+    "variantId": {
+      "const": "spooky-campsite"
+    },
+    "intro": {
+      "properties": {
+        "narration": {
+          "type": "string",
+          "minLength": 10,
+          "const": "As the moon casts a eerie glow over the Halloween fair, the rides begin to malfunction, trapping terrified passengers."
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 22,
+      "items": {
+        "type": "object",
+        "required": [
+          "nodeId",
+          "narration",
+          "choices"
+        ],
+        "properties": {
+          "nodeId": {
+            "type": "string"
+          },
+          "narration": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 6,
+            "example": "The crowd panics as the Ferris wheel comes to a grinding halt, trapping riders in mid-air."
+          },
+          "image": {
+            "type": "string"
+          },
+          "choices": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": [
+                "choiceId",
+                "text",
+                "to"
+              ],
+              "properties": {
+                "choiceId": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 5,
+                  "maxLength": 60,
+                  "example": "Ask the crowd for more information about the malfunction."
+                },
+                "guards": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "effects": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "to": {
+                  "type": "string",
+                  "enum": ["node1", "node2", "ending1", "ending2"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "endings": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "endingId",
+          "title",
+          "type",
+          "narration"
+        ],
+        "properties": {
+          "endingId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["success", "mixed", "failure", "twist"]
+          },
+          "narration": {
+            "type": "string",
+            "minLength": 10,
+            "example": "With the help of the crowd, you manage to free everyone trapped on the Ferris wheel."
+          },
+          "image": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "uiHints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "themeSignals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

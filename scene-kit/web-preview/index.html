@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scene Previewer</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Scene Previewer</h1>
+      <p>Load an expanded VN JSON and click through nodes.</p>
+      <input type="file" id="fileInput" accept=".json"/>
+    </header>
+    <main>
+      <section id="meta"></section>
+      <section id="narration"></section>
+      <section id="choices"></section>
+      <section id="ending" class="ending"></section>
+    </main>
+    <footer>
+      <small>Keyboard: 1-9 to choose. R to restart.</small>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

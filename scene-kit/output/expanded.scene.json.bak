@@ -1,0 +1,127 @@
+{
+  "sceneId": "interrogation.v1",
+  "variantId": "cia-safe-house",
+  "intro": {
+    "narration": "Night falls in a sterile CIA safe house, the hum of fluorescent lights echoing off cold, bare walls. A single-way mirror separates you from your subject, their eyes sharp and wary beneath the glare."
+  },
+  "nodes": [
+    {
+      "nodeId": "N1",
+      "narration": "With a deep breath, you step into the room, feeling the weight of stakes that hang heavy. The subject's gaze follows you as you take your seat.",
+      "choices": [
+        {
+          "choiceId": "O1-soft",
+          "text": "You assure them this is a fair inquiry and their safety is guaranteed.",
+          "guards": ["player.unprepared"],
+          "effects": ["subject.trust+1"],
+          "to": "N2"
+        },
+        {
+          "choiceId": "O1-hard",
+          "text": "You slam down evidence, the clock ticking louder with each passing second.",
+          "guards": [],
+          "effects": ["subject.resistance+1", "timer.ticks+1"],
+          "to": "N2"
+        },
+        {
+          "choiceId": "O1-bait",
+          "text": "You offer a small, believable lie to bait a correction.",
+          "guards": ["player.prepared"],
+          "effects": [],
+          "to": "N2"
+        }
+      ]
+    },
+    {
+      "nodeId": "N2",
+      "narration": "The subject counters with a partial story, leaving gaping holes that demand your attention.",
+      "choices": [
+        {
+          "choiceId": "O2-contradict",
+          "text": "You remain silent, allowing the contradiction to eat away at their composure.",
+          "guards": [],
+          "effects": ["subject.anxiety+1"],
+          "to": "N3"
+        },
+        {
+          "choiceId": "O2-ally",
+          "text": "You offer protection in exchange for a valuable name.",
+          "guards": ["subject.trust+1"],
+          "effects": ["subject.considers-deal"],
+          "to": "N3"
+        },
+        {
+          "choiceId": "O2-bluff",
+          "text": "You bluff about surveillance footage, watching the subject's reaction.",
+          "guards": [],
+          "effects": ["subject.calls-bluff?"],
+          "to": "N3"
+        }
+      ]
+    },
+    {
+      "nodeId": "N3",
+      "narration": "The ticking clock grows louder, putting pressure on you to force an edge or pivot.",
+      "choices": [
+        {
+          "choiceId": "O3-partner",
+          "text": "You bring in a 'good cop' ally to reframe the situation.",
+          "guards": [],
+          "effects": ["subject.trust-shift"],
+          "to": "E2"
+        },
+        {
+          "choiceId": "O3-breakdown",
+          "text": "You push too hard, causing the subject to shut down or lawyer up.",
+          "guards": ["subject.resistance+1"],
+          "effects": ["access.revoked"],
+          "to": "E3"
+        },
+        {
+          "choiceId": "O3-reversal",
+          "text": "The subject flips the frame, accusing you; you must concede or counter.",
+          "guards": ["subject.composed"],
+          "effects": ["power.flip"],
+          "to": "E4"
+        },
+        {
+          "choiceId": "O3-confession",
+          "text": "You employ precision tactics that yield a verifiable detail, unlocking the next lead.",
+          "guards": [],
+          "effects": ["lead.unlocked", "subject.exhausted"],
+          "to": "E1"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "E1",
+      "title": "Cold Confession",
+      "type": "success",
+      "stateResults": ["lead.unlocked", "subject.exhausted"],
+      "unlockables": ["perk.interrogation-precision"]
+    },
+    {
+      "endingId": "E2",
+      "title": "Fragile Alliance",
+      "type": "mixed",
+      "stateResults": ["subject.informant", "timer.ticks+1"],
+      "unlockables": []
+    },
+    {
+      "endingId": "E3",
+      "title": "Ice-Out",
+      "type": "failure",
+      "stateResults": ["access.revoked", "authority.alerted"],
+      "unlockables": []
+    },
+    {
+      "endingId": "E4",
+      "title": "Public Reversal",
+      "type": "twist",
+      "stateResults": ["reputation.dented", "investigation.refocused"],
+      "unlockables": ["perk.stoic-defense"]
+    }
+  ]
+}

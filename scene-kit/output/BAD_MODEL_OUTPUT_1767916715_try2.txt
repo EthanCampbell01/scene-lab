@@ -1,0 +1,386 @@
+{
+  "sceneId": "the-halloween-fair-took-a-dangerous-turn-when-the-rides-began-to-break-and-shutdown-with-people-onboard",
+  "variantId": "spooky-campsite",
+  "title": "A Nightmare at the Fair",
+  "intro": {
+    "narration": "As the sun sets, the Halloween fair is in full swing. The air is filled with laughter and screams of delight from the rides. But as the night wears on, something sinister begins to unfold."
+  },
+  "initialState": {
+    "tags": [],
+    "stats": {},
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "1",
+      "narration": "The Ferris wheel suddenly comes to a halt, stranding riders high above the ground. Panic ensues as people realize they're stuck.",
+      "choices": [
+        {
+          "choiceId": "1a",
+          "text": "Stay put and wait for help.",
+          "moveType": "node",
+          "to": "2",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "1b",
+          "text": "Try to climb down on your own.",
+          "moveType": "node",
+          "to": "3",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "2",
+      "narration": "You decide to stay put, hoping help will arrive soon. The minutes tick by as you watch the ground crew scramble below.",
+      "choices": [
+        {
+          "choiceId": "2a",
+          "text": "Call out for attention.",
+          "moveType": "node",
+          "to": "4",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "2b",
+          "text": "Remain silent and conserve energy.",
+          "moveType": "node",
+          "to": "5",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "3",
+      "narration": "You decide to climb down, but the drop is steep and you're not sure you can make it. The other riders watch in horror as you begin your descent.",
+      "choices": [
+        {
+          "choiceId": "3a",
+          "text": "Take a risk and jump.",
+          "moveType": "node",
+          "to": "6",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "3b",
+          "text": "Wait for help to arrive before attempting the descent.",
+          "moveType": "node",
+          "to": "7",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "4",
+      "narration": "Your calls for help catch the attention of a nearby ride operator. They quickly alert the ground crew who are able to free you and the other riders.",
+      "choices": [
+        {
+          "choiceId": "4a",
+          "text": "Thank the operator profusely.",
+          "moveType": "node",
+          "to": "8",
+          "guards": [],
+          "effects": ["tag:gratitude"]
+        },
+        {
+          "choiceId": "4b",
+          "text": "Ignore the operator and rush off to find your friends.",
+          "moveType": "node",
+          "to": "9",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "5",
+      "narration": "You conserve energy, but the minutes stretch into hours. The cold night air begins to take its toll.",
+      "choices": [
+        {
+          "choiceId": "5a",
+          "text": "Call out again, hoping someone hears you.",
+          "moveType": "node",
+          "to": "10",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "5b",
+          "text": "Give up and accept your fate.",
+          "moveType": "ending",
+          "to": "end_failure",
+          "guards": [],
+          "effects": ["fact:fate_accepted=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "6",
+      "narration": "You take a risk and jump, landing roughly on the ground. The impact knocks the wind out of you, but you're alive.",
+      "choices": [
+        {
+          "choiceId": "6a",
+          "text": "Crawl to safety as quickly as possible.",
+          "moveType": "node",
+          "to": "7",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "6b",
+          "text": "Lie still and catch your breath.",
+          "moveType": "node",
+          "to": "11",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "7",
+      "narration": "You make it to safety, but the other riders are still stuck. You feel a mix of relief and guilt.",
+      "choices": [
+        {
+          "choiceId": "7a",
+          "text": "Go back and help the others.",
+          "moveType": "node",
+          "to": "12",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "7b",
+          "text": "Leave the others behind and find your friends.",
+          "moveType": "ending",
+          "to": "end_mixed",
+          "guards": [],
+          "effects": ["fact:abandoned_others=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "8",
+      "narration": "You thank the operator and rush off to find your friends. As you search, you begin to wonder if they're safe.",
+      "choices": [
+        {
+          "choiceId": "8a",
+          "text": "Ask a nearby employee for help.",
+          "moveType": "node",
+          "to": "13",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "8b",
+          "text": "Continue searching on your own.",
+          "moveType": "node",
+          "to": "14",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "9",
+      "narration": "You ignore the operator and rush off to find your friends. As you search, you begin to wonder if they're safe.",
+      "choices": [
+        {
+          "choiceId": "9a",
+          "text": "Ask a nearby employee for help.",
+          "moveType": "node",
+          "to": "13",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "9b",
+          "text": "Continue searching on your own.",
+          "moveType": "node",
+          "to": "14",
+          "guards": [],
+          "effects": ["fact:ignored_help=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "10",
+      "narration": "Your calls for help are heard by a group of fairgoers who rally to your aid. Together, you manage to free the other riders.",
+      "choices": [
+        {
+          "choiceId": "10a",
+          "text": "Thank everyone profusely.",
+          "moveType": "ending",
+          "to": "end_success",
+          "guards": [],
+          "effects": ["fact:saved_others=verified"]
+        },
+        {
+          "choiceId": "10b",
+          "text": "Ignore the help and rush off to find your friends.",
+          "moveType": "node",
+          "to": "14",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "11",
+      "narration": "You lie still, catching your breath. The other riders watch you with a mix of relief and concern.",
+      "choices": [
+        {
+          "choiceId": "11a",
+          "text": "Get up and walk to safety.",
+          "moveType": "node",
+          "to": "7",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "11b",
+          "text": "Stay where you are until help arrives.",
+          "moveType": "node",
+          "to": "5",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "12",
+      "narration": "You go back to help the other riders. Together, you manage to free everyone and make it to safety.",
+      "choices": [
+        {
+          "choiceId": "12a",
+          "text": "Thank everyone for their help.",
+          "moveType": "ending",
+          "to": "end_success",
+          "guards": [],
+          "effects": ["fact:saved_others=verified"]
+        },
+        {
+          "choiceId": "12b",
+          "text": "Ignore the help and rush off to find your friends.",
+          "moveType": "node",
+          "to": "14",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "13",
+      "narration": "You ask an employee for help. They lead you to a first aid station where you're treated for your injuries.",
+      "choices": [
+        {
+          "choiceId": "13a",
+          "text": "Thank the employee and continue searching for your friends.",
+          "moveType": "node",
+          "to": "14",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "13b",
+          "text": "Stay at the first aid station until your friends are found.",
+          "moveType": "node",
+          "to": "15",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "14",
+      "narration": "You continue searching for your friends, growing more worried with each passing minute.",
+      "choices": [
+        {
+          "choiceId": "14a",
+          "text": "Ask another employee for help.",
+          "moveType": "node",
+          "to": "16",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "14b",
+          "text": "Keep searching on your own.",
+          "moveType": "ending",
+          "to": "end_mixed",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "15",
+      "narration": "You stay at the first aid station, hoping your friends will come to you. After what seems like an eternity, they finally arrive.",
+      "choices": [
+        {
+          "choiceId": "15a",
+          "text": "Thank everyone for their help and relief.",
+          "moveType": "ending",
+          "to": "end_success",
+          "guards": [],
+          "effects": ["fact:found_friends=verified"]
+        },
+        {
+          "choiceId": "15b",
+          "text": "Express your frustration at being separated and vow to never let it happen again.",
+          "moveType": "ending",
+          "to": "end_success",
+          "guards": [],
+          "effects": ["fact:vowed_never_again=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "16",
+      "narration": "You ask another employee for help. They lead you to a group of your friends who were also stranded on a different ride.",
+      "choices": [
+        {
+          "choiceId": "16a",
+          "text": "Thank the employee and rush to your friends.",
+          "moveType": "ending",
+          "to": "end_success",
+          "guards": [],
+          "effects": ["fact:found_friends=verified"]
+        },
+        {
+          "choiceId": "16b",
+          "text": "Express your frustration at being separated and vow to never let it happen again.",
+          "moveType": "ending",
+          "to": "end_success",
+          "guards": [],
+          "effects": ["fact:vowed_never_again=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "end_success",
+      "narration": "You and your friends make it to safety, shaken but unharmed. You've learned a valuable lesson about the importance of staying together in unfamiliar places.",
+      "choices": [],
+      "end": true
+    },
+    {
+      "nodeId": "end_mixed",
+      "narration": "You and your friends are safe, but some were left behind. You're left with a mix of relief and guilt, wondering if you could have done more.",
+      "choices": [],
+      "end": true
+    },
+    {
+      "nodeId": "end_failure",
+      "narration": "You gave up and accepted your fate. The cold night air took its toll, and you didn't make it out alive.",
+      "choices": [],
+      "end": true
+    }
+  ]
+}

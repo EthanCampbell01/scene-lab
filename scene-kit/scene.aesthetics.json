@@ -1,0 +1,295 @@
+{
+  "sceneId": "interrogation.v1",
+  "aestheticVariants": [
+    {
+      "variantId": "family-dinner",
+      "label": "Kitchen Table Interrogation",
+      "tone": [
+        "intimate",
+        "awkward"
+      ],
+      "genre": [
+        "domestic-drama"
+      ],
+      "location": {
+        "type": "kitchen",
+        "descriptor": "Over-bright bulbs, casserole cooling, chairs too close.",
+        "timeOfDay": "evening"
+      },
+      "sensoryPalette": {
+        "lighting": [
+          "yellowed overheads"
+        ],
+        "sound": [
+          "utensils clink",
+          "refrigerator whirr",
+          "stifled cough"
+        ],
+        "colorKeys": [
+          "warm-amber",
+          "faded-teal"
+        ],
+        "props": [
+          "family photo",
+          "paper napkins",
+          "phone with unread texts"
+        ]
+      },
+      "castArchetypes": [
+        "protective-parent",
+        "embarrassed-sibling",
+        "cornered-guest"
+      ],
+      "uiPresentation": {
+        "camera": "tight",
+        "uiHints": [
+          "dialogue-cards"
+        ]
+      },
+      "hardConstraints": {
+        "disallowedEndingIds": [
+          "E4"
+        ],
+        "disallowedTags": [
+          "physical-violence"
+        ],
+        "requiredTagsForOptions": {}
+      },
+      "likelihoodModifiers": {
+        "byEndingId": {
+          "E1": 0.9,
+          "E2": 1.3,
+          "E3": 0.8,
+          "E4": 0.5
+        },
+        "byOptionTags": {
+          "soft-pressure": 1.4,
+          "hard-pressure": 0.6,
+          "deception": 1.0
+        }
+      },
+      "worldRules": [
+        "no-authorities",
+        "privacy-fragile"
+      ]
+    },
+    {
+      "variantId": "cia-safe-house",
+      "label": "CIA Safe House Interrogation",
+      "tone": [
+        "clinical",
+        "tense"
+      ],
+      "genre": [
+        "spy",
+        "procedural"
+      ],
+      "location": {
+        "type": "safe-house",
+        "descriptor": "Bare drywall, one-way mirror, air too cold.",
+        "timeOfDay": "night"
+      },
+      "sensoryPalette": {
+        "lighting": [
+          "fluorescent hum"
+        ],
+        "sound": [
+          "HVAC drone",
+          "distant traffic"
+        ],
+        "colorKeys": [
+          "steel-blue",
+          "gray"
+        ],
+        "props": [
+          "polygraph",
+          "recorder",
+          "manilla folders"
+        ]
+      },
+      "castArchetypes": [
+        "handler-with-agenda",
+        "burned-asset",
+        "silent-observer"
+      ],
+      "uiPresentation": {
+        "camera": "wide",
+        "uiHints": [
+          "timer-badge",
+          "evidence-panel"
+        ]
+      },
+      "hardConstraints": {
+        "disallowedEndingIds": [],
+        "disallowedTags": [],
+        "requiredTagsForOptions": {
+          "O1-bait": [
+            "player.prepared"
+          ]
+        }
+      },
+      "likelihoodModifiers": {
+        "byEndingId": {
+          "E1": 1.3,
+          "E2": 1.0,
+          "E3": 1.1,
+          "E4": 0.8
+        },
+        "byOptionTags": {
+          "hard-pressure": 1.2,
+          "deception": 1.1,
+          "soft-pressure": 0.9
+        }
+      },
+      "worldRules": [
+        "agency-protocols",
+        "recording-enabled"
+      ]
+    },
+    {
+      "variantId": "congress-hearing",
+      "label": "Congressional Hearing Interrogation",
+      "tone": [
+        "public",
+        "performative"
+      ],
+      "genre": [
+        "political"
+      ],
+      "location": {
+        "type": "hearing-room",
+        "descriptor": "Cameras everywhere, microphones hot, nameplates judging.",
+        "timeOfDay": "afternoon"
+      },
+      "sensoryPalette": {
+        "lighting": [
+          "broadcast-bright"
+        ],
+        "sound": [
+          "press shutters",
+          "gavel raps"
+        ],
+        "colorKeys": [
+          "mahogany",
+          "flag-blue"
+        ],
+        "props": [
+          "gavel",
+          "sworn oath cards",
+          "water pitchers"
+        ]
+      },
+      "castArchetypes": [
+        "grandstanding-senator",
+        "media-liaison",
+        "cornered-exec"
+      ],
+      "uiPresentation": {
+        "camera": "roving",
+        "uiHints": [
+          "reputation-meter",
+          "transcript-feed"
+        ]
+      },
+      "hardConstraints": {
+        "disallowedEndingIds": [],
+        "disallowedTags": [
+          "physical-violence"
+        ],
+        "requiredTagsForOptions": {}
+      },
+      "likelihoodModifiers": {
+        "byEndingId": {
+          "E1": 1.0,
+          "E2": 1.2,
+          "E3": 1.0,
+          "E4": 1.5
+        },
+        "byOptionTags": {
+          "hard-pressure": 0.8,
+          "soft-pressure": 0.9,
+          "deception": 0.7,
+          "team-dynamic": 1.2
+        }
+      },
+      "worldRules": [
+        "media-presence",
+        "legal-protocols"
+      ]
+    },
+    {
+      "variantId": "speed-date",
+      "label": "Speed-Date Interrogation",
+      "tone": [
+        "playful",
+        "sharp"
+      ],
+      "genre": [
+        "romcom",
+        "mystery"
+      ],
+      "location": {
+        "type": "public-venue",
+        "descriptor": "Fairy lights, bell every three minutes, too-loud playlist.",
+        "timeOfDay": "evening"
+      },
+      "sensoryPalette": {
+        "lighting": [
+          "twinkle LEDs"
+        ],
+        "sound": [
+          "pop playlist",
+          "bar chatter",
+          "bell dings"
+        ],
+        "colorKeys": [
+          "neon-pink",
+          "charcoal"
+        ],
+        "props": [
+          "scorecards",
+          "cocktail napkins",
+          "tiny timer"
+        ]
+      },
+      "castArchetypes": [
+        "too-charming-date",
+        "nosy-host",
+        "undercover-rival"
+      ],
+      "uiPresentation": {
+        "camera": "tight",
+        "uiHints": [
+          "timer-badge",
+          "banter-meter"
+        ]
+      },
+      "hardConstraints": {
+        "disallowedEndingIds": [
+          "E3"
+        ],
+        "disallowedTags": [
+          "hard-pressure"
+        ],
+        "requiredTagsForOptions": {}
+      },
+      "likelihoodModifiers": {
+        "byEndingId": {
+          "E1": 0.8,
+          "E2": 1.4,
+          "E3": 0.3,
+          "E4": 0.9
+        },
+        "byOptionTags": {
+          "soft-pressure": 1.5,
+          "deception": 1.0,
+          "precision": 0.9
+        }
+      },
+      "worldRules": [
+        "public-eyes",
+        "time-slices"
+      ]
+    }
+  ]
+}

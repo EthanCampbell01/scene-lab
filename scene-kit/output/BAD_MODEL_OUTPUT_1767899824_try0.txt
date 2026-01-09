@@ -1,0 +1,280 @@
+{
+  "sceneId": "the-halloween-fair-took-a-dangerous-turn-when-the-rides-began-to-break-and-shutdown-with-people-onboard",
+  "variantId": "spooky-campsite",
+  "title": "A Nightmare at the Halloween Fair",
+  "intro": {
+    "narration": "As the sun sets, the Halloween fair is in full swing. The air is thick with the scent of candy apples and the laughter of children. But something is amiss - the rides have begun to malfunction, trapping people onboard."
+  },
+  "initialState": {
+    "tags": [],
+    "stats": {},
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "n1",
+      "narration": "You arrive at the fair, drawn by the bright lights and festive atmosphere. As you approach the Ferris wheel, you notice it's not moving.",
+      "choices": [
+        {
+          "choiceId": "c1-1",
+          "text": "Investigate the Ferris wheel.",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c1-2",
+          "text": "Move on to another attraction.",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n2",
+      "narration": "You find a group of frightened people gathered around the Ferris wheel. A man explains that his daughter is trapped inside.",
+      "choices": [
+        {
+          "choiceId": "c2-1",
+          "text": "Offer to help rescue the girl.",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": ["fact:girl_trapped=verified"]
+        },
+        {
+          "choiceId": "c2-2",
+          "text": "Suggest they call for help from the fair staff.",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n3",
+      "narration": "You join a small group attempting to free the girl. The ride's operator explains that a power surge caused the malfunction.",
+      "choices": [
+        {
+          "choiceId": "c3-1",
+          "text": "Offer to fix the Ferris wheel yourself.",
+          "moveType": "to",
+          "weight": 50,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c3-2",
+          "text": "Insist on evacuating the trapped passengers immediately.",
+          "moveType": "to",
+          "weight": 50,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n4",
+      "narration": "You manage to free the girl, but as you do, the roller coaster behind you suddenly derails.",
+      "choices": [
+        {
+          "choiceId": "c4-1",
+          "text": "Rush to help those trapped in the roller coaster.",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c4-2",
+          "text": "Help the girl and her family find safety first.",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n5",
+      "narration": "You and the others work together to free those trapped in the roller coaster. As you do, you notice a strange symbol etched into one of the cars.",
+      "choices": [
+        {
+          "choiceId": "c5-1",
+          "text": "Ignore the symbol for now and focus on rescuing more people.",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c5-2",
+          "text": "Investigate the symbol to learn more about its origin.",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": ["fact:symbol_found=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "n6",
+      "narration": "With everyone safely off the roller coaster, you and the others decide to leave the fair. As you exit, you catch a glimpse of the symbol again, this time on a nearby tent.",
+      "choices": [
+        {
+          "choiceId": "c6-1",
+          "text": "Follow the symbol to learn more about its origin.",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": ["fact:symbol_leads_tent=verified"]
+        },
+        {
+          "choiceId": "c6-2",
+          "text": "Ignore the symbol and continue on your way.",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n7",
+      "narration": "You follow the symbol to a tent selling occult items. Inside, you find a group of people dressed in dark robes.",
+      "choices": [
+        {
+          "choiceId": "c7-1",
+          "text": "Confront the group about their involvement with the malfunctioning rides.",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": ["goal:investigate_cult+1"]
+        },
+        {
+          "choiceId": "c7-2",
+          "text": "Leave the tent and continue your investigation elsewhere.",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n8",
+      "narration": "As you investigate the cult, you uncover evidence of a dark ritual planned for Halloween night.",
+      "choices": [
+        {
+          "choiceId": "c8-1",
+          "text": "Alert the authorities about the impending ritual.",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": ["goal:stop_ritual+1"]
+        },
+        {
+          "choiceId": "c8-2",
+          "text": "Keep the information to yourself, unsure if you can trust the authorities.",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": ["goal:keep_secret+1"]
+        }
+      ]
+    },
+    {
+      "nodeId": "n9",
+      "narration": "You race against time to stop the cult's ritual. As you approach their gathering, you are confronted by their leader.",
+      "choices": [
+        {
+          "choiceId": "c9-1",
+          "text": "Engage in a physical struggle with the leader to disrupt the ritual.",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": ["goal:disrupt_ritual+1"]
+        },
+        {
+          "choiceId": "c9-2",
+          "text": "Attempt to negotiate with the leader, hoping to convince them to abandon their plans.",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": ["goal:negotiate_peace+1"]
+        }
+      ]
+    },
+    {
+      "nodeId": "n10",
+      "narration": "Your actions disrupt the ritual, but not before several cult members are able to complete a crucial part of the ceremony.",
+      "choices": [
+        {
+          "choiceId": "c10-1",
+          "text": "Pursue the remaining cult members to prevent further harm.",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": ["goal:pursue_cult+1"]
+        },
+        {
+          "choiceId": "c10-2",
+          "text": "Focus on helping those affected by the ritual.",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n11",
+      "narration": "You manage to apprehend the remaining cult members and prevent any further harm. The authorities arrive to take them into custody.",
+      "choices": [
+        {
+          "choiceId": "c11-1",
+          "text": "Stay behind to help clean up and support those affected.",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c11-2",
+          "text": "Leave immediately, feeling that your work is done.",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n12",
+      "narration": "You return home, reflecting on the events of the night. You realize that your actions have saved countless lives and brought justice to those responsible.",
+      "choices": [
+        {
+          "choiceId": "c12-1",
+          "text": "Share your story with others, inspiring them to stand against injustice.",
+          "moveType": "end",
+          "weight": 50,
+          "guards": [],
+          "effects": ["fact:story_told=verified"]
+        },
+        {
+          "choiceId": "c12-2",
+          "text": "Keep your story to yourself, preferring to remain a quiet hero.",
+          "moveType": "end",
+          "weight": 50,
+          "guards": [],
+          "effects": ["fact:story_kept=verified"]
+        }
+      ]
+    }
+  ]
+}

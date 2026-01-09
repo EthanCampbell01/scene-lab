@@ -1,0 +1,201 @@
+{
+  "sceneId": "interrogation.v1",
+  "variantId": "cia-safe-house",
+  "intro": {
+    "narration": "In the heart of a sterile CIA safe house, you're tasked with extracting the truth from a burned asset. The air is cold and dry, the lighting fluorescent and humming. A one-way mirror separates you from your subject, who watches you with calculated composure."
+  },
+  "nodes": [
+    {
+      "nodeId": "N1",
+      "narration": "You're thrown into the interrogation room without preparation; the subject is already seated. The HVAC drone echoes in the background, a constant reminder of the ticking clock.",
+      "choices": [
+        {
+          "choiceId": "O1-soft",
+          "text": "Promise fairness and safety, empathizing with their situation.",
+          "guards": [],
+          "effects": [
+            "subject.trust+1"
+          ],
+          "to": "N2"
+        },
+        {
+          "choiceId": "O1-hard",
+          "text": "Present evidence and tighten the time squeeze, pushing for a quick confession.",
+          "guards": [],
+          "effects": [
+            "subject.resistance+1",
+            "timer.ticks+1"
+          ],
+          "to": "N2"
+        },
+        {
+          "choiceId": "O1-bait",
+          "text": "Offer a small, believable lie to bait a correction.",
+          "guards": [
+            "player.prepared"
+          ],
+          "effects": [
+            "subject.slips?"
+          ],
+          "to": "N2"
+        }
+      ]
+    },
+    {
+      "nodeId": "N2",
+      "narration": "The subject counters with a partial story, leaving holes in their narrative.",
+      "choices": [
+        {
+          "choiceId": "O2-contradict",
+          "text": "Quietly surface a contradiction and wait for the subject to grow anxious.",
+          "guards": [],
+          "effects": [
+            "subject.anxiety+1"
+          ],
+          "to": "N3"
+        },
+        {
+          "choiceId": "O2-ally",
+          "text": "Offer protection for a name, potentially forming an alliance.",
+          "guards": [
+            "subject.trust+1"
+          ],
+          "effects": [
+            "subject.considers-deal"
+          ],
+          "to": "N3"
+        },
+        {
+          "choiceId": "O2-bluff",
+          "text": "Bluff about surveillance footage, testing the subject's reaction.",
+          "guards": [],
+          "effects": [
+            "subject.calls-bluff?"
+          ],
+          "to": "N3"
+        }
+      ]
+    },
+    {
+      "nodeId": "N3",
+      "narration": "With the subject growing increasingly defensive, you must choose your next move carefully.",
+      "choices": [
+        {
+          "choiceId": "O3-partner",
+          "text": "Bring in a ‘good cop’ ally to reframe the situation.",
+          "guards": [],
+          "effects": [
+            "subject.trust-shift"
+          ],
+          "to": "E2"
+        },
+        {
+          "choiceId": "O3-breakdown",
+          "text": "Push too hard, potentially losing access to the subject.",
+          "guards": [
+            "subject.resistance+1"
+          ],
+          "effects": [
+            "access.revoked"
+          ],
+          "to": "E3"
+        },
+        {
+          "choiceId": "O3-reversal",
+          "text": "Allow the subject to flip the frame, accusing you; you must concede or counter.",
+          "guards": [
+            "subject.composed"
+          ],
+          "effects": [
+            "power.flip"
+          ],
+          "to": "E4"
+        },
+        {
+          "choiceId": "O3-confession",
+          "text": "Use precision to extract a verifiable detail from the subject.",
+          "guards": [
+            "subject.anxiety+1"
+          ],
+          "effects": [
+            "truth.fragment"
+          ],
+          "to": "E1"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "E1",
+      "title": "Cold Confession",
+      "type": "success",
+      "summary": "The subject yields a verifiable detail that unlocks the next lead.",
+      "stateResults": [
+        "lead.unlocked",
+        "subject.exhausted"
+      ],
+      "unlockables": [
+        "perk.interrogation-precision"
+      ],
+      "narration": "Cold Confession (success). The scene resolves with consequences that set the next moves."
+    },
+    {
+      "endingId": "E2",
+      "title": "Fragile Alliance",
+      "type": "mixed",
+      "summary": "The subject agrees to help but sets conditions that may backfire.",
+      "stateResults": [
+        "subject.informant",
+        "timer.ticks+1"
+      ],
+      "unlockables": [],
+      "narration": "Fragile Alliance (mixed). The scene resolves with consequences that set the next moves."
+    },
+    {
+      "endingId": "E3",
+      "title": "Ice-Out",
+      "type": "failure",
+      "summary": "Access lost; you’ll need an external angle to proceed.",
+      "stateResults": [
+        "access.revoked",
+        "authority.alerted"
+      ],
+      "unlockables": [],
+      "narration": "Ice-Out (failure). The scene resolves with consequences that set the next moves."
+    },
+    {
+      "endingId": "E4",
+      "title": "Public Reversal",
+      "type": "twist",
+      "summary": "The subject reframes you as the aggressor; your credibility becomes a new resource to manage.",
+      "stateResults": [
+        "reputation.dented",
+        "investigation.refocused"
+      ],
+      "unlockables": [
+        "perk.stoic-defense"
+      ],
+      "narration": "Public Reversal (twist). The scene resolves with consequences that set the next moves."
+    }
+  ],
+  "themeSignals": [
+    "mirrors",
+    "heartbeat",
+    "ticking clock"
+  ],
+  "telemetry": {
+    "intensityCurve": [
+      0.2,
+      0.5,
+      0.8,
+      0.95
+    ],
+    "riskCurve": [
+      0.1,
+      0.3,
+      0.7,
+      0.9
+    ]
+  }
+}

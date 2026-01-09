@@ -1,0 +1,38 @@
+{
+  "sceneId": null,
+  "aestheticVariants": [
+    {
+      "variantId": "cia-safe-house",
+      "label": "cia-safe-house",
+      "tone": [
+        "tense",
+        "grounded"
+      ],
+      "genre": [
+        "interactive drama"
+      ],
+      "location": {
+        "name": "Unknown location"
+      },
+      "sensoryPalette": {
+        "sights": [],
+        "sounds": [],
+        "smells": []
+      },
+      "castArchetypes": [],
+      "uiPresentation": {
+        "notes": "Auto-generated (mismatch repaired)"
+      },
+      "worldRules": [],
+      "hardConstraints": {
+        "disallowedEndingIds": [],
+        "disallowedTags": [],
+        "requiredTagsForOptions": {}
+      },
+      "likelihoodModifiers": {
+        "byEndingId": {},
+        "byOptionTags": {}
+      }
+    }
+  ]
+}

@@ -1,0 +1,458 @@
+{
+  "sceneId": "the-halloween-fair-took-a-dangerous-turn-when-the-rides-began-to-break-and-shutdown-with-people-onboard",
+  "variantId": "spooky-campsite",
+  "title": "A Nightmare at the Fair",
+  "intro": {
+    "narration": "As the moon rises over the eerie Halloween fair, you find yourself trapped amidst a series of malfunctioning rides. The screams of terrified passengers echo through the darkness as you race against time to save those still on board."
+  },
+  "initialState": {
+    "tags": [],
+    "stats": {},
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "1",
+      "narration": "You hear the screams of a young girl trapped on a broken Ferris wheel. The ride's operator, a disheveled man, pleads with you to help her.",
+      "choices": [
+        {
+          "choiceId": "1A",
+          "text": "Help the girl first",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "1B",
+          "text": "Help the operator instead",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "2",
+      "narration": "You reach the Ferris wheel and find that the girl is unharmed but the operator has vanished. A nearby carousel continues to spin wildly.",
+      "choices": [
+        {
+          "choiceId": "2A",
+          "text": "Attempt to stop the carousel",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "2B",
+          "text": "Search for the operator",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "3",
+      "narration": "You manage to stop the carousel, but the operator still hasn't been found. A roller coaster suddenly derails, sending passengers flying through the air.",
+      "choices": [
+        {
+          "choiceId": "3A",
+          "text": "Rush to help the injured passengers",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "3B",
+          "text": "Search for the operator again",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "4",
+      "narration": "As you tend to the injured passengers, you hear a faint cry for help coming from another ride. The operator is trapped!",
+      "choices": [
+        {
+          "choiceId": "4A",
+          "text": "Rescue the operator",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "4B",
+          "text": "Continue helping the injured passengers",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "5",
+      "narration": "You successfully free the operator, who thanks you profusely. The fair is now safe, and you can finally leave.",
+      "choices": [
+        {
+          "choiceId": "5A",
+          "text": "Celebrate your victory with the operator",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "5B",
+          "text": "Leave immediately",
+          "moveType": "end",
+          "weight": 40,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "6",
+      "narration": "You decide to stay and enjoy the rest of the fair. Suddenly, you hear a loud crash as another ride collapses.",
+      "choices": [
+        {
+          "choiceId": "6A",
+          "text": "Rush to help those trapped in the wreckage",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "6B",
+          "text": "Investigate the cause of the crash",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "7",
+      "narration": "You discover that the fair's owner sabotaged the rides in an attempt to drive away competitors. The police are called, and the owner is arrested.",
+      "choices": [
+        {
+          "choiceId": "7A",
+          "text": "Stay at the fair to celebrate the arrest",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "7B",
+          "text": "Leave the fair immediately",
+          "moveType": "end",
+          "weight": 40,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "8",
+      "narration": "As the police question you about your involvement in the fair's events, you are filled with a sense of accomplishment and relief.",
+      "choices": [
+        {
+          "choiceId": "8A",
+          "text": "Cooperate fully with the police",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "8B",
+          "text": "Refuse to cooperate",
+          "moveType": "end",
+          "weight": 30,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "9",
+      "narration": "You are hailed as a hero for your actions at the fair. The media swarms around you, eager for your story.",
+      "choices": [
+        {
+          "choiceId": "9A",
+          "text": "Grant interviews to the media",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "9B",
+          "text": "Decline all interviews",
+          "moveType": "end",
+          "weight": 40,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "10",
+      "narration": "You are offered a chance to speak at a conference about your experiences at the fair. A representative from a major theme park offers you a job.",
+      "choices": [
+        {
+          "choiceId": "10A",
+          "text": "Accept the job offer",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": ["tag:fame"]
+        },
+        {
+          "choiceId": "10B",
+          "text": "Decline the job offer",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "11",
+      "narration": "You decide to take a break from the spotlight and spend some time with your family. They are proud of your accomplishments.",
+      "choices": [
+        {
+          "choiceId": "11A",
+          "text": "Spend quality time with your family",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": ["fact:spent_time_with_family=verified"]
+        },
+        {
+          "choiceId": "11B",
+          "text": "Return to your normal life",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "12",
+      "narration": "You are approached by a mysterious figure who offers you a chance to join a secret organization dedicated to protecting innocent lives.",
+      "choices": [
+        {
+          "choiceId": "12A",
+          "text": "Accept the offer",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": ["tag:secret_organization"]
+        },
+        {
+          "choiceId": "12B",
+          "text": "Decline the offer",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "13",
+      "narration": "You are given a choice between two paths: one leading to a life of adventure and danger, the other offering a peaceful existence. Which will you choose?",
+      "choices": [
+        {
+          "choiceId": "13A",
+          "text": "Choose the path of adventure",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": ["tag:adventure"]
+        },
+        {
+          "choiceId": "13B",
+          "text": "Choose the path of peace",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": ["tag:peace"]
+        }
+      ]
+    },
+    {
+      "nodeId": "14",
+      "narration": "Your choice has led you down a new path. The future is uncertain, but one thing is certain: your actions at the fair will never be forgotten.",
+      "choices": [
+        {
+          "choiceId": "14A",
+          "text": "Continue on this new path",
+          "moveType": "end",
+          "weight": 100,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "End1",
+      "narration": "You have successfully navigated the fair and made a difference in people's lives. Your story will inspire others for years to come.",
+      "choices": [
+        {
+          "choiceId": "End1A",
+          "text": "Reflect on your journey",
+          "moveType": "end",
+          "weight": 100,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "End2",
+      "narration": "You have chosen a life of adventure and danger. The world is your oyster, but be prepared for the challenges that lie ahead.",
+      "choices": [
+        {
+          "choiceId": "End2A",
+          "text": "Embrace the adventure",
+          "moveType": "end",
+          "weight": 100,
+          "guards": [],
+          "effects": ["tag:adventure"]
+        }
+      ]
+    },
+    {
+      "nodeId": "End3",
+      "narration": "You have chosen a path of peace. Enjoy the simple pleasures in life and cherish the moments with those you love.",
+      "choices": [
+        {
+          "choiceId": "End3A",
+          "text": "Live a peaceful life",
+          "moveType": "end",
+          "weight": 100,
+          "guards": [],
+          "effects": ["tag:peace"]
+        }
+      ]
+    },
+    {
+      "nodeId": "End4",
+      "narration": "You have declined the job offer and chosen to return to your normal life. Though your actions at the fair will always be remembered, you can now focus on your own path.",
+      "choices": [
+        {
+          "choiceId": "End4A",
+          "text": "Return to your normal life",
+          "moveType": "end",
+          "weight": 100,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "End5",
+      "narration": "You have declined the offer to join the secret organization. Though you may miss out on exciting opportunities, your decision allows you to maintain your privacy and independence.",
+      "choices": [
+        {
+          "choiceId": "End5A",
+          "text": "Maintain your privacy and independence",
+          "moveType": "end",
+          "weight": 100,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "End6",
+      "narration": "You have chosen to spend quality time with your family. The bond between you grows stronger as you share stories of your adventure at the fair.",
+      "choices": [
+        {
+          "choiceId": "End6A",
+          "text": "Spend more time with your family",
+          "moveType": "end",
+          "weight": 100,
+          "guards": [],
+          "effects": ["fact:spent_time_with_family=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "End7",
+      "narration": "You have chosen to grant interviews to the media. Your story captivates audiences worldwide, and you become an inspiration to many.",
+      "choices": [
+        {
+          "choiceId": "End7A",
+          "text": "Grant more interviews",
+          "moveType": "end",
+          "weight": 100,
+          "guards": [],
+          "effects": ["tag:fame"]
+        }
+      ]
+    },
+    {
+      "nodeId": "End8",
+      "narration": "You have chosen to decline all interviews. Though you miss out on the spotlight, you are able to maintain your privacy and focus on your own life.",
+      "choices": [
+        {
+          "choiceId": "End8A",
+          "text": "Decline further interviews",
+          "moveType": "end",
+          "weight": 100,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "End9",
+      "narration": "You have chosen to accept the job offer from the theme park. Your new position allows you to share your passion for safety and adventure with others.",
+      "choices": [
+        {
+          "choiceId": "End9A",
+          "text": "Accept the job offer",
+          "moveType": "end",
+          "weight": 100,
+          "guards": [],
+          "effects": ["tag:theme_park"]
+        }
+      ]
+    },
+    {
+      "nodeId": "End10",
+      "narration": "You have chosen to decline the job offer from the theme park. Though you may miss out on exciting opportunities, you are able to maintain your independence and focus on your own path.",
+      "choices": [
+        {
+          "choiceId": "End10A",
+          "text": "Decline the job offer",
+          "moveType": "end",
+          "weight": 100,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "End11",
+      "narration": "You have chosen to accept the offer from the secret organization. Your new role allows you to use your skills and experience to protect innocent lives around the world.",
+      "

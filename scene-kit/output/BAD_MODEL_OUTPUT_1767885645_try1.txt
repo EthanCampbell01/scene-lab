@@ -1,0 +1,327 @@
+{
+  "sceneId": "the-halloween-fair-took-a-dangerous-turn-when-the-rides-began-to-break-and-shutdown-with-people-onboard",
+  "variantId": "spooky-campsite",
+  "intro": {
+    "narration": "Amidst the eerie glow of jack-o'-lanterns and the cacophony of laughter, screams, and music, something sinister lurks within the Halloween fair. As you navigate the maze of attractions, a series of inexplicable malfunctions threaten to derail the night."
+  },
+  "initialState": {
+    "tags": ["halloween", "fear", "mystery"],
+    "stats": {},
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "n1",
+      "narration": "The first ride you approach is the Ferris wheel, its lights flickering ominously. A group of friends are stuck at the top, pleading for help.",
+      "choices": [
+        {
+          "choiceId": "c1n1",
+          "text": "Help the stranded friends.",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": [],
+          "to": "n2"
+        },
+        {
+          "choiceId": "c2n1",
+          "text": "Ignore the friends and move on.",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": [],
+          "to": "n3"
+        }
+      ]
+    },
+    {
+      "nodeId": "n2",
+      "narration": "As you attempt to rescue the friends, the Ferris wheel suddenly lurches, sending you and the trapped passengers plummeting towards the ground. You manage to grab onto a dangling seat just in time.",
+      "choices": [
+        {
+          "choiceId": "c1n2",
+          "text": "Try to fix the Ferris wheel.",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": ["fact:ferris_wheel_broken=verified"],
+          "to": "n4"
+        },
+        {
+          "choiceId": "c2n2",
+          "text": "Abandon the Ferris wheel and find another ride.",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": [],
+          "to": "n3"
+        }
+      ]
+    },
+    {
+      "nodeId": "n3",
+      "narration": "You make your way to the haunted house, where you encounter a group of rowdy teenagers. They challenge you to a game of truth or dare.",
+      "choices": [
+        {
+          "choiceId": "c1n3",
+          "text": "Play truth.",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": ["fact:teenagers_revealed_secret=verified"],
+          "to": "n5"
+        },
+        {
+          "choiceId": "c2n3",
+          "text": "Play dare.",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": ["fact:teenagers_dared=verified"],
+          "to": "n6"
+        }
+      ]
+    },
+    {
+      "nodeId": "n4",
+      "narration": "With the Ferris wheel repaired, you and the trapped passengers safely disembark. The crowd erupts in cheers, but your relief is short-lived as another ride malfunctions.",
+      "choices": [
+        {
+          "choiceId": "c1n4",
+          "text": "Investigate the malfunctioned ride.",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": ["fact:ride2_broken=verified"],
+          "to": "n7"
+        },
+        {
+          "choiceId": "c2n4",
+          "text": "Ignore the malfunction and move on.",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": [],
+          "to": "n8"
+        }
+      ]
+    },
+    {
+      "nodeId": "n5",
+      "narration": "During the truth game, you learn that the teenagers have been sabotaging the rides as a prank. They refuse to stop unless you reveal a secret of your own.",
+      "choices": [
+        {
+          "choiceId": "c1n5",
+          "text": "Reveal a personal secret.",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": ["fact:personal_secret_revealed=verified"],
+          "to": "n9"
+        },
+        {
+          "choiceId": "c2n5",
+          "text": "Refuse to reveal a secret.",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": ["fact:teenagers_refused=verified"],
+          "to": "n10"
+        }
+      ]
+    },
+    {
+      "nodeId": "n6",
+      "narration": "During the dare game, you are forced to jump from a great height into a pool of water. As you emerge, you notice that one of the teenagers has fallen and is struggling to swim.",
+      "choices": [
+        {
+          "choiceId": "c1n6",
+          "text": "Save the drowning teenager.",
+          "moveType": "to",
+          "weight": 70,
+          "guards": [],
+          "effects": ["fact:teenager_saved=verified"],
+          "to": "n11"
+        },
+        {
+          "choiceId": "c2n6",
+          "text": "Ignore the drowning teenager and continue with the game.",
+          "moveType": "to",
+          "weight": 30,
+          "guards": [],
+          "effects": ["fact:teenager_ignored=verified"],
+          "to": "n12"
+        }
+      ]
+    },
+    {
+      "nodeId": "n7",
+      "narration": "Upon investigating the second malfunctioned ride, you discover a hidden control room with a group of individuals responsible for the sabotage. They reveal that they are seeking revenge on the fair's owner for past wrongdoings.",
+      "choices": [
+        {
+          "choiceId": "c1n7",
+          "text": "Confront and stop the saboteurs.",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": ["fact:saboteurs_stopped=verified"],
+          "to": "n13"
+        },
+        {
+          "choiceId": "c2n7",
+          "text": "Ignored the saboteurs and leave them to continue their plan.",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": ["fact:saboteurs_ignored=verified"],
+          "to": "n14"
+        }
+      ]
+    },
+    {
+      "nodeId": "n8",
+      "narration": "As more rides malfunction, panic begins to spread throughout the fair. You must decide whether to help those in need or try to escape.",
+      "choices": [
+        {
+          "choiceId": "c1n8",
+          "text": "Help those in need.",
+          "moveType": "to",
+          "weight": 60,
+          "guards": [],
+          "effects": [],
+          "to": "n9"
+        },
+        {
+          "choiceId": "c2n8",
+          "text": "Escape the chaos.",
+          "moveType": "to",
+          "weight": 40,
+          "guards": [],
+          "effects": ["fact:escaped_chaos=verified"],
+          "to": "n10"
+        }
+      ]
+    },
+    {
+      "nodeId": "n9",
+      "narration": "As the night comes to a close, you reflect on the events that transpired and the choices you made. You realize that while some consequences were positive, others may have far-reaching negative impacts.",
+      "choices": [
+        {
+          "choiceId": "c1n9",
+          "text": "Stay at the fair to help clean up and address any remaining issues.",
+          "moveType": "ending",
+          "weight": 60,
+          "to": "e1"
+        },
+        {
+          "choiceId": "c2n9",
+          "text": "Leave the fair and return home to process your experiences.",
+          "moveType": "ending",
+          "weight": 40,
+          "to": "e2"
+        }
+      ]
+    },
+    {
+      "nodeId": "n10",
+      "narration": "With the fair in chaos and your personal safety at risk, you make a hasty exit. As you leave, you can't help but wonder about the fate of those left behind.",
+      "choices": [
+        {
+          "choiceId": "c1n10",
+          "text": "Return to the fair to offer assistance and support.",
+          "moveType": "ending",
+          "weight": 60,
+          "to": "e3"
+        },
+        {
+          "choiceId": "c2n10",
+          "text": "Focus on your own well-being and avoid returning to the fair.",
+          "moveType": "ending",
+          "weight": 40,
+          "to": "e4"
+        }
+      ]
+    },
+    {
+      "nodeId": "n11",
+      "narration": "After saving the drowning teenager, you are hailed as a hero by the crowd. The teenagers apologize for their pranks and offer to help clean up and repair the fair.",
+      "choices": [
+        {
+          "choiceId": "c1n11",
+          "text": "Accept their help and work together to restore order.",
+          "moveType": "ending",
+          "weight": 60,
+          "to": "e5"
+        },
+        {
+          "choiceId": "c2n11",
+          "text": "Decline their help and insist on handling the situation yourself.",
+          "moveType": "ending",
+          "weight": 40,
+          "to": "e6"
+        }
+      ]
+    },
+    {
+      "nodeId": "n12",
+      "narration": "After ignoring the drowning teenager, you are confronted by their friends. They demand that you help them find and save their friend before it's too late.",
+      "choices": [
+        {
+          "choiceId": "c1n12",
+          "text": "Join them in searching for the missing teenager.",
+          "moveType": "ending",
+          "weight": 60,
+          "to": "e7"
+        },
+        {
+          "choiceId": "c2n12",
+          "text": "Refuse to help and leave them to their own devices.",
+          "moveType": "ending",
+          "weight": 40,
+          "to": "e8"
+        }
+      ]
+    },
+    {
+      "nodeId": "n13",
+      "narration": "After confronting and stopping the saboteurs, you are hailed as a hero by the fair's management and the crowd. They offer to reward you for your actions.",
+      "choices": [
+        {
+          "choiceId": "c1n13",
+          "text": "Accept the reward and use it to help those affected by the sabotage.",
+          "moveType": "ending",
+          "weight": 60,
+          "to": "e9"
+        },
+        {
+          "choiceId": "c2n13",
+          "text": "Refuse the reward and insist that your actions were simply the right thing to do.",
+          "moveType": "ending",
+          "weight": 40,
+          "to": "e10"
+        }
+      ]
+    },
+    {
+      "nodeId": "n14",
+      "narration": "After leaving the saboteurs to continue their plan, you can't shake the feeling that you may have made a grave mistake. You vow to return and set things right, but it may be too late.",
+      "choices": [
+        {
+          "choiceId": "c1n14",
+          "text": "Return to the fair as soon as possible to confront the saboteurs.",
+          "moveType": "ending",
+          "weight": 60,
+          "to": "e11"
+        },
+        {
+          "choiceId": "c2n14",
+          "text": "Wait and see if anyone comes forward to stop the saboteurs before taking action.",
+          "moveType": "ending",
+          "weight": 40,
+          "to": "e12"
+        }
+      ]
+    }
+  ]
+}

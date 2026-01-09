@@ -1,0 +1,364 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Expanded Visual Novel Scene",
+  "type": "object",
+  "required": ["sceneId", "variantId", "intro", "nodes", "endings"],
+  "additionalProperties": false,
+  "properties": {
+    "sceneId": "the-halloween-fair-took-a-dangerous-turn-when-the-rides-began-to-break-and-shutdown-with-people-onboard",
+    "variantId": "spooky-campsite",
+
+    "intro": {
+      "type": "object",
+      "required": ["narration"],
+      "additionalProperties": false,
+      "properties": {
+        "narration": "Amidst the cackling laughter and flickering lights of the Halloween fair, an eerie silence descends as rides begin to malfunction, trapping terrified passengers."
+      }
+    },
+
+    "initialState": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tags": [],
+        "stats": {},
+        "facts": {},
+        "goals": {}
+      }
+    },
+
+    "nodes": [
+      {
+        "nodeId": "n01",
+        "narration": "You rush to the scene, heart pounding. The Ferris wheel has come to a sudden halt, leaving riders dangling precariously.",
+        "choices": [
+          {
+            "choiceId": "c01",
+            "text": "Ask the operator for help.",
+            "moveType": "to",
+            "weight": 50,
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "c02",
+            "text": "Try to free the passengers yourself.",
+            "moveType": "to",
+            "weight": 50,
+            "guards": [],
+            "effects": ["stat:bravery+1"]
+          }
+        ]
+      },
+      {
+        "nodeId": "n02",
+        "narration": "The operator is nowhere to be found. You decide to climb the Ferris wheel to reach the trapped riders.",
+        "choices": [
+          {
+            "choiceId": "c03",
+            "text": "Climb the Ferris wheel safely.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "c04",
+            "text": "Take a risky shortcut up the Ferris wheel.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": ["stat:risk+1"]
+          }
+        ]
+      },
+      {
+        "nodeId": "n03",
+        "narration": "As you reach the top of the Ferris wheel, you realize that the safety bars have jammed. You must unlock them to free the passengers.",
+        "choices": [
+          {
+            "choiceId": "c05",
+            "text": "Forcefully pry open the safety bars.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": ["stat:strength+1"]
+          },
+          {
+            "choiceId": "c06",
+            "text": "Look for a tool to unlock the safety bars.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": ["fact:tool=not_found"]
+          }
+        ]
+      },
+      {
+        "nodeId": "n04",
+        "narration": "You manage to unlock the safety bars and free the passengers. The crowd cheers as they descend safely.",
+        "choices": [
+          {
+            "choiceId": "c07",
+            "text": "Celebrate your success with the crowd.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": ["tag:hero"]
+          },
+          {
+            "choiceId": "c08",
+            "text": "Slip away from the crowd unnoticed.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": ["tag:mysterious"]
+          }
+        ]
+      },
+      {
+        "nodeId": "n05",
+        "narration": "As the crowd disperses, you notice a strange figure lurking in the shadows. They seem to be watching you.",
+        "choices": [
+          {
+            "choiceId": "c09",
+            "text": "Confront the stranger.",
+            "moveType": "to",
+            "weight": 50,
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "c10",
+            "text": "Ignore the stranger and continue exploring the fair.",
+            "moveType": "to",
+            "weight": 50,
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "n06",
+        "narration": "You decide to confront the stranger. They reveal themselves as a ghostly figure who warns you of impending danger at the haunted house.",
+        "choices": [
+          {
+            "choiceId": "c11",
+            "text": "Dismiss the ghost's warning and enter the haunted house.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": ["fact:ghost_warning=ignored"]
+          },
+          {
+            "choiceId": "c12",
+            "text": "Heed the ghost's warning and avoid the haunted house.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": ["fact:ghost_warning=heeded"]
+          }
+        ]
+      },
+      {
+        "nodeId": "n07",
+        "narration": "You enter the haunted house and encounter a series of terrifying obstacles. Your courage is tested at every turn.",
+        "choices": [
+          {
+            "choiceId": "c13",
+            "text": "Press on through the haunted house despite your fears.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": ["stat:courage+1"]
+          },
+          {
+            "choiceId": "c14",
+            "text": "Turn back and leave the haunted house.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": ["stat:cowardice+1"]
+          }
+        ]
+      },
+      {
+        "nodeId": "n08",
+        "narration": "You make it through the haunted house and emerge unscathed. The crowd cheers once again, but something feels off.",
+        "choices": [
+          {
+            "choiceId": "c15",
+            "text": "Accept the crowd's applause graciously.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "c16",
+            "text": "Refuse the crowd's applause and leave quickly.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "n09",
+        "narration": "As you leave the fair, you notice that the strange figure from earlier is still watching you. They seem to be following you.",
+        "choices": [
+          {
+            "choiceId": "c17",
+            "text": "Confront the stranger again.",
+            "moveType": "to",
+            "weight": 50,
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "c18",
+            "text": "Lose the stranger in the darkness.",
+            "moveType": "to",
+            "weight": 50,
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "n10",
+        "narration": "You manage to shake off the stranger and continue on your way. Suddenly, you hear a loud crash behind you.",
+        "choices": [
+          {
+            "choiceId": "c19",
+            "text": "Turn back to investigate the noise.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "c20",
+            "text": "Ignore the noise and continue walking.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "n11",
+        "narration": "You turn back to investigate the noise and discover that the haunted house has collapsed. The strange figure is nowhere to be found.",
+        "choices": [
+          {
+            "choiceId": "c21",
+            "text": "Search for survivors in the rubble.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "c22",
+            "text": "Leave the area and report the collapse to authorities.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "n12",
+        "narration": "You find a survivor trapped in the rubble. With great effort, you manage to free them and they express their gratitude.",
+        "choices": [
+          {
+            "choiceId": "c23",
+            "text": "Accept the survivor's thanks graciously.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": ["tag:hero"]
+          },
+          {
+            "choiceId": "c24",
+            "text": "Dismiss the survivor's thanks and leave quickly.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": ["tag:mysterious"]
+          }
+        ]
+      },
+      {
+        "nodeId": "n13",
+        "narration": "As you leave the fairgrounds, you can't shake the feeling that the strange figure is still watching you.",
+        "choices": [
+          {
+            "choiceId": "c25",
+            "text": "Turn around to confront the stranger one last time.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "c26",
+            "text": "Keep walking and try to lose the stranger once and for all.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "n14",
+        "narration": "You turn around to confront the stranger. They reveal themselves as a ghostly apparition who offers you a cryptic message before disappearing into the night.",
+        "choices": [
+          {
+            "choiceId": "c27",
+            "text": "Ask the ghost for more information.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "c28",
+            "text": "Dismiss the ghost's message and continue on your way.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "n15",
+        "narration": "The ghost's message leaves you with more questions than answers. You can't help but feel that your adventure at the fair is far from over.",
+        "choices": [
+          {
+            "choiceId": "c29",
+            "text": "Return to the fairgrounds to uncover the truth.",
+            "moveType": "to",
+            "weight": 60,
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "c30",
+            "text": "Leave the fairgrounds and try to forget about the strange encounter.",
+            "moveType": "to",
+            "weight": 40,
+            "guards": [],
+            "effects": []
+          }
+        ]
+      }
+    ]
+  }
+}

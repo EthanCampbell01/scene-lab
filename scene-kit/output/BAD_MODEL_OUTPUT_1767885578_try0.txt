@@ -1,0 +1,323 @@
+{
+  "sceneId": "the-halloween-fair-took-a-dangerous-turn-when-the-rides-began-to-break-and-shutdown-with-people-onboard",
+  "variantId": "spooky-campsite",
+  "intro": {
+    "narration": "Amidst the cackling laughter and eerie music, a sense of unease begins to creep in as the rides at the Halloween fair start malfunctioning. People scream in terror as they are stranded high above the ground."
+  },
+  "initialState": {
+    "tags": [],
+    "stats": {},
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "n1",
+      "narration": "As you approach the fair, you see a group of people huddled together, their faces pale with fear. They tell you about the malfunctioning rides and plead for your help.",
+      "choices": [
+        {
+          "choiceId": "c1-n1",
+          "text": "Investigate the rides",
+          "moveType": "to",
+          "weight": 3,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c2-n1",
+          "text": "Ignore them and continue to the fair",
+          "moveType": "to",
+          "weight": 2,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n2",
+      "narration": "You arrive at the first malfunctioning ride and notice that it's stuck with several people trapped inside. The line for the other rides is empty, but the crowd around the broken one is growing.",
+      "choices": [
+        {
+          "choiceId": "c1-n2",
+          "text": "Try to fix the ride",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c2-n2",
+          "text": "Evacuate the people and call for help",
+          "moveType": "to",
+          "weight": 3,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n3",
+      "narration": "You manage to free the people from the broken ride, but as you turn around, you hear a loud screeching sound. The Ferris wheel starts spinning out of control.",
+      "choices": [
+        {
+          "choiceId": "c1-n3",
+          "text": "Run for cover",
+          "moveType": "to",
+          "weight": 2,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c2-n3",
+          "text": "Try to stop the Ferris wheel",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n4",
+      "narration": "You successfully stop the Ferris wheel, but not before it drops one of the cars, trapping a child inside. The crowd is panicking and demanding answers.",
+      "choices": [
+        {
+          "choiceId": "c1-n4",
+          "text": "Search for tools to free the trapped child",
+          "moveType": "to",
+          "weight": 3,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c2-n4",
+          "text": "Calm the crowd and call for professional help",
+          "moveType": "to",
+          "weight": 2,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n5",
+      "narration": "You free the trapped child and the crowd disperses, relieved. However, you overhear a few people whispering about sabotage.",
+      "choices": [
+        {
+          "choiceId": "c1-n5",
+          "text": "Investigate the rumors of sabotage",
+          "moveType": "to",
+          "weight": 3,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c2-n5",
+          "text": "Dismiss the rumors and move on",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n6",
+      "narration": "You follow the rumors and discover evidence of sabotage. The fair's owner admits to it, claiming it was an attempt to scare away competitors.",
+      "choices": [
+        {
+          "choiceId": "c1-n6",
+          "text": "Confront the fair's owner and demand justice",
+          "moveType": "to",
+          "weight": 2,
+          "guards": [],
+          "effects": ["tag:evidenceFound"]
+        },
+        {
+          "choiceId": "c2-n6",
+          "text": "Let the owner go and focus on helping the victims",
+          "moveType": "to",
+          "weight": 3,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n7",
+      "narration": "You decide to confront the fair's owner. The crowd gathers around as you demand justice for the victims.",
+      "choices": [
+        {
+          "choiceId": "c1-n7",
+          "text": "Convince the crowd to help apprehend the owner",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["tag:communitySupport"]
+        },
+        {
+          "choiceId": "c2-n7",
+          "text": "Attempt to apprehend the owner alone",
+          "moveType": "to",
+          "weight": 2,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n8",
+      "narration": "You successfully apprehend the fair's owner and call the police. The crowd cheers as justice is served.",
+      "choices": [
+        {
+          "choiceId": "c1-n8",
+          "text": "Console the victims and offer assistance",
+          "moveType": "to",
+          "weight": 3,
+          "guards": [],
+          "effects": ["fact:victimsAssisted=verified"]
+        },
+        {
+          "choiceId": "c2-n8",
+          "text": "Leave the scene and reflect on what happened",
+          "moveType": "to",
+          "weight": 2,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n9",
+      "narration": "As you leave the fair, you can't help but feel a sense of accomplishment. You've helped bring justice to those who were wronged.",
+      "choices": [
+        {
+          "choiceId": "c1-n9",
+          "text": "Reflect on your actions and decide what to do next",
+          "moveType": "to",
+          "weight": 3,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c2-n9",
+          "text": "Celebrate your success with friends",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n10",
+      "narration": "As you celebrate your success, you receive a call from the police. They've found evidence that the fair's owner wasn't acting alone.",
+      "choices": [
+        {
+          "choiceId": "c1-n10",
+          "text": "Investigate further to uncover the conspiracy",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": ["goal:uncoverConspiracy+1"]
+        },
+        {
+          "choiceId": "c2-n10",
+          "text": "Ignore the call and continue celebrating",
+          "moveType": "to",
+          "weight": 3,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n11",
+      "narration": "You decide to investigate the conspiracy. You uncover a web of corruption that reaches higher than you ever imagined.",
+      "choices": [
+        {
+          "choiceId": "c1-n11",
+          "text": "Expose the conspiracy to the public",
+          "moveType": "to",
+          "weight": 2,
+          "guards": [],
+          "effects": ["tag:corruptionExposed"]
+        },
+        {
+          "choiceId": "c2-n11",
+          "text": "Keep the conspiracy a secret to protect yourself",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n12",
+      "narration": "You expose the conspiracy to the public. The authorities move quickly to arrest those involved and bring them to justice.",
+      "choices": [
+        {
+          "choiceId": "c1-n12",
+          "text": "Celebrate your role in exposing the corruption",
+          "moveType": "to",
+          "weight": 3,
+          "guards": [],
+          "effects": ["fact:corruptionExposed=verified"]
+        },
+        {
+          "choiceId": "c2-n12",
+          "text": "Reflect on the impact your actions have had",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n13",
+      "narration": "As the dust settles, you realize that your actions have changed the course of history. You've made a difference in the lives of many.",
+      "choices": [
+        {
+          "choiceId": "c1-n13",
+          "text": "Decide what to do next now that justice has been served",
+          "moveType": "to",
+          "weight": 4,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c2-n13",
+          "text": "Take a well-deserved break and enjoy the peace",
+          "moveType": "to",
+          "weight": 3,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "n14",
+      "narration": "You decide to take a break and enjoy the peace. You've earned it.",
+      "choices": [
+        {
+          "choiceId": "c1-n14",
+          "text": "Reflect on your journey and what you've accomplished",
+          "moveType": "end",
+          "weight": 3,
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "c2-n14",
+          "text": "Celebrate your success with friends and family",
+          "moveType": "end",
+          "weight": 4,
+          "guards": [],
+          "effects": []
+        }
+      ]
+    }
+  ]
+}

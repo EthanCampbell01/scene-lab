@@ -1,0 +1,349 @@
+{
+  "sceneId": "you-have-been-drugged-and-coerced-into-going-to-a-party-hosted-by-an-incredibly-skethcy-uindividual-you-need-to-find-a-way-to-break-the-story-and-free-yourself-from-this-life",
+  "variantId": "luxurious-mansion",
+  "intro": {
+    "narration": "You find yourself in a lavish mansion, disoriented and trapped. The air is thick with the scent of champagne and the sound of laughter echoes off marble walls. Time is running out, you need to act fast."
+  },
+  "initialState": {
+    "tags": [],
+    "stats": {},
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "1",
+      "narration": "As you stumble through the mansion, you overhear a conversation about a secret room. You need to find it before your captors return.",
+      "choices": [
+        {
+          "choiceId": "1A",
+          "text": "Search the mansion for clues",
+          "moveType": "search",
+          "to": "2",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "1B",
+          "text": "Approach a group of guests and ask for help",
+          "moveType": "ask",
+          "to": "3",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "2",
+      "narration": "You search the mansion, finding various rooms filled with revelers. The secret room remains elusive.",
+      "choices": [
+        {
+          "choiceId": "2A",
+          "text": "Continue searching",
+          "moveType": "search",
+          "to": "4",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "2B",
+          "text": "Give up and wait for an opportunity",
+          "moveType": "wait",
+          "to": "5",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "3",
+      "narration": "The guests are suspicious but one of them offers to help. They claim to know the secret room's location, but you sense a catch.",
+      "choices": [
+        {
+          "choiceId": "3A",
+          "text": "Trust this stranger and follow them",
+          "moveType": "trust",
+          "to": "6",
+          "guards": [],
+          "effects": ["tag:stranger"]
+        },
+        {
+          "choiceId": "3B",
+          "text": "Decline their offer and continue searching",
+          "moveType": "decline",
+          "to": "7",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "4",
+      "narration": "You continue searching, growing more desperate. The secret room still eludes you.",
+      "choices": [
+        {
+          "choiceId": "4A",
+          "text": "Search harder for the secret room",
+          "moveType": "search",
+          "to": "8",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "4B",
+          "text": "Give up and accept your fate",
+          "moveType": "accept",
+          "to": "9",
+          "guards": [],
+          "effects": ["fact:gave_up=true"]
+        }
+      ]
+    },
+    {
+      "nodeId": "5",
+      "narration": "You wait, hoping for a chance to escape. The mansion grows quieter as the night wears on.",
+      "choices": [
+        {
+          "choiceId": "5A",
+          "text": "Take advantage of the quiet and search again",
+          "moveType": "search",
+          "to": "6",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "5B",
+          "text": "Accept that you are trapped",
+          "moveType": "accept",
+          "to": "10",
+          "guards": ["fact:gave_up=true"],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "6",
+      "narration": "You find the secret room, but it's locked. You need to find a way in.",
+      "choices": [
+        {
+          "choiceId": "6A",
+          "text": "Look for a key or another way in",
+          "moveType": "search",
+          "to": "7",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "6B",
+          "text": "Use force to break the door down",
+          "moveType": "force",
+          "to": "11",
+          "guards": ["tag:stranger"],
+          "effects": ["fact:used_force=true"]
+        }
+      ]
+    },
+    {
+      "nodeId": "7",
+      "narration": "You find a key and unlock the secret room, revealing a hidden passage.",
+      "choices": [
+        {
+          "choiceId": "7A",
+          "text": "Follow the passage to freedom",
+          "moveType": "follow",
+          "to": "12",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "7B",
+          "text": "Investigate further, hoping to find more clues",
+          "moveType": "investigate",
+          "to": "13",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "8",
+      "narration": "You find a hidden passage, but it's blocked by a heavy door. You need to find a way to move it.",
+      "choices": [
+        {
+          "choiceId": "8A",
+          "text": "Look for a lever or other means to move the door",
+          "moveType": "search",
+          "to": "9",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "8B",
+          "text": "Give up and accept your fate",
+          "moveType": "accept",
+          "to": "10",
+          "guards": [],
+          "effects": ["fact:gave_up=true"]
+        }
+      ]
+    },
+    {
+      "nodeId": "9",
+      "narration": "You find a lever and manage to move the heavy door, revealing a hidden exit.",
+      "choices": [
+        {
+          "choiceId": "9A",
+          "text": "Take the hidden exit to freedom",
+          "moveType": "take_exit",
+          "to": "14",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "9B",
+          "text": "Investigate further, hoping to find more clues",
+          "moveType": "investigate",
+          "to": "13",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "10",
+      "narration": "You accept your fate, realizing that escape is impossible. The mansion's inhabitants close in.",
+      "choices": [
+        {
+          "choiceId": "10A",
+          "text": "Fight back against your captors",
+          "moveType": "fight",
+          "to": "15",
+          "guards": [],
+          "effects": ["fact:fought=true"]
+        },
+        {
+          "choiceId": "10B",
+          "text": "Submit to your captors, hoping for mercy",
+          "moveType": "submit",
+          "to": "16",
+          "guards": ["fact:fought=true"],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "11",
+      "narration": "You break the door down, revealing a hidden room. Inside, you find evidence of your captor's crimes.",
+      "choices": [
+        {
+          "choiceId": "11A",
+          "text": "Take the evidence and use it to expose your captors",
+          "moveType": "expose",
+          "to": "12",
+          "guards": [],
+          "effects": ["fact:exposed=true"]
+        },
+        {
+          "choiceId": "11B",
+          "text": "Destroy the evidence to protect yourself",
+          "moveType": "destroy",
+          "to": "13",
+          "guards": [],
+          "effects": ["fact:destroyed=true"]
+        }
+      ]
+    },
+    {
+      "nodeId": "12",
+      "narration": "You escape the mansion, taking the evidence with you. The police are alerted and your captors are arrested.",
+      "choices": [],
+      "endings": [
+        {
+          "endingId": "success",
+          "title": "Success",
+          "type": "success",
+          "narration": "You have successfully exposed your captors and brought them to justice. Your ordeal is over.",
+          "effects": ["fact:escaped=true"]
+        },
+        {
+          "endingId": "failure",
+          "title": "Failure",
+          "type": "failure",
+          "narration": "Despite your efforts, you are unable to escape the mansion. Your captors continue their crimes, unpunished.",
+          "effects": ["fact:captured=true"]
+        }
+      ]
+    },
+    {
+      "nodeId": "13",
+      "narration": "You continue investigating the hidden room, finding more clues about your captors' activities.",
+      "choices": [
+        {
+          "choiceId": "13A",
+          "text": "Take the evidence and use it to expose your captors",
+          "moveType": "expose",
+          "to": "14",
+          "guards": ["fact:destroyed=true"],
+          "effects": ["fact:exposed=true"]
+        },
+        {
+          "choiceId": "13B",
+          "text": "Destroy the evidence to protect yourself",
+          "moveType": "destroy",
+          "to": "15",
+          "guards": ["fact:destroyed=true"],
+          "effects": ["fact:destroyed=true"]
+        }
+      ]
+    },
+    {
+      "nodeId": "14",
+      "narration": "You escape the mansion, taking the evidence with you. The police are alerted and your captors are arrested.",
+      "choices": [],
+      "endings": [
+        {
+          "endingId": "success",
+          "title": "Success",
+          "type": "success",
+          "narration": "You have successfully exposed your captors and brought them to justice. Your ordeal is over.",
+          "effects": ["fact:escaped=true"]
+        },
+        {
+          "endingId": "failure",
+          "title": "Failure",
+          "type": "failure",
+          "narration": "Despite your efforts, you are unable to escape the mansion. Your captors continue their crimes, unpunished.",
+          "effects": ["fact:captured=true"]
+        }
+      ]
+    },
+    {
+      "nodeId": "15",
+      "narration": "You are captured by your captors and taken back to the mansion. Your fate is uncertain.",
+      "choices": [],
+      "endings": [
+        {
+          "endingId": "failure",
+          "title": "Failure",
+          "type": "failure",
+          "narration": "You have failed to escape and are now at the mercy of your captors. Your ordeal continues.",
+          "effects": ["fact:captured=true"]
+        }
+      ]
+    },
+    {
+      "nodeId": "16",
+      "narration": "You submit to your captors, hoping for mercy. They grant you temporary freedom but warn that they will come for you again.",
+      "choices": [],
+      "endings": [
+        {
+          "endingId": "failure",
+          "title": "Failure",
+          "type": "failure",
+          "narration": "You have failed to escape and are now at the mercy of your captors. Your ordeal continues.",
+          "effects": ["fact:captured=true"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Expanded Visual Novel Scene",
+  "type": "object",
+  "required": [
+    "sceneId",
+    "variantId",
+    "intro",
+    "nodes",
+    "endings"
+  ],
+  "properties": {
+    "sceneId": {
+      "const": "the-halloween-fair-took-a-dangerous-turn-when-the-rides-began-to-break-and-shutdown-with-people-onboard"
+    },
+    "variantId": {
+      "const": "spooky-campsite"
+    },
+    "intro": {
+      "properties": {
+        "narration": {
+          "type": "string",
+          "minLength": 10,
+          "const": "As the moon casts a spooky glow over the Halloween fair, you notice something amiss. The rides are malfunctioning, and people are trapped on them."
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 14,
+      "items": {
+        "type": "object",
+        "required": [
+          "nodeId",
+          "narration",
+          "choices"
+        ],
+        "properties": {
+          "nodeId": {
+            "type": "string"
+          },
+          "narration": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 280
+          },
+          "image": {
+            "type": "string"
+          },
+          "choices": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": [
+                "choiceId",
+                "text",
+                "to"
+              ],
+              "properties": {
+                "choiceId": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 5,
+                  "maxLength": 100
+                },
+                "guards": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "effects": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "to": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "endings": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "endingId",
+          "title",
+          "type",
+          "narration"
+        ],
+        "properties": {
+          "endingId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "success",
+              "mixed",
+              "failure",
+              "twist"
+            ]
+          },
+          "narration": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 280
+          },
+          "image": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "uiHints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "themeSignals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

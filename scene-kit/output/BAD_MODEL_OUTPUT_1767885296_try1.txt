@@ -1,0 +1,428 @@
+{
+  "sceneId": "the-halloween-fair-took-a-dangerous-turn-when-the-rides-began-to-break-and-shutdown-with-people-onboard",
+  "variantId": "spooky-campsite",
+  "intro": {
+    "narration": "As the sun sets, a chilling wind sweeps through the Halloween fair. The rides creak and groan, their lights flickering ominously. Suddenly, a scream echoes through the air as one of the roller coasters malfunctions mid-ride."
+  },
+  "initialState": {
+    "tags": ["halloween", "danger", "fear"],
+    "stats": {},
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "1",
+      "narration": "You rush towards the stranded roller coaster, heart pounding. The riders are screaming in terror as they dangle precariously above the ground.",
+      "choices": [
+        {
+          "choiceId": "1a",
+          "text": "Try to free the riders yourself",
+          "moveType": "action",
+          "to": "2",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "1b",
+          "text": "Call for help from the fair staff",
+          "moveType": "communication",
+          "to": "3",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "2",
+      "narration": "You climb onto the roller coaster, your hands trembling as you try to dislodge the broken safety bar. The riders are panicking, their screams growing louder.",
+      "choices": [
+        {
+          "choiceId": "2a",
+          "text": "Force the safety bar open",
+          "moveType": "action",
+          "to": "4",
+          "guards": [],
+          "effects": ["stat:bravery+1"]
+        },
+        {
+          "choiceId": "2b",
+          "text": "Search for another way to free the riders",
+          "moveType": "exploration",
+          "to": "5",
+          "guards": [],
+          "effects": ["fact:broken_safety_bar=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "3",
+      "narration": "You call for help, but the fair staff are nowhere to be found. The riders' screams grow louder and more desperate.",
+      "choices": [
+        {
+          "choiceId": "3a",
+          "text": "Search for the fair staff yourself",
+          "moveType": "exploration",
+          "to": "6",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "3b",
+          "text": "Try to calm the riders and keep them from panicking",
+          "moveType": "communication",
+          "to": "7",
+          "guards": [],
+          "effects": ["stat:calm+1"]
+        }
+      ]
+    },
+    {
+      "nodeId": "4",
+      "narration": "You manage to force the safety bar open, and the riders are freed. The fair staff finally arrive, looking disorganized and flustered.",
+      "choices": [
+        {
+          "choiceId": "4a",
+          "text": "Confront the fair staff about their lack of preparation",
+          "moveType": "conflict",
+          "to": "8",
+          "guards": [],
+          "effects": ["fact:lack_of_preparation=verified"]
+        },
+        {
+          "choiceId": "4b",
+          "text": "Let the fair staff handle the situation and focus on helping the riders",
+          "moveType": "cooperation",
+          "to": "9",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "5",
+      "narration": "You find a control panel for the roller coaster, but it's locked. You need to find a key.",
+      "choices": [
+        {
+          "choiceId": "5a",
+          "text": "Search the area for a key",
+          "moveType": "exploration",
+          "to": "10",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "5b",
+          "text": "Ask the riders if they have a key",
+          "moveType": "communication",
+          "to": "11",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "6",
+      "narration": "You find the fair staff hiding in a nearby tent, looking scared and disorganized. They admit they were not prepared for this situation.",
+      "choices": [
+        {
+          "choiceId": "6a",
+          "text": "Demand that they fix the roller coaster immediately",
+          "moveType": "conflict",
+          "to": "12",
+          "guards": [],
+          "effects": ["fact:admission_of_lack_preparation=verified"]
+        },
+        {
+          "choiceId": "6b",
+          "text": "Offer to help them fix the roller coaster",
+          "moveType": "cooperation",
+          "to": "13",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "7",
+      "narration": "You manage to calm the riders, but you can sense their fear and anger towards the fair staff.",
+      "choices": [
+        {
+          "choiceId": "7a",
+          "text": "Confront the fair staff about their negligence",
+          "moveType": "conflict",
+          "to": "14",
+          "guards": [],
+          "effects": ["fact:negligence=verified"]
+        },
+        {
+          "choiceId": "7b",
+          "text": "Assure the riders that everything will be okay and focus on finding a solution",
+          "moveType": "cooperation",
+          "to": "15",
+          "guards": [],
+          "effects": ["stat:leadership+1"]
+        }
+      ]
+    },
+    {
+      "nodeId": "8",
+      "narration": "You confront the fair staff, demanding answers and accountability. They become defensive and argumentative.",
+      "choices": [
+        {
+          "choiceId": "8a",
+          "text": "Insist on immediate action to fix the roller coaster",
+          "moveType": "conflict",
+          "to": "16",
+          "guards": [],
+          "effects": ["fact:demand_for_action=verified"]
+        },
+        {
+          "choiceId": "8b",
+          "text": "Try to negotiate a solution with the fair staff",
+          "moveType": "negotiation",
+          "to": "17",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "9",
+      "narration": "You help the riders off the roller coaster and ensure they are safe. The fair staff finally get to work fixing the ride.",
+      "choices": [
+        {
+          "choiceId": "9a",
+          "text": "Stay with the riders until the ride is fixed",
+          "moveType": "protection",
+          "to": "18",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "9b",
+          "text": "Leave the area to investigate other potential dangers at the fair",
+          "moveType": "investigation",
+          "to": "19",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "10",
+      "narration": "You find a key to the roller coaster control panel, but it's locked in a cabinet. You need to find a way to open it.",
+      "choices": [
+        {
+          "choiceId": "10a",
+          "text": "Look for a tool to open the cabinet",
+          "moveType": "exploration",
+          "to": "20",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "10b",
+          "text": "Ask the riders if they have a tool that can open the cabinet",
+          "moveType": "communication",
+          "to": "21",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "11",
+      "narration": "The riders don't have a key, but one of them remembers seeing a tool in the lost and found tent.",
+      "choices": [
+        {
+          "choiceId": "11a",
+          "text": "Go to the lost and found tent to get the tool",
+          "moveType": "exploration",
+          "to": "22",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "11b",
+          "text": "Ask the fair staff if they have a tool that can open the cabinet",
+          "moveType": "communication",
+          "to": "23",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "12",
+      "narration": "You negotiate a solution with the fair staff, who agree to fix the roller coaster as soon as possible.",
+      "choices": [
+        {
+          "choiceId": "12a",
+          "text": "Insist on a timeline for when the roller coaster will be fixed",
+          "moveType": "negotiation",
+          "to": "24",
+          "guards": [],
+          "effects": ["fact:agreement_on_timeline=verified"]
+        },
+        {
+          "choiceId": "12b",
+          "text": "Thank the fair staff for their cooperation and focus on helping them fix the roller coaster",
+          "moveType": "cooperation",
+          "to": "25",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "13",
+      "narration": "You offer to help the fair staff fix the roller coaster, and they gratefully accept your assistance.",
+      "choices": [
+        {
+          "choiceId": "13a",
+          "text": "Work with the fair staff to fix the roller coaster as quickly as possible",
+          "moveType": "cooperation",
+          "to": "26",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "13b",
+          "text": "Insist on being in charge of fixing the roller coaster",
+          "moveType": "conflict",
+          "to": "27",
+          "guards": [],
+          "effects": ["fact:demand_for_control=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "14",
+      "narration": "You confront the fair staff about their negligence, and they become defensive and uncooperative.",
+      "choices": [
+        {
+          "choiceId": "14a",
+          "text": "Insist on immediate action to fix the roller coaster",
+          "moveType": "conflict",
+          "to": "28",
+          "guards": [],
+          "effects": ["fact:demand_for_action=verified"]
+        },
+        {
+          "choiceId": "14b",
+          "text": "Try to negotiate a solution with the fair staff",
+          "moveType": "negotiation",
+          "to": "29",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "15",
+      "narration": "You assure the riders that everything will be okay and focus on finding a solution. The fair staff become more cooperative, sensing your determination.",
+      "choices": [
+        {
+          "choiceId": "15a",
+          "text": "Demand that the fair staff fix the roller coaster immediately",
+          "moveType": "conflict",
+          "to": "30",
+          "guards": [],
+          "effects": ["fact:demand_for_action=verified"]
+        },
+        {
+          "choiceId": "15b",
+          "text": "Work with the fair staff and the riders to find a solution",
+          "moveType": "cooperation",
+          "to": "31",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "16",
+      "narration": "You insist on immediate action to fix the roller coaster, and the fair staff become more cooperative, sensing your determination.",
+      "choices": [
+        {
+          "choiceId": "16a",
+          "text": "Work with the fair staff to fix the roller coaster as quickly as possible",
+          "moveType": "cooperation",
+          "to": "32",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "16b",
+          "text": "Insist on being in charge of fixing the roller coaster",
+          "moveType": "conflict",
+          "to": "33",
+          "guards": [],
+          "effects": ["fact:demand_for_control=verified"]
+        }
+      ]
+    },
+    {
+      "nodeId": "17",
+      "narration": "You negotiate a solution with the fair staff, who agree to fix the roller coaster as soon as possible.",
+      "choices": [
+        {
+          "choiceId": "17a",
+          "text": "Insist on a timeline for when the roller coaster will be fixed",
+          "moveType": "negotiation",
+          "to": "34",
+          "guards": [],
+          "effects": ["fact:agreement_on_timeline=verified"]
+        },
+        {
+          "choiceId": "17b",
+          "text": "Thank the fair staff for their cooperation and focus on helping them fix the roller coaster",
+          "moveType": "cooperation",
+          "to": "35",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "18",
+      "narration": "You stay with the riders until the ride is fixed, and they are grateful for your help and protection.",
+      "choices": [
+        {
+          "choiceId": "18a",
+          "text": "Leave once the ride is fixed",
+          "moveType": "protection",
+          "to": "36",
+          "guards": [],
+          "effects": []
+        },
+        {
+          "choiceId": "18b",
+          "text": "Offer to help the riders find other activities at the fair while you wait for the ride to be fixed",
+          "moveType": "cooperation",
+          "to": "37",
+          "guards": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "nodeId": "19",
+      "narration": "You leave the area to investigate other potential dangers at the fair, and you find several rides that are not properly maintained.",
+      "choices": [
+        {
+          "choiceId": "19a",
+          "text": "Confront the fair staff about the dangerous conditions of the rides",
+          "moveType": "conflict",
+          "to": "38",
+          "guards": [],
+          "effects": ["fact:dangerous_conditions=verified"]
+        },
+        {
+          "choiceId": "19b",
+          "text": "Work with the fair staff to fix the dangerous rides",
+          "moveType": "cooperation",
+          "to": "39",
+          "guards": [],
+         

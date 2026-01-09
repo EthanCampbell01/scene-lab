@@ -1,0 +1,460 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Expanded Visual Novel Scene",
+  "type": "object",
+  "required": ["sceneId", "variantId", "intro", "nodes", "endings"],
+  "additionalProperties": false,
+  "properties": {
+    "sceneId": "the-halloween-fair-took-a-dangerous-turn-when-the-rides-began-to-break-and-shutdown-with-people-onboard",
+    "variantId": "spooky-campsite",
+
+    "intro": {
+      "type": "object",
+      "required": ["narration"],
+      "additionalProperties": false,
+      "properties": {
+        "narration": "As the Halloween fair reaches its climax, a series of mechanical failures plunge the festivities into chaos. The once joyous atmosphere is replaced by fear and uncertainty as rides begin to malfunction, trapping terrified passengers."
+      }
+    },
+
+    "initialState": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tags": [],
+        "stats": {},
+        "facts": {},
+        "goals": {}
+      }
+    },
+
+    "nodes": [
+      {
+        "nodeId": "1",
+        "narration": "You rush towards the Ferris wheel, where screams are growing louder and more frantic. The operator is nowhere to be found.",
+        "choices": [
+          {
+            "choiceId": "1A",
+            "text": "Try to free passengers manually.",
+            "moveType": "node",
+            "to": "2",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "1B",
+            "text": "Search for the operator.",
+            "moveType": "node",
+            "to": "3",
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "2",
+        "narration": "You manage to open the control panel and release several passengers, but more are still trapped.",
+        "choices": [
+          {
+            "choiceId": "2A",
+            "text": "Risk climbing the Ferris wheel to reach the remaining passengers.",
+            "moveType": "node",
+            "to": "4",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "2B",
+            "text": "Focus on freeing as many passengers as possible before attempting to reach the top.",
+            "moveType": "node",
+            "to": "5",
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "3",
+        "narration": "After finding the operator, you learn that a power surge caused the malfunctions. You must find and reset the main breaker.",
+        "choices": [
+          {
+            "choiceId": "3A",
+            "text": "Follow the operator's instructions to locate the breaker.",
+            "moveType": "node",
+            "to": "6",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "3B",
+            "text": "Take charge and navigate the fairgrounds on your own.",
+            "moveType": "node",
+            "to": "7",
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "4",
+        "narration": "Reaching the top of the Ferris wheel, you find that a broken safety cable is preventing you from reaching the remaining passengers.",
+        "choices": [
+          {
+            "choiceId": "4A",
+            "text": "Cut the safety cable to reach the trapped passengers.",
+            "moveType": "node",
+            "to": "8",
+            "guards": [],
+            "effects": ["stat:trust-2"]
+          },
+          {
+            "choiceId": "4B",
+            "text": "Search for another way to reach the passengers without cutting the cable.",
+            "moveType": "node",
+            "to": "9",
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "5",
+        "narration": "You successfully free the majority of passengers, but time is running out. The Ferris wheel begins to sway dangerously.",
+        "choices": [
+          {
+            "choiceId": "5A",
+            "text": "Climb the Ferris wheel as quickly as possible.",
+            "moveType": "node",
+            "to": "10",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "5B",
+            "text": "Help the remaining passengers onto a nearby, functioning ride.",
+            "moveType": "node",
+            "to": "11",
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "6",
+        "narration": "After locating the main breaker, you discover that it requires a special key to reset.",
+        "choices": [
+          {
+            "choiceId": "6A",
+            "text": "Search for the operator's toolbox nearby.",
+            "moveType": "node",
+            "to": "12",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "6B",
+            "text": "Ask another worker for the key.",
+            "moveType": "node",
+            "to": "13",
+            "guards": ["tag:operatorPresent"],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "7",
+        "narration": "Taking charge, you navigate the fairgrounds and locate the main breaker more quickly than expected.",
+        "choices": [
+          {
+            "choiceId": "7A",
+            "text": "Reset the breaker immediately.",
+            "moveType": "node",
+            "to": "14",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "7B",
+            "text": "Search for the operator's toolbox first to ensure you have the necessary tools.",
+            "moveType": "node",
+            "to": "15",
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "8",
+        "narration": "You successfully reach the trapped passengers, but the safety cable snaps as you cut it.",
+        "choices": [
+          {
+            "choiceId": "8A",
+            "text": "Hold on tightly and hope for the best.",
+            "moveType": "ending",
+            "to": "end1"
+          },
+          {
+            "choiceId": "8B",
+            "text": "Search for another way to reach the passengers without cutting the cable.",
+            "moveType": "node",
+            "to": "9",
+            "guards": [],
+            "effects": ["stat:courage+1"]
+          }
+        ]
+      },
+      {
+        "nodeId": "9",
+        "narration": "You find a sturdy rope and manage to secure it around the Ferris wheel, allowing you to reach the trapped passengers safely.",
+        "choices": [
+          {
+            "choiceId": "9A",
+            "text": "Help the remaining passengers onto the rope and descend together.",
+            "moveType": "node",
+            "to": "16",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "9B",
+            "text": "Call for help to ensure a safer evacuation.",
+            "moveType": "node",
+            "to": "17",
+            "guards": [],
+            "effects": ["fact:helpCalled=verified"]
+          }
+        ]
+      },
+      {
+        "nodeId": "10",
+        "narration": "As you climb the Ferris wheel, it begins to sway violently. You must act quickly.",
+        "choices": [
+          {
+            "choiceId": "10A",
+            "text": "Climb faster to reach the trapped passengers before the Ferris wheel collapses.",
+            "moveType": "node",
+            "to": "18",
+            "guards": [],
+            "effects": ["stat:determination+2"]
+          },
+          {
+            "choiceId": "10B",
+            "text": "Help the remaining passengers onto a nearby, functioning ride.",
+            "moveType": "node",
+            "to": "11",
+            "guards": [],
+            "effects": ["stat:selfPreservation+1"]
+          }
+        ]
+      },
+      {
+        "nodeId": "11",
+        "narration": "You successfully help the remaining passengers onto a nearby, functioning ride. The Ferris wheel collapses moments later.",
+        "choices": [
+          {
+            "choiceId": "11A",
+            "text": "Celebrate your success and take stock of the situation.",
+            "moveType": "node",
+            "to": "19",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "11B",
+            "text": "Check on the operator to ensure they are safe.",
+            "moveType": "node",
+            "to": "20",
+            "guards": ["tag:operatorPresent"],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "12",
+        "narration": "You find the operator's toolbox and successfully reset the main breaker, restoring power to the fairgrounds.",
+        "choices": [
+          {
+            "choiceId": "12A",
+            "text": "Celebrate your success and take stock of the situation.",
+            "moveType": "node",
+            "to": "19",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "12B",
+            "text": "Check on the operator to ensure they are safe.",
+            "moveType": "node",
+            "to": "20",
+            "guards": ["tag:operatorPresent"],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "13",
+        "narration": "The operator provides you with the key to reset the main breaker.",
+        "choices": [
+          {
+            "choiceId": "13A",
+            "text": "Reset the breaker immediately.",
+            "moveType": "node",
+            "to": "14",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "13B",
+            "text": "Search for the operator's toolbox first to ensure you have the necessary tools.",
+            "moveType": "node",
+            "to": "15",
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "14",
+        "narration": "You successfully reset the main breaker, restoring power to the fairgrounds.",
+        "choices": [
+          {
+            "choiceId": "14A",
+            "text": "Celebrate your success and take stock of the situation.",
+            "moveType": "node",
+            "to": "19",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "14B",
+            "text": "Check on the operator to ensure they are safe.",
+            "moveType": "node",
+            "to": "20",
+            "guards": ["tag:operatorPresent"],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "15",
+        "narration": "You find the necessary tools in the operator's toolbox and successfully reset the main breaker, restoring power to the fairgrounds.",
+        "choices": [
+          {
+            "choiceId": "15A",
+            "text": "Celebrate your success and take stock of the situation.",
+            "moveType": "node",
+            "to": "19",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "15B",
+            "text": "Check on the operator to ensure they are safe.",
+            "moveType": "node",
+            "to": "20",
+            "guards": ["tag:operatorPresent"],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "16",
+        "narration": "You successfully help the remaining passengers onto solid ground. The Ferris wheel collapses moments later.",
+        "choices": [
+          {
+            "choiceId": "16A",
+            "text": "Celebrate your success and take stock of the situation.",
+            "moveType": "node",
+            "to": "19",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "16B",
+            "text": "Check on the operator to ensure they are safe.",
+            "moveType": "node",
+            "to": "20",
+            "guards": ["tag:operatorPresent"],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "17",
+        "narration": "You call for help, and emergency responders arrive quickly to assist with the evacuation.",
+        "choices": [
+          {
+            "choiceId": "17A",
+            "text": "Celebrate your success and take stock of the situation.",
+            "moveType": "node",
+            "to": "19",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "17B",
+            "text": "Check on the operator to ensure they are safe.",
+            "moveType": "node",
+            "to": "20",
+            "guards": ["tag:operatorPresent"],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "18",
+        "narration": "You manage to reach the trapped passengers just in time, and everyone is safely evacuated before the Ferris wheel collapses.",
+        "choices": [
+          {
+            "choiceId": "18A",
+            "text": "Celebrate your success and take stock of the situation.",
+            "moveType": "node",
+            "to": "19",
+            "guards": [],
+            "effects": []
+          },
+          {
+            "choiceId": "18B",
+            "text": "Check on the operator to ensure they are safe.",
+            "moveType": "node",
+            "to": "20",
+            "guards": ["tag:operatorPresent"],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "19",
+        "narration": "Everyone is safe, and the fairgrounds are evacuated. You have saved many lives today.",
+        "choices": [
+          {
+            "choiceId": "19A",
+            "text": "Take a moment to reflect on your actions and the impact you've made.",
+            "moveType": "ending",
+            "to": "end2"
+          },
+          {
+            "choiceId": "19B",
+            "text": "Assist emergency responders in securing the area and ensuring everyone is accounted for.",
+            "moveType": "node",
+            "to": "20",
+            "guards": [],
+            "effects": []
+          }
+        ]
+      },
+      {
+        "nodeId": "20",
+        "narration": "You assist emergency responders in securing the area and ensuring everyone is accounted for. The operator thanks you for your bravery.",
+        "choices": [
+          {
+            "choiceId": "20A",
+            "text": "Reflect on the day's events and consider what you might do differently next time.",
+            "moveType": "ending",
+            "to": "end3"
+          }
+        ]
+      },
+      {
+        "nodeId": "end1",
+        "narration": "You successfully reach the trapped passengers, but the Ferris wheel collapses as you

@@ -1,0 +1,372 @@
+{
+  "sceneId": "interrogation.v1",
+  "premise": "You need the truth from someone who has every reason to lie—and leverage to hurt you if you push too far.",
+  "stakes": {
+    "personal": "Your mentor’s reputation is on the line.",
+    "external": "A bomb threat may be real; delay could cost lives."
+  },
+  "coreTensions": [
+    "truth-vs-loyalty",
+    "time-pressure",
+    "power-imbalance"
+  ],
+  "entryBeats": [
+    {
+      "beatId": "caught-off-guard",
+      "summary": "You’re thrown in with no prep; the subject is already seated, watching.",
+      "requirements": [],
+      "yields": [
+        "player.unprepared",
+        "subject.composed"
+      ]
+    },
+    {
+      "beatId": "meticulous-setup",
+      "summary": "You’ve reviewed a thin dossier; you know three weak points but the subject knows you know.",
+      "requirements": [],
+      "yields": [
+        "player.prepared",
+        "subject.alert"
+      ]
+    }
+  ],
+  "choiceGraph": {
+    "nodes": [
+      {
+        "nodeId": "N1",
+        "summary": "Opening gambit—set the tone and framing.",
+        "options": [
+          {
+            "optionId": "O1-soft",
+            "summary": "Empathy-first: promise fairness and safety.",
+            "tags": [
+              "soft-pressure",
+              "rapport"
+            ],
+            "requires": [],
+            "yields": [
+              "subject.trust+1"
+            ],
+            "to": "N2",
+            "weights": {
+              "default": 1.0
+            },
+            "combinedWeight": 0.9
+          },
+          {
+            "optionId": "O1-hard",
+            "summary": "Dominance play: evidence on the table, clock ticking.",
+            "tags": [
+              "hard-pressure",
+              "time-squeeze"
+            ],
+            "requires": [],
+            "yields": [
+              "subject.resistance+1",
+              "timer.ticks+1"
+            ],
+            "to": "N2",
+            "weights": {
+              "default": 1.0
+            },
+            "combinedWeight": 1.2
+          },
+          {
+            "optionId": "O1-bait",
+            "summary": "Offer a small, believable lie to bait a correction.",
+            "tags": [
+              "deception",
+              "probe"
+            ],
+            "requires": [
+              "player.prepared"
+            ],
+            "yields": [
+              "subject.slips?"
+            ],
+            "to": "N2",
+            "weights": {
+              "default": 0.8
+            },
+            "combinedWeight": 0.88
+          }
+        ]
+      },
+      {
+        "nodeId": "N2",
+        "summary": "Subject counters with a partial story; holes remain.",
+        "options": [
+          {
+            "optionId": "O2-contradict",
+            "summary": "Quietly surface a contradiction and wait.",
+            "tags": [
+              "silence",
+              "pressure"
+            ],
+            "requires": [],
+            "yields": [
+              "subject.anxiety+1"
+            ],
+            "to": "N3",
+            "weights": {
+              "default": 1.0
+            },
+            "combinedWeight": 1.0
+          },
+          {
+            "optionId": "O2-ally",
+            "summary": "Offer protection for a name.",
+            "tags": [
+              "deal"
+            ],
+            "requires": [
+              "subject.trust+1"
+            ],
+            "yields": [
+              "subject.considers-deal"
+            ],
+            "to": "N3",
+            "weights": {
+              "default": 1.0
+            },
+            "combinedWeight": 1.0
+          },
+          {
+            "optionId": "O2-bluff",
+            "summary": "Bluff about surveillance footage.",
+            "tags": [
+              "deception"
+            ],
+            "requires": [],
+            "yields": [
+              "subject.calls-bluff?"
+            ],
+            "to": "N3",
+            "weights": {
+              "default": 0.9
+            },
+            "combinedWeight": 0.99
+          }
+        ]
+      },
+      {
+        "nodeId": "N3",
+        "summary": "Timer escalates; you must force an edge or pivot.",
+        "options": [
+          {
+            "optionId": "O3-confession",
+            "summary": "Pin the timeline and ask the one question they can’t dodge.",
+            "tags": [
+              "precision"
+            ],
+            "requires": [
+              "subject.anxiety+1"
+            ],
+            "yields": [
+              "truth.fragment"
+            ],
+            "to": "E1",
+            "weights": {
+              "default": 1.0
+            },
+            "combinedWeight": 1.0
+          },
+          {
+            "optionId": "O3-partner",
+            "summary": "Bring in a ‘good cop’ ally to reframe.",
+            "tags": [
+              "team-dynamic"
+            ],
+            "requires": [],
+            "yields": [
+              "subject.trust-shift"
+            ],
+            "to": "E2",
+            "weights": {
+              "default": 0.9
+            },
+            "combinedWeight": 0.9
+          },
+          {
+            "optionId": "O3-breakdown",
+            "summary": "Push too hard; subject shuts down or lawyers up.",
+            "tags": [
+              "overreach"
+            ],
+            "requires": [
+              "subject.resistance+1"
+            ],
+            "yields": [
+              "access.revoked"
+            ],
+            "to": "E3",
+            "weights": {
+              "default": 0.8
+            },
+            "combinedWeight": 0.8
+          },
+          {
+            "optionId": "O3-reversal",
+            "summary": "Subject flips the frame—accuses you; you must concede or counter.",
+            "tags": [
+              "twist"
+            ],
+            "requires": [
+              "subject.composed"
+            ],
+            "yields": [
+              "power.flip"
+            ],
+            "to": "E4",
+            "weights": {
+              "default": 0.7
+            },
+            "combinedWeight": 0.7
+          }
+        ]
+      }
+    ],
+    "endings": [
+      {
+        "endingId": "E1",
+        "title": "Cold Confession",
+        "type": "success",
+        "summary": "Subject yields a verifiable detail that unlocks the next lead.",
+        "stateResults": [
+          "lead.unlocked",
+          "subject.exhausted"
+        ],
+        "unlockables": [
+          "perk.interrogation-precision"
+        ],
+        "weight": 1.3
+      },
+      {
+        "endingId": "E2",
+        "title": "Fragile Alliance",
+        "type": "mixed",
+        "summary": "Subject agrees to help but sets conditions that may backfire.",
+        "stateResults": [
+          "subject.informant",
+          "timer.ticks+1"
+        ],
+        "unlockables": [],
+        "weight": 1.0
+      },
+      {
+        "endingId": "E3",
+        "title": "Ice-Out",
+        "type": "failure",
+        "summary": "Access lost; you’ll need an external angle to proceed.",
+        "stateResults": [
+          "access.revoked",
+          "authority.alerted"
+        ],
+        "unlockables": [],
+        "weight": 1.1
+      },
+      {
+        "endingId": "E4",
+        "title": "Public Reversal",
+        "type": "twist",
+        "summary": "Subject reframes you as the aggressor; your credibility becomes a new resource to manage.",
+        "stateResults": [
+          "reputation.dented",
+          "investigation.refocused"
+        ],
+        "unlockables": [
+          "perk.stoic-defense"
+        ],
+        "weight": 0.8
+      }
+    ]
+  },
+  "themeSignals": [
+    "mirrors",
+    "heartbeat",
+    "ticking clock"
+  ],
+  "telemetry": {
+    "intensityCurve": [
+      0.2,
+      0.5,
+      0.8,
+      0.95
+    ],
+    "riskCurve": [
+      0.1,
+      0.3,
+      0.7,
+      0.9
+    ]
+  },
+  "aesthetic": {
+    "variantId": "cia-safe-house",
+    "label": "CIA Safe House Interrogation",
+    "tone": [
+      "clinical",
+      "tense"
+    ],
+    "genre": [
+      "spy",
+      "procedural"
+    ],
+    "location": {
+      "type": "safe-house",
+      "descriptor": "Bare drywall, one-way mirror, air too cold.",
+      "timeOfDay": "night"
+    },
+    "sensoryPalette": {
+      "lighting": [
+        "fluorescent hum"
+      ],
+      "sound": [
+        "HVAC drone",
+        "distant traffic"
+      ],
+      "colorKeys": [
+        "steel-blue",
+        "gray"
+      ],
+      "props": [
+        "polygraph",
+        "recorder",
+        "manilla folders"
+      ]
+    },
+    "castArchetypes": [
+      "handler-with-agenda",
+      "burned-asset",
+      "silent-observer"
+    ],
+    "uiPresentation": {
+      "camera": "wide",
+      "uiHints": [
+        "timer-badge",
+        "evidence-panel"
+      ]
+    },
+    "worldRules": [
+      "agency-protocols",
+      "recording-enabled"
+    ]
+  },
+  "playOrder": [
+    "N1",
+    "N2",
+    "N3"
+  ],
+  "diagnostics": {
+    "prunedOptionsPerNode": {
+      "N1": 3,
+      "N2": 3,
+      "N3": 4
+    },
+    "endingWeights": {
+      "E1": 1.3,
+      "E2": 1.0,
+      "E3": 1.1,
+      "E4": 0.8
+    }
+  }
+}

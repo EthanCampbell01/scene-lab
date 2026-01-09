@@ -1,0 +1,116 @@
+{
+  "sceneId": "kidnapping-mansion-v1",
+  "variantId": "cia-safe-house",
+  "intro": {
+    "narration": "In the heart of a luxurious mansion, you find yourself bound and gagged, surrounded by the opulent belongings of the wealthy elite. A man in an expensive suit, your captor, leans against a grand piano, sipping scotch."
+  },
+  "nodes": [
+    {
+      "nodeId": "Intro",
+      "narration": "The man smirks as he notices you struggling. The scent of aged whiskey fills the air. You strain against your bindings, feeling a sense of desperation.",
+      "choices": [
+        {
+          "choiceId": "struggle",
+          "text": "You continue to struggle, hoping to catch him off guard.",
+          "guards": ["stats.trust==0"],
+          "effects": ["stats.trust-=2", "stats.suspicion+=2"],
+          "to": "end_futile"
+        },
+        {
+          "choiceId": "feign_ignorance",
+          "text": "You feign ignorance, pretending not to know anything about their activities.",
+          "guards": ["stats.suspicion>=3"],
+          "effects": ["stats.trust+=1", "stats.suspicion-=1"],
+          "to": "end_less_suspicious"
+        },
+        {
+          "choiceId": "offer_information",
+          "text": "You offer to cooperate, promising valuable information in exchange for your freedom.",
+          "guards": ["stats.leverage>=2"],
+          "effects": ["stats.trust+=2", "stats.leverage-=2"],
+          "to": "negotiation"
+        },
+        {
+          "choiceId": "attempt_escape",
+          "text": "You attempt to slip out of your bindings unnoticed.",
+          "guards": ["stats.suspicion<=3"],
+          "effects": ["stats.trust-=1", "stats.suspicion+=2"],
+          "to": "end_caught"
+        }
+      ]
+    },
+    {
+      "nodeId": "negotiation",
+      "narration": "The man considers your offer, his eyes narrowing as he contemplates the potential value of your information.",
+      "choices": [
+        {
+          "choiceId": "press_advantage",
+          "text": "You press the advantage, emphasizing the urgency and importance of your information.",
+          "guards": ["stats.trust>=3"],
+          "effects": ["stats.trust+=1", "facts.verified.useful_information=true"],
+          "to": "end_deal"
+        },
+        {
+          "choiceId": "bluff",
+          "text": "You bluff, claiming to have information that would implicate him in criminal activities.",
+          "guards": ["stats.suspicion>=4"],
+          "effects": ["stats.trust-=2", "facts.claimed.criminal_activities=true"],
+          "to": "end_bluff"
+        },
+        {
+          "choiceId": "backtrack",
+          "text": "You backtrack on your offer, realizing it was a risky move.",
+          "guards": ["stats.trust<=2"],
+          "effects": ["stats.trust-=1", "facts.abandoned_offer=true"],
+          "to": "end_regret"
+        }
+      ]
+    },
+    {
+      "nodeId": "end_futile",
+      "narration": "Your struggle is in vain, and the man tightens your bonds. The room grows cold as you realize you've made a mistake.",
+      "to": "gameover"
+    },
+    {
+      "nodeId": "end_less_suspicious",
+      "narration": "The man seems slightly less suspicious of you, perhaps seeing potential in your cooperation.",
+      "to": "progress"
+    },
+    {
+      "nodeId": "end_deal",
+      "narration": "A deal is struck, and the man releases you from your bindings. You've gained valuable intelligence but at a cost.",
+      "to": "progress"
+    },
+    {
+      "nodeId": "end_bluff",
+      "narration": "The man laughs, revealing that you had no useful information to offer.",
+      "to": "gameover"
+    },
+    {
+      "nodeId": "end_regret",
+      "narration": "Regretting your hasty decision, you vow to be more careful next time.",
+      "to": "progress"
+    },
+    {
+      "nodeId": "end_caught",
+      "narration": "Your attempt at escape is discovered. The man reacts with anger, tightening your bonds and threatening retribution.",
+      "to": "gameover"
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "gameover",
+      "title": "Game Over",
+      "type": "failure",
+      "narration": "Your mission ends in failure, and you are left with a growing sense of hopelessness."
+    },
+    {
+      "endingId": "progress",
+      "title": "Mission Progress",
+      "type": "success",
+      "narration": "You continue your mission, moving one step closer to uncovering the truth."
+    }
+  ],
+  "uiHints": ["simple_text"],
+  "themeSignals": ["tense", "grounded"]
+}

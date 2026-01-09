@@ -1,0 +1,44 @@
+{
+  "sceneId": "kidnapping-mansion-v1",
+  "choiceGraph": {
+    "nodes": [
+      {
+        "nodeId": "Intro",
+        "narration": "In the heart of a luxurious mansion, you find yourself bound and gagged, surrounded by the opulent belongings of the wealthy elite. A man in an expensive suit, your captor, leans against a grand piano, sipping scotch.",
+        "options": [
+          {
+            "optionId": "struggle",
+            "text": "You struggle against your bindings, trying to break free.",
+            "to": "end_futile",
+            "tags": ["hard-pressure"],
+            "weights": { "default": 1.0 }
+          },
+          {
+            "optionId": "feign_ignorance",
+            "text": "You feign ignorance, pretending not to know anything about their activities.",
+            "to": "end_less_suspicious",
+            "tags": ["rapport"],
+            "weights": { "default": 1.0 }
+          }
+        ]
+      }
+    ],
+    "endings": [
+      {
+        "endingId": "end_futile",
+        "title": "Futile Struggle",
+        "type": "failure"
+      },
+      {
+        "endingId": "end_less_suspicious",
+        "title": "A Crack in Suspicion",
+        "type": "mixed"
+      }
+    ]
+  },
+  "initialState": {
+    "stats": { "trust": 0, "suspicion": 5, "leverage": 0 },
+    "goals": { "interrogator": 0, "suspect": 0 },
+    "facts": {}
+  }
+}

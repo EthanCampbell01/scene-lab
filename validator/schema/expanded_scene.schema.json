@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Expanded Visual Novel Scene",
+  "type": "object",
+  "required": ["sceneId", "variantId", "intro","title", "nodes", "endings"],
+  "additionalProperties": false,
+  "properties": {
+    "sceneId": { "type": "string", "minLength": 3 },
+    "variantId": { "type": "string", "minLength": 1 },
+
+    "title": {
+  "type": "string",
+  "minLength": 3,
+  "maxLength": 80,
+  "description": "Human-readable scene title"
+    }
+    ,
+
+    "intro": {
+      "type": "object",
+      "required": ["narration"],
+      "additionalProperties": false,
+      "properties": {
+        "narration": { "type": "string", "minLength": 30, "maxLength": 1200 }
+      }
+    },
+
+    "initialState": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "stats": { "type": "object", "additionalProperties": { "type": "number" } },
+        "facts": { "type": "object", "additionalProperties": { "type": "string" } },
+        "goals": { "type": "object", "additionalProperties": { "type": "number" } }
+      }
+    },
+
+    "nodes": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 14,
+      "items": {
+        "type": "object",
+        "required": ["nodeId", "narration", "choices"],
+        "additionalProperties": false,
+        "properties": {
+          "nodeId": { "type": "string", "minLength": 1 },
+          "narration": { "type": "string", "minLength": 60, "maxLength": 2000 },
+          "image": { "type": "string" },
+
+          "choices": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["choiceId", "text", "to"],
+              "additionalProperties": false,
+              "properties": {
+                "choiceId": { "type": "string", "minLength": 1 },
+                "text": { "type": "string", "minLength": 5, "maxLength": 80 },
+                "moveType": { "type": "string" },
+                "weight": { "type": "number" },
+
+                "guards": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+                "effects": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                },
+
+                "to": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "endings": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["endingId", "title", "type", "narration"],
+        "additionalProperties": false,
+        "properties": {
+          "endingId": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1, "maxLength": 80 },
+          "type": { "type": "string", "enum": ["success", "mixed", "failure", "twist"] },
+          "narration": { "type": "string", "minLength": 60, "maxLength": 2000 },
+          "image": { "type": "string" },
+          "weight": { "type": "number" }
+        }
+      }
+    },
+
+    "uiHints": { "type": "array", "items": { "type": "string" } },
+    "themeSignals": { "type": "array", "items": { "type": "string" } }
+  }
+}
