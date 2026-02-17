@@ -1,0 +1,14 @@
+### STDOUT ###
+Model output was not usable.
+Saved raw output to:
+C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\output\BAD_MODEL_OUTPUT_1771333237_try0.txt
+Error: Model output missing endings[]. Regenerate.
+Model output was not usable.
+Saved raw output to:
+C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\output\BAD_MODEL_OUTPUT_1771333293_try1.txt
+Error: Model output missing endings[]. Regenerate.
+Wrote expanded scene: C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\experiments\output\runs\20260217_125349\bank-interrogation\robust\run002\scene.json
+Updated previewer: C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\previewer\public\latest.json
+
+
+### STDERR ###

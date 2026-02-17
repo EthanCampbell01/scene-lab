@@ -1,0 +1,2 @@
+timestamp,provider,workflow,briefId,variantId,run,ok,outPath,nodeCount,endingCount,invalidChoiceTargets,reachableNodesCount,reachableEndingsCount
+20260217_125349,ollama,robust,halloween-fair,spooky-campsite,2,False,C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\experiments\output\runs\20260217_125349\halloween-fair\robust\run002\scene.json,,,,,

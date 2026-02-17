@@ -1,0 +1,19 @@
+### STDOUT ###
+Model output was not usable.
+Saved raw output to:
+C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\output\BAD_MODEL_OUTPUT_1771333614_try0.txt
+Error: JSON appears truncated (no matching closing bracket found).
+Model output was not usable.
+Saved raw output to:
+C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\output\BAD_MODEL_OUTPUT_1771333657_try1.txt
+Error: JSON appears truncated (no matching closing bracket found).
+Model output was not usable.
+Saved raw output to:
+C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\output\BAD_MODEL_OUTPUT_1771333703_try2.txt
+Error: JSON appears truncated (no matching closing bracket found).
+
+
+### STDERR ###
+Model did not return usable JSON after retries.
+Last error: JSON appears truncated (no matching closing bracket found).
+Tip: try a shorter brief, or reduce node count / narration length, or use a larger model.

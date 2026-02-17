@@ -1,0 +1,16 @@
+### STDOUT ###
+Model output was not usable.
+Saved raw output to:
+C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\output\BAD_MODEL_OUTPUT_1771332636_try0.txt
+Error: Model output missing endings[]. Regenerate.
+
+
+### STDERR ###
+Traceback (most recent call last):
+  File "C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\pipeline.py", line 676, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\pipeline.py", line 628, in main
+    with open(out_path, "w", encoding="utf-8") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'output\\runs\\20260217_124357\\bank-interrogation\\robust\\run002\\scene.json'

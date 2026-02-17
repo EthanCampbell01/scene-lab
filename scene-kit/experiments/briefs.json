@@ -1,0 +1,12 @@
+[
+  {
+    "briefId": "bank-interrogation",
+    "variantId": "Government-interrogation",
+    "brief": "You are thrust into a room with no preparation and interrogated about a large bank robbery."
+  },
+  {
+    "briefId": "halloween-fair",
+    "variantId": "spooky-campsite",
+    "brief": "A Halloween fair turns dangerous as rides malfunction with people trapped onboard."
+  }
+]

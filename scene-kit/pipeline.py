@@ -29,6 +29,7 @@ import shutil
 import subprocess
 import time
 import webbrowser
+from scene_normalizer import normalize_scene_targets
 from typing import Any, Dict, Optional
 
 import requests
@@ -198,7 +199,7 @@ def _call_ollama(system: str, user: str, timeout_s: int) -> str:
     temperature = float(os.getenv("OLLAMA_TEMPERATURE", "0.3"))
 
     # Increase if you still see truncation, decrease if it rambles too long
-    num_predict = int(os.getenv("OLLAMA_NUM_PREDICT", "4096"))
+    num_predict = int(os.getenv("OLLAMA_NUM_PREDICT", "2048"))
 
     chat_url = f"{base}/api/chat"
     chat_payload = {
@@ -514,15 +515,15 @@ Generate a branching interactive scene as JSON that matches this JSON Schema exa
 
 Constraints:
 - Use sceneId: "{scene_id}" and variantId: "{variant_id}".
-- 12 to 22 nodes.
+- 6 to 8 nodes.
 - Exactly 2 choices per node.
-- Each node narration must be 2–6 sentences (longer prose, more detail).
+- Each node narration must be 1-3 sentences (longer prose, more detail).
 - Every node should include concrete action + environment detail + character intent (no filler).
 - Maintain continuity: consequences, discovered facts, and emotional tone should carry forward.
 - Use a clear 3-act structure:
-  - Act 1 (nodes 1–6): setup, hook, first complication.
-  - Act 2 (nodes 7–16): escalation + midpoint reversal around nodes 10–12.
-  - Act 3 (final nodes): climax + resolution.
+  - Act 1  setup, hook, first complication.
+  - Act 2  escalation + midpoint reversal 
+  - Act 3  climax + resolution.
 - Include 2 to 4 endings.
 - All choice.to values must point to an existing nodeId OR an endingId.
 - Effects may be used but keep them rare and meaningful (aim ~6–10 total across the whole scene).
@@ -616,13 +617,21 @@ Writing style:
     # shows success/failure badges.
     obj = _promote_terminal_nodes_to_endings(obj)
 
+    # FINAL SAFETY PASS: fix bad or unknown choice targets (endings[1], etc.)
+    obj = normalize_scene_targets(obj)
+
 
     # Write output
     out_dir = os.path.join(os.path.dirname(__file__), "output")
     os.makedirs(out_dir, exist_ok=True)
     out_path = args.out or os.path.join(out_dir, f"expanded.{obj['sceneId']}.{obj['variantId']}.json")
+
+    # Ensure the parent directory exists even when --out points elsewhere (e.g., output/runs/...)
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(obj, f, ensure_ascii=False, indent=2)
+
 
     # Copy to previewer/public/latest.json
     preview_public = os.path.join(ROOT, "previewer", "public")
