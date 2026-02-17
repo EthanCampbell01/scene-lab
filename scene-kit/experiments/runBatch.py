@@ -5,6 +5,8 @@ import json
 import os
 import subprocess
 import time
+from critic import evaluate_narrative
+
 from typing import Any, Dict, List
 
 from metrics import compute_metrics, count_invalid_targets
@@ -75,6 +77,15 @@ def main() -> int:
     "avgNarrationWords", "lexicalDiversity", "effectsTotal", "endingTypeDiversity",
 
     "structuralScore", "branchScore", "narrativeScore", "totalScore",
+    "criticScore",
+    "dialogueQuality",
+    "emotionalCoherence",
+    "characterConsistency",
+    "dramaticTension",
+    "overallNarrativeQuality",
+    "compositeScore",
+    "criticJsonPath",
+
     ]
 
 
@@ -171,6 +182,22 @@ def main() -> int:
                     _write_json(metrics_path, m)
 
                     row.update(m)
+
+                    critic = evaluate_narrative(scene)
+
+                    critic_path = os.path.join(run_dir, "critic.json")
+                    _write_json(critic_path, critic)
+
+                    row.update({
+                        "criticScore": critic.get("criticScore", ""),
+                        "dialogueQuality": critic.get("dialogueQuality", ""),
+                        "emotionalCoherence": critic.get("emotionalCoherence", ""),
+                        "characterConsistency": critic.get("characterConsistency", ""),
+                        "dramaticTension": critic.get("dramaticTension", ""),
+                        "overallNarrativeQuality": critic.get("overallNarrativeQuality", ""),
+                        "criticJsonPath": critic_path,
+                    })
+
 
                 except Exception as e:
                     # Scene file exists but we couldn't parse/measure it
