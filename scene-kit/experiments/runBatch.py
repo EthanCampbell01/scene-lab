@@ -38,6 +38,11 @@ def _append_csv(path: str, header: List[str], row: Dict[str, Any]) -> None:
             f.write(",".join(header) + "\n")
         f.write(",".join(str(row.get(h, "")) for h in header) + "\n")
 
+def _append_text(path: str, text: str) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(text)
+
 
 def main() -> int:
     here = os.path.dirname(os.path.abspath(__file__))          # .../scene-kit/experiments
@@ -60,6 +65,8 @@ def main() -> int:
     os.makedirs(run_root, exist_ok=True)
 
     summary_csv = os.path.join(run_root, "summary.csv")
+    critic_report_path = os.path.join(run_root, "critic_report.txt")
+
     header = [
     "timestamp", "provider", "workflow", "briefId", "variantId", "run",
     "ok", "returncode", "outPath",
@@ -153,6 +160,33 @@ def main() -> int:
                 try:
                     
                     scene = _read_json(out_path)
+                    critic = evaluate_narrative(scene)
+
+                    # save critic per-run too
+                    critic_path = os.path.join(run_dir, "critic.json")
+                    _write_json(critic_path, critic)
+
+                    _append_text(
+                    critic_report_path,
+                    (
+                        "\n" + "=" * 90 + "\n"
+                        f"briefId: {brief_id}\n"
+                        f"variantId: {variant_id}\n"
+                        f"run: {i}\n"
+                        f"scenePath: {out_path}\n"
+                        f"criticScore: {critic.get('criticScore','')}\n"
+                        f"dialogueQuality: {critic.get('dialogueQuality','')} | "
+                        f"emotionalCoherence: {critic.get('emotionalCoherence','')} | "
+                        f"characterConsistency: {critic.get('characterConsistency','')} | "
+                        f"dramaticTension: {critic.get('dramaticTension','')} | "
+                        f"originalityAndVoice: {critic.get('originalityAndVoice','')} | "
+                        f"overallNarrativeQuality: {critic.get('overallNarrativeQuality','')}\n"
+                        f"keyIssues: {critic.get('keyIssues','')}\n"
+                        f"standoutLine: {critic.get('standoutLine','')}\n"
+                        f"worstLine: {critic.get('worstLine','')}\n"
+                        f"justification: {critic.get('justification','')}\n"
+                    ),
+                )
 
                     # COST ESTIMATION
                     prompt_tokens = estimate_tokens(brief_text)
@@ -197,6 +231,13 @@ def main() -> int:
                         "overallNarrativeQuality": critic.get("overallNarrativeQuality", ""),
                         "criticJsonPath": critic_path,
                     })
+
+                    # Composite: 40% structure + 60% narrative quality
+                    struct_score_100 = (float(row.get("totalScore", 0) or 0) / 24.0) * 100.0
+                    critic_score_100 = (float(row.get("criticScore", 0) or 0) / 50.0) * 100.0
+
+                    row["compositeScore"] = round(0.4 * struct_score_100 + 0.6 * critic_score_100, 2)
+
 
 
                 except Exception as e:
@@ -294,6 +335,94 @@ def main() -> int:
     print(f"Done. Results in: {run_root}")
     print(f"Summary CSV: {summary_csv}")
     return 0
+
+    import glob
+
+    report_path = os.path.join(run_root, "critics_report.txt")
+
+    def fnum(x, default=0.0):
+        try:
+            return float(x)
+        except:
+            return default
+
+    entries = []
+
+    # Find every critic.json created in this run
+    for critic_file in glob.glob(os.path.join(run_root, "**", "critic.json"), recursive=True):
+        run_dir = os.path.dirname(critic_file)
+        scene_path = os.path.join(run_dir, "scene.json")
+        metrics_path = os.path.join(run_dir, "metrics.json")
+
+        try:
+            with open(critic_file, "r", encoding="utf-8") as f:
+                critic = json.load(f)
+        except:
+            continue
+
+        try:
+            with open(metrics_path, "r", encoding="utf-8") as f:
+                metrics = json.load(f)
+        except:
+            metrics = {}
+
+        # compositeScore is in summary.csv row, but metrics.json may also contain totals.
+        # If you didn’t store compositeScore in metrics, we’ll approximate from critic + structural totalScore.
+        structural = fnum(metrics.get("totalScore", 0.0))
+        critic_score = fnum(critic.get("criticScore", 0.0))
+        composite = round(0.4 * (structural / 24.0 * 100.0) + 0.6 * (critic_score / 50.0 * 100.0), 2)
+
+        entries.append({
+            "run_dir": run_dir,
+            "scene_path": scene_path,
+            "sceneId": metrics.get("sceneId", ""),
+            "variantId": metrics.get("variantId", ""),
+            "criticScore": critic_score,
+            "compositeScore": composite,
+            "critic": critic,
+            "metrics": metrics,
+        })
+
+    entries.sort(key=lambda e: e["compositeScore"], reverse=True)
+
+    with open(report_path, "w", encoding="utf-8") as out:
+        out.write(f"CRITIC REPORT (ranked) — {stamp}\n")
+        out.write("=" * 80 + "\n\n")
+
+        for idx, e in enumerate(entries, start=1):
+            c = e["critic"]
+            out.write(f"#{idx}  composite={e['compositeScore']}  critic={e['criticScore']}/50\n")
+            out.write(f"sceneId: {e['sceneId']}\n")
+            out.write(f"variant: {e['variantId']}\n")
+            out.write(f"path: {e['run_dir']}\n")
+
+            out.write(
+                "scores: "
+                f"dialogue={c.get('dialogueQuality')}  "
+                f"emotion={c.get('emotionalCoherence')}  "
+                f"character={c.get('characterConsistency')}  "
+                f"tension={c.get('dramaticTension')}  "
+                f"overall={c.get('overallNarrativeQuality')}\n"
+            )
+
+            key_issues = c.get("keyIssues", [])
+            if isinstance(key_issues, list) and key_issues:
+                out.write("keyIssues:\n")
+                for it in key_issues[:3]:
+                    out.write(f" - {it}\n")
+
+            sl = c.get("standoutLine", "")
+            if sl:
+                out.write(f"standoutLine: {sl}\n")
+
+            just = c.get("justification", "")
+            if just:
+                out.write(f"justification: {just}\n")
+
+            out.write("\n" + "-" * 80 + "\n\n")
+
+    print(f"Wrote critic report: {report_path}")
+
 
 
 if __name__ == "__main__":

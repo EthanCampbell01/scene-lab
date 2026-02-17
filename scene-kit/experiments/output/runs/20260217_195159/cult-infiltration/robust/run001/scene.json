@@ -1,0 +1,104 @@
+{
+  "sceneId": "you-are-an-undercover-investigative-journalist-infiltrating-a-secluded-rural-cult-compound-you-have-spent-months-gaining-partial-trust-but-tonight-is-the-final-initiation-ritual-you-suspect-illegal-financial-fraud-and-possible-coercion-of-members-the-cult-leader-has-begun-to-question-your-loyalty-a-vulnerable-member-quietly-signals-for-help-if-exposed-you-may-not-leave-alive-you-must-decide-whether-to-gather-evidence-rescue-someone-or-protect-your-cover-knowing-each-action-changes-how-the-group-perceives-you",
+  "variantId": "hidden-ritual",
+  "title": "The Final Initiation",
+  "intro": {
+    "narration": "The air is thick with tension as the cult members gather around a flickering bonfire. Shadows dance across their faces, revealing a mix of fervor and fear. You stand at the edge, heart racing, knowing that tonight could change everything."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You scan the crowd, noting the nervous glances exchanged among the members. The cult leader, a charismatic figure, begins to speak, his voice low and hypnotic. You feel the weight of their expectations pressing down on you.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Gather evidence of their illegal activities.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Approach the vulnerable member for help.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You slip away from the group, heart pounding as you search for a place to document what you’ve seen. The dimly lit shed nearby seems promising, but you hear footsteps approaching. You must act quickly.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Hide and wait for the footsteps to pass.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Continue to gather evidence despite the risk.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You approach the vulnerable member, their eyes wide with fear. They whisper about the cult leader's true intentions, but before you can ask more, a loud shout interrupts. The leader has noticed your absence.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Reassure them and ask for more information.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Leave them and return to the group.",
+          "to": "node4"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You hide behind a stack of crates as the footsteps draw closer. The cult members are on high alert, and you can hear them discussing your loyalty. You realize your cover is at risk.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Make a run for it back to the bonfire.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Stay hidden and listen for more information.",
+          "to": "node5"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Exposé",
+      "type": "success",
+      "narration": "You expose the cult leader's fraud, and the members turn against him. The vulnerable member is saved, and you escape with the evidence, ready to reveal the truth.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Deceiver",
+      "type": "mixed",
+      "narration": "You protect your cover, but the cult's grip tightens. The vulnerable member is left behind, and you leave with a heavy heart, knowing the truth remains hidden.",
+      "weight": 1
+    },
+    {
+      "endingId": "node5",
+      "title": "Node5",
+      "type": "mixed",
+      "narration": "You gather crucial evidence, but the tension in the air is palpable. The cult leader's voice rises, and you know you must make a choice before it's too late. The vulnerable member's fate hangs in the balance."
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You sprint back to the bonfire, adrenaline surging. The cult members turn to you, suspicion in their eyes. You must convince them of your loyalty before they turn against you."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

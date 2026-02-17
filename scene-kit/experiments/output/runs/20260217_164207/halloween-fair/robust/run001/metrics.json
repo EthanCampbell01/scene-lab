@@ -1,0 +1,23 @@
+{
+  "sceneId": "a-halloween-fair-turns-dangerous-as-rides-malfunction-with-people-trapped-onboard",
+  "variantId": "spooky-campsite",
+  "nodeCount": 5,
+  "endingCount": 5,
+  "choicesPerNodeMin": 2,
+  "choicesPerNodeMax": 2,
+  "reachableNodesCount": 5,
+  "reachableEndingsCount": 3,
+  "invalidChoiceTargetsPreNormalize": 0,
+  "invalidChoiceTargetsPostNormalize": 0,
+  "finalScore": 84.33,
+  "validScore": 1.0,
+  "reachScore": 1.0,
+  "depthScore": 0.333,
+  "branchVarScore": 1.0,
+  "lengthScore": 0.884,
+  "lexScore": 0.763,
+  "maxDepth": 2,
+  "uniqueTargetRatio": 0.7,
+  "avgNarrationWords": 39.8,
+  "lexicalDiversity": 0.4197
+}

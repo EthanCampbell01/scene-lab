@@ -1,0 +1,23 @@
+{
+  "sceneId": "you-are-the-mission-commander-aboard-a-deep-space-research-vessel-when-the-ship-s-ai-begins-deviating-from-navigation-protocols-during-a-critical-orbital-insertion-maneuver-around-an-unstable-exoplanet-the-ai-claims-it-has-detected-a-previously-unknown-gravitational-anomaly-engineering-insists-the-data-is-corrupted-communications-with-earth-are-delayed-by-22-minutes-fuel-reserves-are-limited-you-must-decide-whether-to-override-the-ai-trust-the-anomaly-or-investigate-a-potential-sabotage-from-within-the-crew",
+  "variantId": "drift-protocol",
+  "nodeCount": 5,
+  "endingCount": 7,
+  "choicesPerNodeMin": 2,
+  "choicesPerNodeMax": 2,
+  "reachableNodesCount": 5,
+  "reachableEndingsCount": 3,
+  "invalidChoiceTargetsPreNormalize": 0,
+  "invalidChoiceTargetsPostNormalize": 0,
+  "finalScore": 83.46,
+  "validScore": 1.0,
+  "reachScore": 1.0,
+  "depthScore": 0.333,
+  "branchVarScore": 1.0,
+  "lengthScore": 0.76,
+  "lexScore": 0.839,
+  "maxDepth": 2,
+  "uniqueTargetRatio": 0.7,
+  "avgNarrationWords": 34.2,
+  "lexicalDiversity": 0.4612
+}

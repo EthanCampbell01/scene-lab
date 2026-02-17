@@ -1,0 +1,177 @@
+{
+  "sceneId": "you-are-a-senior-intelligence-officer-summoned-to-a-sealed-conference-room-inside-a-foreign-embassy-at-night-a-junior-diplomat-has-been-caught-leaking-classified-negotiation-documents-during-a-fragile-peace-summit-the-leak-may-have-been-coerced-through-blackmail-involving-a-hidden-personal-scandal-the-building-is-under-quiet-lockdown-and-if-this-situation-becomes-public-it-could-collapse-the-treaty-talks-and-trigger-military-escalation-you-must-extract-the-truth-while-preserving-diplomatic-stability-the-diplomat-may-be-lying-panicking-or-protecting-someone-more-powerful",
+  "variantId": "embassy-crisis",
+  "title": "The Tipping Point",
+  "intro": {
+    "narration": "The air is thick with tension as you step into the dimly lit conference room. Shadows dance across the walls, reflecting the gravity of the situation. A junior diplomat sits across the table, visibly shaken, clutching a stack of documents that could unravel the fragile peace."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You take a seat, your eyes locked onto the diplomat's face. His hands tremble slightly as he avoids your gaze. You sense fear, but is it fear of exposure or fear of something deeper? You need to establish control over the conversation.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Calmly ask him about the documents.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Accuse him of leaking information.",
+          "to": "node3",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "He hesitates, then begins to explain the context of the documents. His voice quivers as he mentions a powerful figure who pressured him into leaking the information. You lean in, sensing an opportunity to uncover the truth.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Press him for the name of the powerful figure.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Reassure him that he is safe here.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "His eyes widen in shock, and he recoils as if struck. The accusation hangs heavy in the air, and you can see the panic rising in him. He stammers, trying to defend himself, but the fear of being cornered is palpable.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Offer him a chance to explain his side.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Threaten to escalate the situation.",
+          "to": "node6",
+          "effects": [
+            "stat:trust-1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "He glances around nervously, then whispers a name that sends chills down your spine. The implications are staggering; this could lead to a diplomatic crisis. You must tread carefully now.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Confront him about the implications of his actions.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Suggest a way to mitigate the fallout.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "He seems to relax slightly, encouraged by your reassurance. He begins to share more details about the coercion he faced, revealing a hidden scandal that could endanger many lives. The stakes are rising.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Ask for more details about the scandal.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Encourage him to take responsibility.",
+          "to": "node8",
+          "effects": [
+            "goal:interrogator.getConfession+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "The atmosphere shifts as you lay out the potential consequences of his actions. The diplomat's face pales, and you can see the weight of his choices pressing down on him. He realizes the gravity of the situation.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Offer him a deal to protect himself.",
+          "to": "node8"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Demand he confess everything.",
+          "to": "node9"
+        }
+      ]
+    },
+    {
+      "nodeId": "node7",
+      "narration": "You listen intently as he divulges the details of the scandal, revealing connections that could shake the foundation of the negotiations. The truth is a double-edged sword, and you must decide how to wield it.",
+      "choices": [
+        {
+          "choiceId": "choice7a",
+          "text": "Use this information to negotiate a better outcome.",
+          "to": "node9"
+        },
+        {
+          "choiceId": "choice7b",
+          "text": "Consider the implications for the treaty talks.",
+          "to": "node10"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A New Dawn",
+      "type": "success",
+      "narration": "The truth comes to light, and while the fallout is significant, it paves the way for a more honest negotiation process. The treaty survives, and trust is slowly rebuilt.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Cost of Silence",
+      "type": "mixed",
+      "narration": "You choose to handle the situation internally, but the weight of the secret lingers. The treaty is saved, but at the cost of your integrity and the diplomat's future.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "A Fragile Peace",
+      "type": "failure",
+      "narration": "The cover-up leads to a fragile peace, but the underlying issues remain unresolved. Tensions rise, and the threat of conflict looms ever closer.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "He nods, understanding the need for honesty. As he begins to confess, the tension in the room shifts. The truth is out, but at what cost? You feel the weight of your decisions bearing down on you."
+    },
+    {
+      "endingId": "node9",
+      "title": "Node9",
+      "type": "mixed",
+      "narration": "With the truth laid bare, you realize the delicate balance of power is shifting. The diplomat's fate hangs in the balance, and your next move could either save or condemn him."
+    },
+    {
+      "endingId": "node10",
+      "title": "Node10",
+      "type": "mixed",
+      "narration": "You weigh the potential fallout of the scandal against the fragile peace. The room feels smaller, the stakes higher. Every decision could lead to war or peace."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

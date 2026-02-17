@@ -1,0 +1,130 @@
+{
+  "sceneId": "you-are-thrust-into-a-room-with-no-preparation-and-interrogated-about-a-large-bank-robbery",
+  "variantId": "Government-interrogation",
+  "title": "Under the Harsh Light",
+  "intro": {
+    "narration": "The fluorescent lights buzz overhead, casting a harsh glare on the cold metal table. You sit alone, hands trembling slightly, as the door swings open. A stern-faced interrogator steps in, eyes locked onto yours, ready to unravel your secrets."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "The interrogator leans in, his voice low and menacing. 'We know you were at the bank during the robbery. Tell me what you saw.' You feel the weight of his gaze, the pressure mounting. Do you stick to your story or reveal the truth?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Stick to your story.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Reveal what you know.",
+          "to": "node3",
+          "effects": [
+            "stat:trust+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You maintain your composure, insisting you were just a bystander. The interrogator's expression darkens. 'Lying won't save you. We have witnesses.' You sense the tension rising, and your heart races.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Stay silent.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Change your story.",
+          "to": "node3",
+          "effects": [
+            "stat:suspicion-2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You decide to come clean, revealing the details of the robbery. The interrogator's eyes widen, a mix of surprise and intrigue. 'Interesting. But why should I believe you?' You realize the stakes have just escalated.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Offer evidence.",
+          "to": "node5",
+          "effects": [
+            "goal:interrogator.getConfession+1"
+          ]
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Plead for leniency.",
+          "to": "node4"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "Silence fills the room as you weigh your options. The interrogator watches you intently, waiting for your next move. You can feel the tension crackling in the air, and your mind races with possibilities.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Confess everything.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Stick to your original story.",
+          "to": "node2",
+          "guards": [
+            "stat:trust>=2"
+          ]
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A New Ally",
+      "type": "success",
+      "narration": "You walk out of the interrogation room, a new ally in the government. Your knowledge of the robbery has turned you from a suspect into a key player in the investigation.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Deal",
+      "type": "mixed",
+      "narration": "You strike a deal with the interrogator, securing your safety but at a cost. The truth comes at a price, and you find yourself entangled in a web of deception.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "Betrayal",
+      "type": "failure",
+      "narration": "You agree to cooperate, but the government uses your information against you. Betrayed and alone, you realize trust is a fragile thing.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "The Silent Witness",
+      "type": "twist",
+      "narration": "You refuse to cooperate, and the interrogator's patience wears thin. As the door slams shut, you realize the silence may be your only weapon.",
+      "weight": 1
+    },
+    {
+      "endingId": "node5",
+      "title": "Node5",
+      "type": "mixed",
+      "narration": "You lay out the evidence, detailing the robbery's planning and execution. The interrogator's demeanor shifts, curiosity piqued. 'This changes things. You might just be telling the truth.'"
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "The interrogator leans back, contemplating your words. 'You could be a valuable asset to us. But trust is hard to come by.' You sense a shift in power dynamics, but the danger is far from over."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

@@ -1,0 +1,23 @@
+{
+  "sceneId": "you-are-thrust-into-a-room-with-no-preparation-and-interrogated-about-a-large-bank-robbery",
+  "variantId": "Government-interrogation",
+  "nodeCount": 7,
+  "endingCount": 5,
+  "choicesPerNodeMin": 2,
+  "choicesPerNodeMax": 2,
+  "reachableNodesCount": 7,
+  "reachableEndingsCount": 3,
+  "invalidChoiceTargetsPreNormalize": 0,
+  "invalidChoiceTargetsPostNormalize": 0,
+  "finalScore": 85.8,
+  "validScore": 1.0,
+  "reachScore": 1.0,
+  "depthScore": 0.5,
+  "branchVarScore": 0.918,
+  "lengthScore": 0.721,
+  "lexScore": 0.963,
+  "maxDepth": 3,
+  "uniqueTargetRatio": 0.6429,
+  "avgNarrationWords": 32.43,
+  "lexicalDiversity": 0.5298
+}

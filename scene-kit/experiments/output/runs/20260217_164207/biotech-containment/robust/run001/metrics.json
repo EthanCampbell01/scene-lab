@@ -1,0 +1,23 @@
+{
+  "sceneId": "you-are-the-head-of-security-inside-a-subterranean-biotech-research-facility-when-an-emergency-alarm-signals-a-containment-breach-in-a-restricted-laboratory-a-genetically-engineered-pathogen-prototype-may-have-been-exposed-surveillance-footage-is-incomplete-a-lead-scientist-insists-it-was-a-false-alarm-but-a-technician-is-missing-the-ventilation-system-is-beginning-a-purge-cycle-that-will-seal-entire-sections-permanently-you-must-decide-whether-to-trust-your-staff-override-protocols-or-initiate-full-lockdown-knowing-that-each-choice-affects-lives-and-future-accountability",
+  "variantId": "deep-lab",
+  "nodeCount": 4,
+  "endingCount": 8,
+  "choicesPerNodeMin": 2,
+  "choicesPerNodeMax": 2,
+  "reachableNodesCount": 4,
+  "reachableEndingsCount": 4,
+  "invalidChoiceTargetsPreNormalize": 0,
+  "invalidChoiceTargetsPostNormalize": 0,
+  "finalScore": 85.28,
+  "validScore": 1.0,
+  "reachScore": 1.0,
+  "depthScore": 0.333,
+  "branchVarScore": 1.0,
+  "lengthScore": 0.906,
+  "lexScore": 0.911,
+  "maxDepth": 2,
+  "uniqueTargetRatio": 0.875,
+  "avgNarrationWords": 40.75,
+  "lexicalDiversity": 0.501
+}

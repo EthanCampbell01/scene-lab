@@ -1,0 +1,23 @@
+{
+  "sceneId": "you-are-a-royal-advisor-in-a-medieval-court-when-the-heir-to-the-throne-is-accused-of-orchestrating-the-poisoning-of-a-rival-noble-the-accusation-surfaces-during-a-midnight-council-session-with-only-a-handful-of-witnesses-present-the-accused-denies-everything-but-evidence-appears-compelling-several-council-members-have-hidden-agendas-and-a-single-wrong-move-could-destabilize-succession-you-must-interrogate-loyalties-weigh-fragile-alliances-and-uncover-whether-the-accusation-is-a-political-trap",
+  "variantId": "midnight-accusation",
+  "nodeCount": 6,
+  "endingCount": 6,
+  "choicesPerNodeMin": 2,
+  "choicesPerNodeMax": 2,
+  "reachableNodesCount": 6,
+  "reachableEndingsCount": 3,
+  "invalidChoiceTargetsPreNormalize": 0,
+  "invalidChoiceTargetsPostNormalize": 0,
+  "finalScore": 87.05,
+  "validScore": 1.0,
+  "reachScore": 1.0,
+  "depthScore": 0.5,
+  "branchVarScore": 0.952,
+  "lengthScore": 0.859,
+  "lexScore": 0.834,
+  "maxDepth": 3,
+  "uniqueTargetRatio": 0.6667,
+  "avgNarrationWords": 38.67,
+  "lexicalDiversity": 0.4589
+}

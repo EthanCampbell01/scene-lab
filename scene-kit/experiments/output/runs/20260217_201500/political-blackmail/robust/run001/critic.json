@@ -1,0 +1,17 @@
+{
+  "dialogueQuality": 7,
+  "emotionalCoherence": 8,
+  "characterConsistency": 7,
+  "dramaticTension": 8,
+  "originalityAndVoice": 6,
+  "overallNarrativeQuality": 7,
+  "keyIssues": [
+    "Some cliché phrasing",
+    "Minor awkwardness in dialogue",
+    "Limited character depth"
+  ],
+  "standoutLine": "The accusation hangs in the air, and the diplomat's face pales.",
+  "worstLine": "You feel a sense of determination.",
+  "justification": "The scene effectively builds tension and maintains emotional coherence, particularly through the diplomat's fear and the stakes involved. However, some dialogue feels generic, and there are moments of awkward phrasing that detract from the overall impact. The choices presented are engaging, but the character depth could be enhanced for a more memorable experience.",
+  "criticScore": 43
+}

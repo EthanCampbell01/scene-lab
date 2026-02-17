@@ -1,0 +1,140 @@
+{
+  "sceneId": "you-are-a-senior-intelligence-officer-summoned-to-a-sealed-conference-room-inside-a-foreign-embassy-at-night-a-junior-diplomat-has-been-caught-leaking-classified-negotiation-documents-during-a-fragile-peace-summit-the-leak-may-have-been-coerced-through-blackmail-involving-a-hidden-personal-scandal-the-building-is-under-quiet-lockdown-and-if-this-situation-becomes-public-it-could-collapse-the-treaty-talks-and-trigger-military-escalation-you-must-extract-the-truth-while-preserving-diplomatic-stability-the-diplomat-may-be-lying-panicking-or-protecting-someone-more-powerful",
+  "variantId": "embassy-crisis",
+  "title": "The Diplomat's Dilemma",
+  "intro": {
+    "narration": "The air is thick with tension as you step into the dimly lit conference room. The walls are adorned with flags, but the atmosphere feels stifling. A junior diplomat sits at the table, eyes darting nervously, clutching a stack of documents that could unravel delicate negotiations."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You take a seat across from the diplomat, your gaze steady. 'We need to talk about the leak,' you say, watching for any flicker of emotion. The diplomat swallows hard, sweat beading on their forehead, clearly panicking.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Press for the truth directly.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Offer reassurance to ease their fear.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You lean in, your voice low and firm. 'I know about the blackmail. Who is behind this?' The diplomat's eyes widen, and they shake their head. 'I can't say. It’s too dangerous.' You sense they are hiding something crucial.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Threaten to expose them if they don't cooperate.",
+          "to": "node4",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Calmly insist that their safety depends on honesty.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You soften your tone, trying to build trust. 'I’m here to help you, but I need the truth.' The diplomat's shoulders relax slightly, but their eyes still dart around the room, searching for an escape.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Encourage them to share their fears.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Mention the consequences of silence.",
+          "to": "node4",
+          "effects": [
+            "stat:trust+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "Your threat hangs in the air, heavy and palpable. The diplomat's face pales, and they nod slowly, fear etched in their features. 'Okay, okay. I’ll tell you what I know.'",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Ask about the blackmailer's identity.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Inquire about the documents they leaked.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "The diplomat takes a deep breath, visibly torn. 'I... I was approached by someone who knows my past. They threatened to ruin me if I didn’t comply.' Their voice trembles, revealing a hidden vulnerability.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Probe deeper into their past.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Ask for details about the documents.",
+          "to": "node7"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "Confrontation",
+      "type": "mixed",
+      "narration": "You storm out of the room, ready to confront the higher authority. The diplomat's fate hangs in the balance as you navigate the treacherous waters of diplomacy.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "Strategic Maneuver",
+      "type": "success",
+      "narration": "Using the information wisely, you manage to avert a crisis. The diplomat feels relieved, and the treaty talks continue, albeit under a watchful eye.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "Public Outcry",
+      "type": "failure",
+      "narration": "The information leaks to the press, causing a scandal that rocks the diplomatic community. The treaty talks collapse, and tensions rise dangerously.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "Quiet Resolution",
+      "type": "twist",
+      "narration": "You choose to keep the information secret, allowing the diplomat to escape the immediate danger. However, the shadows of the past linger, hinting at future complications.",
+      "weight": 1
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "The diplomat hesitates, then whispers, 'It’s someone high up in the government. I can’t name them, but they have connections everywhere.' You feel the weight of this revelation."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "The diplomat's voice quivers as they explain the contents of the leaked documents. 'They contain sensitive negotiation strategies that could jeopardize everything.' You realize the stakes are higher than you thought."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

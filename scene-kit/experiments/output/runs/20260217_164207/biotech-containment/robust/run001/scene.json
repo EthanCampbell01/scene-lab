@@ -1,0 +1,137 @@
+{
+  "sceneId": "you-are-the-head-of-security-inside-a-subterranean-biotech-research-facility-when-an-emergency-alarm-signals-a-containment-breach-in-a-restricted-laboratory-a-genetically-engineered-pathogen-prototype-may-have-been-exposed-surveillance-footage-is-incomplete-a-lead-scientist-insists-it-was-a-false-alarm-but-a-technician-is-missing-the-ventilation-system-is-beginning-a-purge-cycle-that-will-seal-entire-sections-permanently-you-must-decide-whether-to-trust-your-staff-override-protocols-or-initiate-full-lockdown-knowing-that-each-choice-affects-lives-and-future-accountability",
+  "variantId": "deep-lab",
+  "title": "Containment Breach: Trust or Lockdown",
+  "intro": {
+    "narration": "The emergency alarm blares through the sterile halls of the facility, echoing off the cold metal walls. You stand at the security console, eyes glued to the flickering screens showing chaotic scenes from the restricted lab. A lead scientist insists it’s a false alarm, but a technician is unaccounted for, and the ventilation system is initiating a purge cycle."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You scan the surveillance footage, but the images are distorted and incomplete. The scientist argues passionately, claiming the pathogen is secure. Yet, the technician's absence gnaws at you. Do you trust the scientist's judgment or take immediate action?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Trust the scientist and ignore the alarm.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Initiate a full lockdown immediately.",
+          "to": "node3",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You decide to trust the scientist, but as you turn away, a frantic technician bursts into the room, gasping for breath. 'The pathogen is unstable!' they shout. Panic rises as you realize your mistake. The alarm intensifies, and the ventilation system continues its countdown.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Override the lockdown protocols.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Call for an emergency team.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You hit the lockdown button, sealing off sections of the facility. The scientist's protests fade as the doors slam shut. Tension fills the air as you hear distant screams. You must act quickly to assess the situation before it spirals out of control.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Check the lab for the technician.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Review security footage for clues.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You override the lockdown, but alarms blare louder. The scientist looks horrified. 'What have you done?' they scream. You feel the weight of your decision as the ventilation system begins to purge. Time is running out.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Search for the technician yourself.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Evacuate the remaining staff.",
+          "to": "node8"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "Containment Secured",
+      "type": "success",
+      "narration": "The breach is contained, and the technician is safe. You report the incident, and an investigation begins. Trust is restored, but the facility will never be the same.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "Panic and Chaos",
+      "type": "mixed",
+      "narration": "The evacuation leads to chaos, and many are injured. The technician is saved, but the facility's reputation is tarnished. You question your decisions as you face the aftermath.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "Betrayal Uncovered",
+      "type": "twist",
+      "narration": "Confronting the scientist reveals a hidden agenda. They were aware of the risks and tried to cover it up. You expose the truth, but at a great cost to your career.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "A Costly Decision",
+      "type": "failure",
+      "narration": "Your decision to evacuate leads to a catastrophic failure. The pathogen escapes, and the facility is locked down permanently. Lives are lost, and you bear the weight of the consequences.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "node5",
+      "title": "Node5",
+      "type": "mixed",
+      "narration": "You rush to the lab, heart pounding. The technician is cornered, struggling with a containment breach. You must decide quickly: help them or secure the area first. The pathogen could escape at any moment."
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You review the footage, and a chilling realization hits you. The technician was last seen near the containment unit, and the scientist's claims seem increasingly suspicious. You must act before it's too late."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You find the technician, but the breach is worsening. Together, you manage to seal it just in time. Breathing heavily, you realize the danger is far from over. The scientist's motives are now in question."
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "You order an evacuation, but chaos ensues as panic spreads. The scientist's voice is drowned out by the alarm. You must regain control before the situation escalates further."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

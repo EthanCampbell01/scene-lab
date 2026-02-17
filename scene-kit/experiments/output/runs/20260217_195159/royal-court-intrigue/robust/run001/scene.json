@@ -1,0 +1,134 @@
+{
+  "sceneId": "you-are-a-royal-advisor-in-a-medieval-court-when-the-heir-to-the-throne-is-accused-of-orchestrating-the-poisoning-of-a-rival-noble-the-accusation-surfaces-during-a-midnight-council-session-with-only-a-handful-of-witnesses-present-the-accused-denies-everything-but-evidence-appears-compelling-several-council-members-have-hidden-agendas-and-a-single-wrong-move-could-destabilize-succession-you-must-interrogate-loyalties-weigh-fragile-alliances-and-uncover-whether-the-accusation-is-a-political-trap",
+  "variantId": "midnight-accusation",
+  "title": "Whispers in the Dark",
+  "intro": {
+    "narration": "The council chamber is dimly lit, shadows flickering against the stone walls. Tension hangs thick in the air as you sit among the council members, the weight of the accusation pressing down on you. The heir, pale and trembling, insists on his innocence, but the evidence is damning."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You lean forward, studying the heir's face for any sign of deceit. The flickering candlelight casts shadows that dance across his features, revealing a mix of fear and defiance. You must decide how to approach this delicate situation.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Press him for details about the night of the poisoning.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Defend him against the council's accusations.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "The heir's eyes widen as you demand specifics. He stammers, recounting a hurried conversation with the rival noble just hours before the incident. His voice trembles, but you sense a flicker of truth. Yet, the council members exchange knowing glances, their skepticism palpable.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Ask about the rival's motives.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Inquire about his relationship with the rival.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You rise to defend the heir, your voice steady against the rising tide of accusations. The council members murmur, some nodding in agreement while others scowl. You feel the weight of their scrutiny, but you must hold your ground.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Challenge the evidence presented.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Suggest a thorough investigation.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "The heir hesitates, then reveals that the rival had recently gained significant power, making enemies among the council. You sense a shift in the room; some members seem intrigued, while others grow more hostile. The stakes are rising.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Propose to interrogate the witnesses.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Accuse a council member of manipulation.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You press for clarity on the heir's relationship with the rival. He admits they were once friends, but recent tensions had strained their bond. The council's murmurs grow louder, and you realize you must act decisively to steer the conversation.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Call for a vote of confidence in the heir.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Demand to see the evidence against him.",
+          "to": "node7"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Truth Unveiled",
+      "type": "success",
+      "narration": "The servant's testimony reveals a hidden plot against the heir. With the truth laid bare, the council has no choice but to exonerate him, restoring peace to the court.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "A Web of Lies",
+      "type": "mixed",
+      "narration": "The ally's confession uncovers a conspiracy, but the heir's reputation is tarnished. He remains in power, but trust is a fragile thing in the court.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "The Evidence Falls Apart",
+      "type": "success",
+      "narration": "You expose the flaws in the evidence, leading to the heir's release. However, the council's unity is shattered, and new rivalries emerge.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "Betrayal Revealed",
+      "type": "twist",
+      "narration": "Your revelation of the council member's motives turns the tide, but it also reveals deeper corruption within the court. The heir is safe, but the kingdom's stability is at risk.",
+      "weight": 1
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You suggest interrogating the witnesses, hoping to uncover more truths. The council agrees, and you feel a surge of hope. However, the heir's fate hangs in the balance as you prepare to face the witnesses."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You demand to see the evidence, challenging the council's integrity. The atmosphere thickens with tension as they reluctantly present the documents. You scan the pages, searching for inconsistencies that could save the heir."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

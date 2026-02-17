@@ -1,0 +1,127 @@
+{
+  "sceneId": "a-halloween-fair-turns-dangerous-as-rides-malfunction-with-people-trapped-onboard",
+  "variantId": "spooky-campsite",
+  "title": "The Frightening Fairground",
+  "intro": {
+    "narration": "The air is thick with excitement and the scent of caramel apples. Laughter echoes as children dart between colorful booths. Suddenly, a loud crack reverberates through the fairground, and the Ferris wheel shudders violently, leaving riders suspended in mid-air."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You stand frozen, heart racing as the Ferris wheel creaks ominously. A crowd gathers, their faces painted with fear. You notice a little girl crying, her mother desperately trying to calm her. Do you rush to help the girl or investigate the ride's mechanics?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Help the girl",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Investigate the ride",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You kneel beside the girl, offering her a comforting smile. Her mother thanks you, but your attention is drawn back to the Ferris wheel as it shakes violently. The operator seems overwhelmed. Do you stay with the girl or rush to assist the operator?",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Stay with the girl",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Assist the operator",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You push through the crowd, eyes fixed on the ride's control panel. Sparks fly as wires dangle dangerously. You realize the operator is missing crucial tools. Do you search for tools nearby or try to fix the panel with what you have?",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Search for tools",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Attempt a quick fix",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You comfort the girl, but the ride's groans grow louder. Suddenly, the Ferris wheel tilts dangerously. You must decide: do you evacuate the girl to safety or stay to help her mother?",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Evacuate the girl",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Help her mother",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You rush to the operator's booth, grabbing tools from a nearby vendor. As you return, the Ferris wheel shudders again, and a scream pierces the air. Do you fix the panel or help the trapped riders first?",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Fix the panel",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Help the trapped riders",
+          "to": "ending1"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "Heroic Rescue",
+      "type": "success",
+      "narration": "You manage to save the trapped riders just in time. The crowd erupts in cheers, and you feel a surge of pride. The fairground is safe again, and you are hailed as a hero.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "Brave Sacrifice",
+      "type": "mixed",
+      "narration": "In a moment of bravery, you risk everything to save the trapped riders. You succeed, but the ride's collapse leaves you injured. The crowd is grateful, but you bear the scars of your heroism.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "Safe but Haunted",
+      "type": "failure",
+      "narration": "You retreat to safety, watching as chaos unfolds. The guilt weighs heavily on you as you realize you could have done more. The fairground is forever changed, and so are you.",
+      "weight": 1
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You make a quick decision, either fixing the panel or assisting the trapped riders. The tension is palpable as you work against time. Suddenly, the ride lurches, and you must act fast. Do you risk your safety to save others or retreat to safety?"
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You scoop up the girl and dash towards safety, her mother following closely. The Ferris wheel creaks ominously, but you manage to escape just in time. As you look back, the ride collapses. Do you comfort the girl or check on the others?"
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

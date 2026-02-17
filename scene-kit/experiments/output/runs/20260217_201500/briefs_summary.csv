@@ -1,0 +1,4 @@
+briefId,runs,okRuns,successRate,meanTotalScore,stdTotalScore,bestTotalScore
+bank-interrogation,1,1,1.0,0.0,,0.0
+halloween-fair,1,1,1.0,0.0,,0.0
+political-blackmail,1,1,1.0,0.0,,0.0

@@ -1,0 +1,160 @@
+{
+  "sceneId": "you-are-an-undercover-investigative-journalist-infiltrating-a-secluded-rural-cult-compound-you-have-spent-months-gaining-partial-trust-but-tonight-is-the-final-initiation-ritual-you-suspect-illegal-financial-fraud-and-possible-coercion-of-members-the-cult-leader-has-begun-to-question-your-loyalty-a-vulnerable-member-quietly-signals-for-help-if-exposed-you-may-not-leave-alive-you-must-decide-whether-to-gather-evidence-rescue-someone-or-protect-your-cover-knowing-each-action-changes-how-the-group-perceives-you",
+  "variantId": "hidden-ritual",
+  "title": "The Final Initiation",
+  "intro": {
+    "narration": "The air is thick with tension as the cult members gather around a flickering bonfire. Shadows dance across their faces, revealing a mix of fervor and fear. You stand on the periphery, heart racing, knowing tonight could change everything."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "As the cult leader begins the ritual, you notice a member, eyes wide with desperation, subtly gesturing for help. The fire crackles, and the chanting grows louder, drowning out your thoughts. You feel the weight of your choices pressing down on you.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Gather evidence of the ritual.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Approach the vulnerable member.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You slip away from the crowd, heart pounding as you search for your phone to document the ritual. The flickering light reveals a hidden ledger beneath a nearby altar, filled with suspicious transactions. You snap photos, but the cult leader's gaze suddenly shifts towards you.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Confront the cult leader about the ledger.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Hide the evidence and return to the group.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You approach the member, whispering reassurances. They tremble, revealing they are being coerced into the ritual. Just then, a loud shout interrupts, and the cult leader's eyes narrow, sensing your distraction.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Help the member escape.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Feign ignorance and return to the group.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You boldly confront the cult leader, accusing him of fraud. The crowd gasps, and tension crackles in the air. He smiles, but his eyes are cold. 'You think you can expose us?' he taunts, raising the stakes.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Stand your ground and demand answers.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Back down and apologize.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You return to the group, heart racing. The cult leader watches you closely, suspicion etched on his face. You realize your actions have shifted the group's perception of you, and the atmosphere grows more hostile.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Try to regain their trust by participating in the ritual.",
+          "to": "node8"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Plan your escape while the ritual continues.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "You help the member slip away into the shadows, adrenaline surging. As you navigate through the trees, you hear the cult members chanting behind you. The weight of your decision hangs heavy, knowing you may have just sealed your fate.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Return to the compound to gather more evidence.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Escape with the member to safety.",
+          "to": "ending1"
+        }
+      ]
+    },
+    {
+      "nodeId": "node8",
+      "narration": "You join the ritual, trying to blend in. The cult members chant, and you feel the weight of their expectations. But inside, you know you are still an outsider, and the risk of exposure looms large.",
+      "choices": [
+        {
+          "choiceId": "choice8a",
+          "text": "Use the ritual to gather more information.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice8b",
+          "text": "Attempt to sabotage the ritual from within.",
+          "to": "ending4"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Narrow Escape",
+      "type": "success",
+      "narration": "You and the member slip away into the night, hearts pounding. The cult's chants fade behind you, and you feel a rush of relief. You've saved a life, but the evidence remains hidden, and the cult's grip tightens.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "Caught in the Act",
+      "type": "failure",
+      "narration": "As you fight back, the cult members overpower you. The last thing you see is the cold smile of the leader as darkness envelops you. Your mission ends in failure, and the truth remains buried.",
+      "weight": -1
+    },
+    {
+      "endingId": "ending3",
+      "title": "A Deal with the Devil",
+      "type": "mixed",
+      "narration": "You surrender, hoping for mercy. The cult leader offers you a choice: join them or face dire consequences. You realize you are trapped, caught between your mission and your survival.",
+      "weight": 0
+    },
+    {
+      "endingId": "ending4",
+      "title": "The Ritual Unraveled",
+      "type": "twist",
+      "narration": "As you sabotage the ritual, chaos erupts. The cult members turn on each other, revealing deep-seated fears and betrayals. You escape in the confusion, but the truth of their darkness remains.",
+      "weight": 0
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You refuse to back down, demanding the truth. The cult leader's smile fades, and he signals to his followers. They close in, and you realize the danger of your position. The tension escalates, and your heart races."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

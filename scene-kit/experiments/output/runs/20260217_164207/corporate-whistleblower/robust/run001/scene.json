@@ -1,0 +1,134 @@
+{
+  "sceneId": "you-are-the-chair-of-an-emergency-corporate-ethics-tribunal-investigating-a-whistleblower-who-claims-the-company-knowingly-concealed-a-fatal-product-defect-senior-executives-deny-wrongdoing-legal-advisors-warn-that-admitting-fault-could-bankrupt-the-company-the-whistleblower-presents-partial-evidence-but-may-have-personal-motives-media-leaks-are-already-circulating-you-must-question-both-sides-under-pressure-balancing-truth-liability-and-public-safety",
+  "variantId": "boardroom-hearing",
+  "title": "The Weight of Truth",
+  "intro": {
+    "narration": "In the dimly lit boardroom, tension hangs thick in the air. You sit at the head of the table, surrounded by executives in tailored suits, their faces a mix of defiance and anxiety. The whistleblower, a nervous figure clutching a folder of documents, stands ready to present their case against the company."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You begin the hearing, addressing the room with authority. The executives shift uncomfortably, while the whistleblower's eyes dart between you and the evidence. You sense the stakes are high, and the truth may be buried beneath layers of corporate secrecy.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Ask the whistleblower to present their evidence.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Question the executives about their knowledge of the defect.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "The whistleblower lays out their evidence, detailing a series of emails that suggest the defect was known. You notice the executives exchanging worried glances. The atmosphere shifts as the weight of the accusation sinks in.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Probe deeper into the emails for inconsistencies.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Dismiss the evidence as circumstantial.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "The executives deny any wrongdoing, their voices rising in unison. You can feel their desperation as they cling to their narrative. Yet, something in their tone feels rehearsed, as if they are hiding something significant.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Challenge their statements with the whistleblower's claims.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Allow them to continue without interruption.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You press the whistleblower for more details, and they reveal a hidden memo that contradicts the executives' statements. The room goes silent, the tension palpable. You can feel the executives' facade beginning to crack.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Confront the executives with the memo.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Request a break to gather your thoughts.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You choose to dismiss the evidence, but the whistleblower's determination only grows. They argue passionately, and the executives seem relieved, but you sense that this decision may haunt you later.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Reconsider your stance and ask for more evidence.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "End the session prematurely.",
+          "to": "ending1"
+        }
+      ]
+    },
+    {
+      "nodeId": "node7",
+      "narration": "You call for a break, needing time to process the unfolding drama. As you step outside, the weight of the decision looms over you. The media is waiting, and the public's trust hangs in the balance.",
+      "choices": [
+        {
+          "choiceId": "choice7a",
+          "text": "Return with a firm resolve to uncover the truth.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice7b",
+          "text": "Decide to prioritize the company's reputation over the truth.",
+          "to": "ending1"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Cover-Up",
+      "type": "failure",
+      "narration": "You choose to protect the company, dismissing the whistleblower's claims. The media frenzy escalates, and public trust erodes. The truth remains buried, and the company faces a backlash that could have been avoided."
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Truth Revealed",
+      "type": "success",
+      "narration": "You demand a full investigation, and the truth comes to light. The executives are held accountable, and the company begins to rebuild its reputation. The whistleblower is vindicated, and justice prevails."
+    },
+    {
+      "endingId": "ending3",
+      "title": "A Compromise",
+      "type": "mixed",
+      "narration": "You suggest a settlement, hoping to quell the media storm. While the company avoids immediate disaster, the underlying issues remain unresolved. The whistleblower feels betrayed, and trust is still fractured."
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You confront the executives with the memo, and their faces drain of color. They stammer, trying to deflect blame. The whistleblower watches, a glimmer of hope in their eyes. You realize the truth is within reach."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

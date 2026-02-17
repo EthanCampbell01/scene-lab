@@ -1,0 +1,146 @@
+{
+  "sceneId": "you-are-thrust-into-a-room-with-no-preparation-and-interrogated-about-a-large-bank-robbery",
+  "variantId": "Government-interrogation",
+  "title": "Under the Harsh Light",
+  "intro": {
+    "narration": "The fluorescent lights buzz overhead, casting a harsh glare on the sterile walls. You sit at a cold metal table, hands clammy, heart racing. An interrogator stares at you, eyes piercing, waiting for you to break the silence."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "The interrogator leans forward, a smirk playing on their lips. 'Let's start simple. Where were you on the night of the robbery?' The tension in the room thickens as you consider your response.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Tell the truth about your alibi.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Lie and say you were elsewhere.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You recount your alibi, detailing your whereabouts. The interrogator's expression shifts, skepticism creeping in. 'Interesting. But can anyone corroborate your story?' You feel the weight of their doubt.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Insist that your friend can confirm.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Admit you were alone.",
+          "to": "node5",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You fabricate a story about being at a party. The interrogator raises an eyebrow, clearly unconvinced. 'You expect me to believe that? Prove it.' You realize the stakes are higher than you thought.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Provide a fake name of a supposed witness.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Change the subject to distract.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "The interrogator's gaze sharpens. 'If I find out you're lying, this will get much worse for you.' You feel a chill run down your spine. The room feels smaller, the air thicker.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Stay calm and maintain your story.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Plead for leniency.",
+          "to": "node7",
+          "effects": [
+            "stat:trust-1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You admit to being alone, the truth hanging heavy in the air. The interrogator's lips curl into a knowing smile. 'So, you had no one to back you up. Interesting choice.'",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Try to shift blame onto someone else.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Remain silent and wait.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "The interrogator leans back, arms crossed. 'You're either very brave or very foolish. Let's see how this plays out.' You brace yourself for the next round of questioning.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Ask about the evidence they have.",
+          "to": "node1"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Demand to speak to a lawyer.",
+          "to": "ending1"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Lawyer's Shield",
+      "type": "success",
+      "narration": "You demand a lawyer, and the interrogator's demeanor shifts. They realize they can't push you further without legal representation. You walk out, feeling a mix of relief and anxiety.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Confession",
+      "type": "failure",
+      "narration": "Under the pressure, you confess to the robbery, believing it might ease your situation. Instead, the interrogator's smile widens as they take your statement, sealing your fate.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "Sticking to the Story",
+      "type": "mixed",
+      "narration": "You hold firm to your story, but the interrogator's relentless questioning leaves you shaken. They let you go for now, but you know the battle isn't over.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "Silence fills the room, thick with tension. The interrogator watches you, a predator sizing up its prey. You feel the pressure mounting, and your heart races."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

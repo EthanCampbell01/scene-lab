@@ -1,0 +1,143 @@
+{
+  "sceneId": "you-are-the-head-of-security-inside-a-subterranean-biotech-research-facility-when-an-emergency-alarm-signals-a-containment-breach-in-a-restricted-laboratory-a-genetically-engineered-pathogen-prototype-may-have-been-exposed-surveillance-footage-is-incomplete-a-lead-scientist-insists-it-was-a-false-alarm-but-a-technician-is-missing-the-ventilation-system-is-beginning-a-purge-cycle-that-will-seal-entire-sections-permanently-you-must-decide-whether-to-trust-your-staff-override-protocols-or-initiate-full-lockdown-knowing-that-each-choice-affects-lives-and-future-accountability",
+  "variantId": "deep-lab",
+  "title": "Containment Breach: Trust or Lockdown",
+  "intro": {
+    "narration": "The alarm blares, echoing through the sterile halls of the facility. Red lights flash ominously, casting shadows on the faces of your team. A lead scientist insists it’s a false alarm, but the missing technician weighs heavily on your mind."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You stand in the control room, the screens flickering with static. The lead scientist argues passionately, claiming the pathogen is secure. Yet, the technician's absence gnaws at you. Do you trust your team or take immediate action?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Trust the scientist and ignore the alarm.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Initiate full lockdown protocols.",
+          "to": "node3",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You decide to trust the scientist, but the tension in the room thickens. Suddenly, a loud crash echoes from the lab. Panic spreads as you realize the situation is more dire than anticipated. You must act quickly.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Investigate the source of the noise.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Call for an evacuation.",
+          "to": "node5",
+          "effects": [
+            "goal:evacuation.initiated+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "The lockdown engages, sealing off sections of the facility. Alarms blare louder, and the scientist's face pales. You feel a mix of relief and dread as you realize the implications of your choice. Time is running out.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Search for the missing technician.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Review surveillance footage.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You rush towards the lab, heart pounding. The door is ajar, and you push it open to find chaos. Equipment is overturned, and the technician lies unconscious. You must decide your next move.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Administer first aid and secure the area.",
+          "to": "node7",
+          "effects": [
+            "stat:trust+1"
+          ]
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Call for backup immediately.",
+          "to": "ending1"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "The footage reveals a shadowy figure tampering with the containment protocols. Your heart races as you realize the breach may not be an accident. You must confront the scientist about this.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Confront the scientist with the evidence.",
+          "to": "ending4"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Keep the information to yourself for now.",
+          "to": "node7"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Truth Revealed",
+      "type": "success",
+      "narration": "Your instincts lead you to uncover a conspiracy within the facility. The technician's recovery reveals critical information, and you manage to avert disaster, restoring order.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "Purge Initiated",
+      "type": "failure",
+      "narration": "By overriding the purge, you inadvertently release the pathogen. Chaos ensues as the facility descends into panic, and you realize the consequences of your choice.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "Evacuation Successful",
+      "type": "mixed",
+      "narration": "The evacuation is executed flawlessly, but the facility is lost. You grapple with the weight of your decisions, knowing lives were saved, yet the research is gone.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "Betrayal Uncovered",
+      "type": "twist",
+      "narration": "Confronting the scientist reveals a shocking betrayal. The breach was orchestrated, and you must now navigate the fallout of this revelation.",
+      "weight": 1
+    },
+    {
+      "endingId": "node5",
+      "title": "Node5",
+      "type": "mixed",
+      "narration": "As you call for evacuation, the lights flicker and the ventilation system begins its purge cycle. You feel a sense of urgency as you realize the danger is escalating. You must act decisively."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You stabilize the technician, but the alarms continue to blare. With the lockdown in place, you must decide whether to trust your instincts or follow protocol."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

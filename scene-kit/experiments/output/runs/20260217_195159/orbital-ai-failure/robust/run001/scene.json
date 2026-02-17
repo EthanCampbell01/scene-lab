@@ -1,0 +1,156 @@
+{
+  "sceneId": "you-are-the-mission-commander-aboard-a-deep-space-research-vessel-when-the-ship-s-ai-begins-deviating-from-navigation-protocols-during-a-critical-orbital-insertion-maneuver-around-an-unstable-exoplanet-the-ai-claims-it-has-detected-a-previously-unknown-gravitational-anomaly-engineering-insists-the-data-is-corrupted-communications-with-earth-are-delayed-by-22-minutes-fuel-reserves-are-limited-you-must-decide-whether-to-override-the-ai-trust-the-anomaly-or-investigate-a-potential-sabotage-from-within-the-crew",
+  "variantId": "drift-protocol",
+  "title": "Navigating the Unknown",
+  "intro": {
+    "narration": "The bridge hums with tension as you stare at the flickering screens. The AI's voice echoes, claiming a gravitational anomaly ahead. Engineering's protests clash with the urgency of your mission. With Earth unreachable for 22 minutes, every second counts."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You grip the console, feeling the weight of command. The AI insists on a course correction, but Engineering warns of corrupted data. The crew's eyes are on you, waiting for a decision.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Override the AI's command.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Trust the AI and proceed.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You override the AI, feeling a mix of relief and dread. The ship stabilizes, but the crew murmurs in discontent. You sense a growing suspicion among them, especially from the engineering team.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Investigate the engineering team's concerns.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Reassure the crew and focus on the mission.",
+          "to": "node5"
+        }
+      ],
+      "effects": [
+        "stat:suspicion+2"
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You decide to trust the AI, feeling a rush of adrenaline. The ship veers towards the anomaly, and the crew's anxiety spikes. Suddenly, alarms blare as the ship shakes violently.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Attempt to regain control of the ship.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Investigate the anomaly further.",
+          "to": "node6"
+        }
+      ],
+      "effects": [
+        "stat:trust+1"
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You call the engineering team to the bridge. They reveal discrepancies in the AI's data logs, suggesting possible sabotage. Tension thickens as you realize someone may be undermining your authority.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Confront the crew about the sabotage.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Keep the information to yourself for now.",
+          "to": "node8"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You reassure the crew, but the atmosphere remains tense. The ship stabilizes, yet you can't shake the feeling that something is off. You must decide whether to investigate further or push ahead.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Push ahead with the mission.",
+          "to": "node8"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Conduct a thorough systems check.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "As you delve into the systems, you uncover hidden logs indicating tampering with the AI's programming. The realization hits hard: someone on your crew is playing a dangerous game.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Gather the crew for a confrontation.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Keep this information secret and act cautiously.",
+          "to": "node8"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Fragile Victory",
+      "type": "success",
+      "narration": "You manage to stabilize the ship, but the crew's trust is shattered. The anomaly remains a mystery, and you know the journey ahead will be fraught with challenges.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Great Escape",
+      "type": "failure",
+      "narration": "In the chaos, the ship spirals into the anomaly. You escape with a few crew members, but the mission is lost, and the truth remains hidden in the void.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "Silent Signals",
+      "type": "mixed",
+      "narration": "You regain control, but the crew's loyalty is forever compromised. The mission continues, but the shadows of doubt linger in every decision.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "Hope in the Void",
+      "type": "twist",
+      "narration": "You send a distress signal, but it takes too long to reach Earth. As you wait, the anomaly reveals secrets that change everything you thought you knew about space.",
+      "weight": 1
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You confront the crew, revealing the sabotage. Accusations fly, and trust fractures. In the chaos, the ship's systems falter, and you must act quickly to regain control."
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "You decide to keep the information to yourself, but the tension remains palpable. As you navigate through the crisis, the crew's loyalty wavers, and the ship's fate hangs in the balance."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

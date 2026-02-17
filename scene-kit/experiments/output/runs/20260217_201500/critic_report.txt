@@ -1,0 +1,36 @@
+
+==========================================================================================
+briefId: bank-interrogation
+variantId: Government-interrogation
+run: 1
+scenePath: C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\experiments\output\runs\20260217_201500\bank-interrogation\robust\run001\scene.json
+criticScore: 43
+dialogueQuality: 7 | emotionalCoherence: 8 | characterConsistency: 7 | dramaticTension: 8 | originalityAndVoice: 6 | overallNarrativeQuality: 7
+keyIssues: ['Some cliché phrases', 'Limited character depth', 'Choices feel somewhat predictable']
+standoutLine: 'You think this is a game? We can make your life hell.'
+worstLine: 'You feel the weight of their gaze, the pressure mounting.'
+justification: The scene effectively builds tension and maintains emotional coherence, particularly through the interrogator's menacing presence. However, it relies on some cliché expressions and predictable choices that detract from its originality. The dialogue is generally strong, but there are moments that feel generic, impacting the overall impact of the narrative.
+
+==========================================================================================
+briefId: halloween-fair
+variantId: spooky-campsite
+run: 1
+scenePath: C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\experiments\output\runs\20260217_201500\halloween-fair\robust\run001\scene.json
+criticScore: 41
+dialogueQuality: 6 | emotionalCoherence: 7 | characterConsistency: 7 | dramaticTension: 8 | originalityAndVoice: 6 | overallNarrativeQuality: 7
+keyIssues: ['Some cliché phrases', 'Minor awkwardness in dialogue', 'Repetitive elements in choices']
+standoutLine: Relief washes over you as the crowd erupts in cheers.
+worstLine: You feel a knot tighten in your stomach.
+justification: The scene effectively builds tension and urgency, particularly with the Ferris wheel's instability and the teens' panic. However, it suffers from some cliché expressions and moments of awkward dialogue that detract from its overall impact. The choices presented are engaging, but a few feel somewhat predictable.
+
+==========================================================================================
+briefId: political-blackmail
+variantId: embassy-crisis
+run: 1
+scenePath: C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\experiments\output\runs\20260217_201500\political-blackmail\robust\run001\scene.json
+criticScore: 43
+dialogueQuality: 7 | emotionalCoherence: 8 | characterConsistency: 7 | dramaticTension: 8 | originalityAndVoice: 6 | overallNarrativeQuality: 7
+keyIssues: ['Some cliché phrasing', 'Minor awkwardness in dialogue', 'Choices feel somewhat predictable']
+standoutLine: The accusation hangs in the air, and the diplomat's face pales.
+worstLine: You feel a sense of determination.
+justification: The scene effectively builds tension and maintains emotional coherence, particularly through the diplomat's fear and the stakes involved. However, some dialogue feels generic, and certain choices lack originality, making the narrative feel somewhat predictable. Overall, it is a solid scene with good pacing and character interaction.

@@ -1,0 +1,17 @@
+{
+  "dialogueQuality": 7,
+  "emotionalCoherence": 8,
+  "characterConsistency": 7,
+  "dramaticTension": 8,
+  "originalityAndVoice": 6,
+  "overallNarrativeQuality": 7,
+  "keyIssues": [
+    "Some cliché phrases",
+    "Limited character depth",
+    "Choices feel somewhat predictable"
+  ],
+  "standoutLine": "'You think this is a game? We can make your life hell.'",
+  "worstLine": "'You feel the weight of their gaze, the pressure mounting.'",
+  "justification": "The scene effectively builds tension and maintains emotional coherence, particularly through the interrogator's menacing presence. However, it relies on some cliché expressions and predictable choices that detract from its originality. The dialogue is generally strong, but there are moments where it feels generic, impacting the overall impact of the narrative.",
+  "criticScore": 43
+}

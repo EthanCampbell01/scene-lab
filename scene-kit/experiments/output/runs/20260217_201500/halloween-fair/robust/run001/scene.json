@@ -1,0 +1,144 @@
+{
+  "sceneId": "a-halloween-fair-turns-dangerous-as-rides-malfunction-with-people-trapped-onboard",
+  "variantId": "spooky-campsite",
+  "title": "The Frightening Fairground",
+  "intro": {
+    "narration": "The air is thick with the scent of caramel apples and popcorn as laughter fills the Halloween fairground. Children dart between stalls, their costumes vibrant against the twilight sky. But beneath the festive surface, an unsettling tension simmers, waiting to erupt."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You stand before the towering Ferris wheel, its lights flickering ominously. A sudden jolt shakes the structure, and a scream pierces the air. You spot a group of teenagers trapped in a cabin, panic etched on their faces.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Rush to help the trapped teens.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Call for security instead.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You sprint towards the Ferris wheel, adrenaline pumping. As you reach the base, the ride lurches again, and you hear a metallic groan. The teens cry out for help, their fear palpable. You must act quickly.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Climb the structure to reach them.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Try to stabilize the ride from below.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You pull out your phone and dial security, but the line is busy. The screams grow louder, and you feel a knot tighten in your stomach. Time is slipping away as the ride continues to shake.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Leave the phone and run to help.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Look for someone else to assist.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You scale the Ferris wheel, heart racing. As you reach the cabin, the teens look at you with desperate eyes. You can see the ride swaying dangerously. You must reassure them.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Tell them to stay calm while you help them out.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Try to unfasten the door quickly.",
+          "to": "ending1"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You brace yourself against the Ferris wheel, trying to steady it. The ride creaks ominously, and you feel a surge of fear. The teens scream louder, urging you to do something.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Yell for help from the crowd.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Attempt to pull a lever to stop the ride.",
+          "to": "ending2"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "You scan the crowd, searching for someone who can help. A man in a security uniform catches your eye, but he seems distracted. The ride shakes again, and the teens scream in terror.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Run to the security guard for assistance.",
+          "to": "node3"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Try to rally the crowd to help.",
+          "to": "ending3"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Narrow Escape",
+      "type": "success",
+      "narration": "You manage to unfasten the door just in time. The teens leap into your arms, and you pull them to safety as the ride finally grinds to a halt. Relief washes over you as the crowd erupts in cheers.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Ride Goes Wrong",
+      "type": "failure",
+      "narration": "As you pull the lever, the ride jerks violently, throwing you and the teens off balance. The Ferris wheel collapses, and chaos ensues. You wake up in the hospital, haunted by the screams.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "The Crowd's Courage",
+      "type": "mixed",
+      "narration": "You rally the crowd, and together they rush to help. The security guard finally arrives, and with their combined efforts, the teens are rescued. But the fair is forever marked by the incident.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "Heroic Rescue",
+      "type": "success",
+      "narration": "You help the teens jump to safety just as the ride tips over. They land safely in the crowd's arms, and you feel a rush of pride. You are hailed as a hero, but the fair will never feel the same.",
+      "weight": 1
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You reassure the teens, urging them to stay calm. As you work to unfasten the door, the ride jerks violently. You manage to open it just as the ride begins to tilt dangerously."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

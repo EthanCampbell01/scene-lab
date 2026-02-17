@@ -1,0 +1,141 @@
+{
+  "sceneId": "a-halloween-fair-turns-dangerous-as-rides-malfunction-with-people-trapped-onboard",
+  "variantId": "spooky-campsite",
+  "title": "The Haunting of Hollow Creek Fair",
+  "intro": {
+    "narration": "The air is thick with excitement and the scent of caramel apples. Laughter echoes as families wander through the Halloween fair, unaware of the lurking danger. Suddenly, a shriek pierces the festive atmosphere, drawing your attention to the Ferris wheel, where riders are stuck at the top."
+  },
+  "initialState": {
+    "tags": [
+      "halloween",
+      "danger",
+      "suspense"
+    ],
+    "stats": {
+      "trust": 0,
+      "suspicion": 0
+    },
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You rush towards the Ferris wheel, heart pounding. The operator stands frozen, panic etched on his face. You can see the terrified faces of the riders high above, swaying in the wind.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Confront the operator about the malfunction.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Climb up to help the trapped riders.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You demand answers from the operator, who stammers about a power outage. His eyes dart nervously. You sense he knows more than he admits. The crowd begins to murmur, growing restless.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Press him for details about the power outage.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Gather a group to help lower the riders safely.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You scramble up the Ferris wheel, adrenaline surging. As you reach the top, you see the riders are terrified but unharmed. You reassure them, but the ride begins to sway dangerously.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Try to calm the riders and signal for help.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Attempt to fix the ride mechanism yourself.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "The operator finally admits that the power outage was caused by a storm earlier. He seems to be hiding something. The crowd grows impatient, and you feel the weight of their expectations.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Investigate the power supply area.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Lead the crowd to help the riders down.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You rally the crowd, and together you form a human chain to help lower the riders. The tension is palpable as you work quickly, but the Ferris wheel creaks ominously.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Focus on lowering the last rider safely.",
+          "to": "ending1"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Check the operator for any hidden tools.",
+          "to": "node6"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Safe Descent",
+      "type": "success",
+      "narration": "With teamwork, the last rider is safely lowered. Cheers erupt from the crowd, and the operator is forced to face the consequences of his negligence. The fair continues, but the shadow of danger lingers.",
+      "image": "success_image.jpg"
+    },
+    {
+      "endingId": "ending2",
+      "title": "Truth Revealed",
+      "type": "mixed",
+      "narration": "You expose the operator's negligence, leading to an investigation. The fair is shut down, but the riders are safe. The thrill of the fair is replaced by a sense of unease.",
+      "image": "mixed_image.jpg"
+    },
+    {
+      "endingId": "ending3",
+      "title": "A Hero's Fix",
+      "type": "success",
+      "narration": "Using the manual, you manage to fix the ride just in time. The riders are safely brought down, and you become a local hero. The fair ends with a newfound respect for safety.",
+      "image": "hero_image.jpg"
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You find a toolbox hidden behind the operator's booth. Inside, you discover a manual that reveals the ride's safety features were tampered with. The operator's face pales as you confront him."
+    }
+  ],
+  "uiHints": [
+    "showChoices",
+    "highlightImportant"
+  ],
+  "themeSignals": [
+    "courage",
+    "community",
+    "safety"
+  ]
+}

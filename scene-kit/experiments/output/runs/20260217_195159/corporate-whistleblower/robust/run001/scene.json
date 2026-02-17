@@ -1,0 +1,146 @@
+{
+  "sceneId": "you-are-the-chair-of-an-emergency-corporate-ethics-tribunal-investigating-a-whistleblower-who-claims-the-company-knowingly-concealed-a-fatal-product-defect-senior-executives-deny-wrongdoing-legal-advisors-warn-that-admitting-fault-could-bankrupt-the-company-the-whistleblower-presents-partial-evidence-but-may-have-personal-motives-media-leaks-are-already-circulating-you-must-question-both-sides-under-pressure-balancing-truth-liability-and-public-safety",
+  "variantId": "boardroom-hearing",
+  "title": "The Weight of Truth",
+  "intro": {
+    "narration": "The boardroom is tense, filled with the weight of accusations and the hum of uncertainty. You sit at the head of the table, flanked by executives in tailored suits, their faces a mix of defiance and anxiety. The whistleblower, a nervous figure, clutches a folder of documents, ready to reveal secrets that could shatter reputations."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You lean forward, the polished wood of the table reflecting the overhead lights. The whistleblower looks up, eyes darting between you and the executives. 'I have evidence that the company knew about the defect,' they assert, voice trembling. The executives exchange glances, their confidence wavering.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Press the whistleblower for more details.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Dismiss the claim as unfounded.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You ask the whistleblower to elaborate, sensing the room's tension shift. They pull out a document, revealing internal emails that hint at knowledge of the defect. The executives' faces pale, and you can feel the stakes rising. 'This could destroy us,' one executive mutters, glancing at their legal advisor.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Request a full investigation into the emails.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Question the whistleblower's motives.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You shake your head, dismissing the whistleblower's claims. The executives visibly relax, but the whistleblower's expression hardens. 'You’re making a mistake,' they warn, their voice steady now. The atmosphere shifts, and you sense the media's looming presence outside the boardroom.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Reconsider your stance and ask for evidence.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Focus on the executives' defense.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You order an immediate investigation, the tension palpable. The executives exchange worried glances, knowing the implications. The whistleblower nods, a flicker of hope in their eyes. 'I just want the truth,' they say, and you feel the weight of your decision settling in.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Allow the executives to present their defense.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Confront the executives about their knowledge.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You challenge the whistleblower, questioning their integrity. 'What do you stand to gain from this?' Their expression hardens, and they reply, 'I stand to gain nothing but the truth.' The room grows colder, and you can feel the executives' relief.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Shift focus back to the executives.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Reassess the whistleblower's evidence.",
+          "to": "node2"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "The executives begin their defense, arguing that admitting fault could lead to bankruptcy. Their legal advisor nods in agreement, emphasizing the potential fallout. You feel the pressure mounting, the media's whispers growing louder outside.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Insist on accountability regardless of the consequences.",
+          "to": "node8"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Consider the financial implications seriously.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node7",
+      "narration": "You confront the executives directly, demanding to know what they knew and when. Their faces tighten, and you can see the fear behind their bravado. 'We were unaware of any defect,' one insists, but the doubt lingers in the air.",
+      "choices": [
+        {
+          "choiceId": "choice7a",
+          "text": "Push for a deeper inquiry into their claims.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice7b",
+          "text": "Accept their defense and move on.",
+          "to": "node6"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Unveiling of Truth",
+      "type": "success",
+      "narration": "Your report reveals the executives' negligence, leading to a public outcry. The company faces penalties, but the truth prevails. The whistleblower is hailed as a hero, and you feel a sense of justice served.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Cost of Silence",
+      "type": "failure",
+      "narration": "The executives manage to bury the truth, and the company survives financially. However, the whistleblower's claims linger in the shadows, and you are left questioning your choices. The media continues to speculate, and the truth remains obscured.",
+      "weight": 1
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "You stand firm, insisting that accountability is paramount. The executives shift uncomfortably, realizing the gravity of the situation. The whistleblower watches you with a mix of hope and fear, knowing that the truth may finally come to light."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

@@ -1,0 +1,23 @@
+{
+  "sceneId": "you-are-an-undercover-investigative-journalist-infiltrating-a-secluded-rural-cult-compound-you-have-spent-months-gaining-partial-trust-but-tonight-is-the-final-initiation-ritual-you-suspect-illegal-financial-fraud-and-possible-coercion-of-members-the-cult-leader-has-begun-to-question-your-loyalty-a-vulnerable-member-quietly-signals-for-help-if-exposed-you-may-not-leave-alive-you-must-decide-whether-to-gather-evidence-rescue-someone-or-protect-your-cover-knowing-each-action-changes-how-the-group-perceives-you",
+  "variantId": "hidden-ritual",
+  "nodeCount": 4,
+  "endingCount": 4,
+  "choicesPerNodeMin": 2,
+  "choicesPerNodeMax": 2,
+  "reachableNodesCount": 4,
+  "reachableEndingsCount": 2,
+  "invalidChoiceTargetsPreNormalize": 0,
+  "invalidChoiceTargetsPostNormalize": 0,
+  "finalScore": 82.36,
+  "validScore": 1.0,
+  "reachScore": 1.0,
+  "depthScore": 0.333,
+  "branchVarScore": 0.893,
+  "lengthScore": 0.783,
+  "lexScore": 0.894,
+  "maxDepth": 2,
+  "uniqueTargetRatio": 0.625,
+  "avgNarrationWords": 35.25,
+  "lexicalDiversity": 0.4918
+}

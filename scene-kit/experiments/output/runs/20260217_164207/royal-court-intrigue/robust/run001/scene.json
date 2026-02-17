@@ -1,0 +1,150 @@
+{
+  "sceneId": "you-are-a-royal-advisor-in-a-medieval-court-when-the-heir-to-the-throne-is-accused-of-orchestrating-the-poisoning-of-a-rival-noble-the-accusation-surfaces-during-a-midnight-council-session-with-only-a-handful-of-witnesses-present-the-accused-denies-everything-but-evidence-appears-compelling-several-council-members-have-hidden-agendas-and-a-single-wrong-move-could-destabilize-succession-you-must-interrogate-loyalties-weigh-fragile-alliances-and-uncover-whether-the-accusation-is-a-political-trap",
+  "variantId": "midnight-accusation",
+  "title": "The Midnight Council's Dilemma",
+  "intro": {
+    "narration": "The flickering candlelight casts long shadows across the stone walls of the council chamber. Tension hangs thick in the air as you sit among the council members, the weight of the accusation against the heir palpable. Whispers of betrayal swirl, and you know that every word spoken could tip the balance of power in the kingdom."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You lean forward, studying the accused prince's face. His eyes dart nervously, betraying a flicker of fear. The council members await your judgment, their expressions a mix of skepticism and intrigue. You must decide how to approach this delicate situation.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Confront the prince directly about the evidence.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Ask the council members for their opinions first.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You fix your gaze on the prince, demanding an explanation for the damning evidence. He stammers, claiming it was a setup, but his voice lacks conviction. The council murmurs, some leaning in, intrigued by the unfolding drama. You sense a shift in their loyalties.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Press him for more details about his alibi.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Dismiss his claims and turn to the council for support.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You turn to the council, inviting their thoughts. A few members speak up, some defending the prince, while others express doubt. The atmosphere grows charged as hidden agendas begin to surface, revealing fractures within the council.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Encourage a vote of confidence in the prince.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Suggest a private inquiry into the evidence.",
+          "to": "node4"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You press the prince for details, and he reveals a secret meeting he attended the night of the poisoning. His voice steadies as he speaks, and you notice a flicker of hope in his eyes. The council members exchange glances, their intrigue deepening.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Investigate the meeting further.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Challenge the prince's credibility.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You call for a vote, and the council's divided opinions echo in the chamber. Some support the prince, while others remain skeptical. The tension escalates, and you realize that your influence is waning as factions begin to form.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Attempt to sway the undecided members.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Propose a temporary suspension of judgment.",
+          "to": "node8"
+        }
+      ]
+    },
+    {
+      "nodeId": "node7",
+      "narration": "You challenge the prince's credibility, and his composure falters. The council members lean in, eager for any sign of weakness. The atmosphere shifts, and you sense the tide turning against him.",
+      "choices": [
+        {
+          "choiceId": "choice7a",
+          "text": "Offer him a chance to redeem himself.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice7b",
+          "text": "Call for a vote of no confidence.",
+          "to": "ending3"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "Truth Prevails",
+      "type": "success",
+      "narration": "You reveal the conspiracy to the council, and the truth comes to light. The prince is exonerated, and the council members who plotted against him are brought to justice. The kingdom stabilizes, and you are hailed as a hero.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "A Dangerous Game",
+      "type": "mixed",
+      "narration": "You confront the conspirators in private, but they threaten your position. You manage to gather enough evidence to protect the prince, but the council remains divided, and your influence wanes.",
+      "weight": 0
+    },
+    {
+      "endingId": "ending3",
+      "title": "A Fall from Grace",
+      "type": "failure",
+      "narration": "You call for a vote of no confidence, and the council turns against the prince. He is stripped of his title, and the kingdom falls into chaos as rival factions vie for power.",
+      "weight": -1
+    },
+    {
+      "endingId": "ending4",
+      "title": "Shadows of Doubt",
+      "type": "twist",
+      "narration": "You investigate the council members' motives and uncover a deeper conspiracy. However, your findings are dismissed, and you find yourself isolated, with your own loyalties questioned.",
+      "weight": -1
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You delve deeper into the prince's claims, uncovering a web of deceit involving several council members. As you piece together the truth, you realize that the poisoning may have been orchestrated to frame the prince and destabilize the throne."
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "You propose a temporary suspension, hoping to buy time. The council agrees, but the atmosphere is fraught with tension. You know that the longer this drags on, the more dangerous the situation becomes."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

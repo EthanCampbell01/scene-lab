@@ -1,0 +1,17 @@
+{
+  "dialogueQuality": 6,
+  "emotionalCoherence": 7,
+  "characterConsistency": 6,
+  "dramaticTension": 7,
+  "originalityAndVoice": 5,
+  "overallNarrativeQuality": 6,
+  "keyIssues": [
+    "Some cliché phrasing",
+    "Tension feels uneven at times",
+    "Character reactions lack depth"
+  ],
+  "standoutLine": "Relief washes over you as the crowd erupts in cheers.",
+  "worstLine": "You feel a knot tighten in your stomach.",
+  "justification": "The scene effectively builds tension and urgency, particularly with the trapped teens, but it relies on some cliché expressions that detract from its originality. While the choices presented are engaging, the emotional depth of the characters could be improved to enhance the overall impact of the narrative.",
+  "criticScore": 37
+}

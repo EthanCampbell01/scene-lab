@@ -1,0 +1,168 @@
+{
+  "sceneId": "you-are-thrust-into-a-room-with-no-preparation-and-interrogated-about-a-large-bank-robbery",
+  "variantId": "Government-interrogation",
+  "title": "Under the Harsh Light",
+  "intro": {
+    "narration": "The fluorescent lights buzz overhead, casting a harsh glare on the cold metal table. You sit, heart racing, as the door swings open. A stern-faced interrogator strides in, eyes locked on you, ready to unravel your secrets."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "The interrogator leans in, their voice low and menacing. 'We know you were involved in the robbery. Start talking, or things will get worse for you.' You feel the weight of their gaze, the pressure mounting.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Deny everything.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Admit to knowing something.",
+          "to": "node3",
+          "effects": [
+            "stat:trust-1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You shake your head, insisting on your innocence. The interrogator's expression darkens. 'Lying won't save you. We have evidence.' You sense the tension in the room thickening.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Stick to your story.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Change your story slightly.",
+          "to": "node5",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You take a deep breath and confess to overhearing a conversation about the robbery. The interrogator's eyes narrow, intrigued. 'Who did you hear it from?' They lean closer, eager for more.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Name a known criminal.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Vague about the details.",
+          "to": "node4"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "The interrogator's patience wears thin. 'You think this is a game? We can make your life hell.' You feel the stakes rising, the air thick with tension. You need to decide how to proceed.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Threaten to expose their methods.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Plead for mercy.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You plead for mercy, your voice shaking. The interrogator's expression softens slightly, but they remain firm. 'You need to give me something real. Otherwise, this won't end well for you.'",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Reveal a minor detail.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Refuse to say more.",
+          "to": "node8",
+          "guards": [
+            "stat:trust<2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "You name a known criminal, and the interrogator's interest piques. 'Interesting. You might be more useful than I thought.' They jot down notes, the atmosphere shifting slightly in your favor.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Ask for protection in exchange.",
+          "to": "node8"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Demand a deal.",
+          "to": "ending1",
+          "effects": [
+            "goal:interrogator.getConfession+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node7",
+      "narration": "You threaten to expose their methods, and the interrogator's demeanor changes. 'You think you can intimidate me? You have no idea who you're dealing with.' They lean back, calculating their next move.",
+      "choices": [
+        {
+          "choiceId": "choice7a",
+          "text": "Stand your ground.",
+          "to": "ending2"
+        },
+        {
+          "choiceId": "choice7b",
+          "text": "Back down and apologize.",
+          "to": "node8"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Deal is Struck",
+      "type": "success",
+      "narration": "You secure a deal with the interrogator, promising to provide information in exchange for protection. As you leave the room, you feel a mix of relief and dread about what lies ahead."
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Intimidation Fails",
+      "type": "failure",
+      "narration": "Your attempt to intimidate the interrogator backfires. They escalate their tactics, and you find yourself facing harsher consequences than you ever imagined."
+    },
+    {
+      "endingId": "ending3",
+      "title": "The Truth Unveiled",
+      "type": "mixed",
+      "narration": "You confess everything, hoping for leniency. The interrogator listens intently, but you sense that your honesty may not save you from the consequences of your actions."
+    },
+    {
+      "endingId": "ending4",
+      "title": "Silence is Golden",
+      "type": "twist",
+      "narration": "You choose silence, and the interrogator, frustrated, leaves the room. In the end, your refusal to speak protects you, but at a cost you cannot yet comprehend."
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "The room feels suffocating as you weigh your options. The interrogator watches you closely, waiting for your next move. You realize this could be your last chance to turn the tide."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}
