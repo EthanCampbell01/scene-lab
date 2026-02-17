@@ -1,0 +1,121 @@
+{
+  "sceneId": "a-halloween-fair-turns-dangerous-as-rides-malfunction-with-people-trapped-onboard",
+  "variantId": "spooky-campsite",
+  "title": "Carnival of Shadows",
+  "intro": {
+    "narration": "The air is thick with the scent of caramel apples and popcorn as laughter echoes through the Halloween fair. Bright lights flicker against the darkening sky, casting eerie shadows. Suddenly, a loud crack reverberates, and the Ferris wheel shudders, leaving riders suspended in the air."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You stand at the foot of the Ferris wheel, heart racing. A crowd gathers, eyes wide with fear as the operator frantically tries to restart the ride. You feel a pull to help, but the chaos is overwhelming.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Rush to the operator's side.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Call for emergency services.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You sprint towards the operator, shouting over the din. He looks at you, panic in his eyes. 'I can't get it to stop!' he yells. You spot a lever that might help, but it’s risky to pull it without knowing the consequences.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Pull the lever to try and stop the ride.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Encourage the operator to reset the system.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You dial emergency services, your hands shaking. As you explain the situation, you notice a group of teenagers laughing nearby, oblivious to the danger. Your heart sinks as you realize they might be next on the ride.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Run to warn the teenagers.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Stay on the line with the operator.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "The operator nods, regaining some composure. Together, you work to reset the system. As the lights flicker back on, the ride begins to move again, but now it’s spinning wildly. The crowd gasps.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Try to stop the ride again.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Evacuate the area.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "You rush over to the teenagers, shouting for them to get off the ride. They look at you, confused, but your urgency breaks through. They leap off just as the ride begins to malfunction again, sending a jolt through the structure.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Lead them to safety.",
+          "to": "ending3"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Join the operator to help.",
+          "to": "node5"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "Heroic Rescue",
+      "type": "success",
+      "narration": "You manage to help the riders down safely, earning the gratitude of the crowd. The operator gives you a nod of respect, and you feel a sense of accomplishment amidst the chaos.",
+      "image": "rescue.jpg"
+    },
+    {
+      "endingId": "ending2",
+      "title": "A Costly Mistake",
+      "type": "failure",
+      "narration": "Your decision to pull the lever leads to a disaster. The ride collapses, and the crowd panics. You stand frozen, realizing the weight of your choice.",
+      "image": "disaster.jpg"
+    },
+    {
+      "endingId": "ending3",
+      "title": "The Brave Few",
+      "type": "mixed",
+      "narration": "You lead the teenagers to safety, but the ride continues to malfunction. The operator manages to regain control, but the fair is forever marked by the incident.",
+      "image": "safety.jpg"
+    },
+    {
+      "endingId": "node4",
+      "title": "Node4",
+      "type": "mixed",
+      "narration": "With a deep breath, you pull the lever. The Ferris wheel jerks violently, and screams fill the air. The ride comes to a sudden halt, but you see a few riders dangling precariously. The operator glares at you, anger mixed with fear."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

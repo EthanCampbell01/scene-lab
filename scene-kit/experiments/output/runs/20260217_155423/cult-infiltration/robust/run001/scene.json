@@ -1,0 +1,122 @@
+{
+  "sceneId": "you-are-an-undercover-investigative-journalist-infiltrating-a-secluded-rural-cult-compound-you-have-spent-months-gaining-partial-trust-but-tonight-is-the-final-initiation-ritual-you-suspect-illegal-financial-fraud-and-possible-coercion-of-members-the-cult-leader-has-begun-to-question-your-loyalty-a-vulnerable-member-quietly-signals-for-help-if-exposed-you-may-not-leave-alive-you-must-decide-whether-to-gather-evidence-rescue-someone-or-protect-your-cover-knowing-each-action-changes-how-the-group-perceives-you",
+  "variantId": "hidden-ritual",
+  "title": "The Final Initiation",
+  "intro": {
+    "narration": "The air is thick with tension as you stand in the dimly lit hall of the cult compound. Flickering candles cast eerie shadows on the walls, and the murmurs of the gathered members create a haunting atmosphere. You feel the weight of your mission pressing down on you; tonight could change everything."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "As the cult leader begins the ritual, you notice a member in the corner, their eyes pleading for help. You can feel the cult's gaze shifting towards you, suspicion brewing. Do you gather evidence of the ritual or approach the member in distress?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Gather evidence of the ritual.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Approach the member for help.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You stealthily pull out your phone, capturing the cult leader's words as he speaks of loyalty and sacrifice. The tension in the room escalates, and you feel eyes on you. You must act quickly before you are discovered.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Continue recording.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Put your phone away and blend in.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You approach the member, whispering reassurances. They look terrified, glancing around for prying eyes. 'I need to get out,' they plead. You can feel the cult leader's gaze sharpening on you. Do you help them escape or keep your cover?",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Help them escape.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Reassure them and stay put.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You decide to blend in, but the tension remains palpable. The cult leader's voice rises, and you feel the weight of your decision. The member looks disappointed but understands. The ritual continues, and you must remain vigilant.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Keep observing the ritual.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Try to gather more information.",
+          "to": "node6"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Confession",
+      "type": "failure",
+      "narration": "You confess your intentions, and chaos erupts. The cult members turn on you, and you realize too late that your cover is blown. You are trapped in a nightmare, unable to escape.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Deception",
+      "type": "success",
+      "narration": "You deny any wrongdoing, and the cult leader seems to buy your act. You manage to gather crucial evidence, but the cost of your deception weighs heavily on your conscience.",
+      "image": "",
+      "weight": 2
+    },
+    {
+      "endingId": "ending3",
+      "title": "The Fight",
+      "type": "mixed",
+      "narration": "You fight your way out, adrenaline surging. The cult members are fierce, but your determination drives you. You escape, but not without scars—both physical and emotional.",
+      "image": "",
+      "weight": 3
+    },
+    {
+      "endingId": "ending4",
+      "title": "The Escape",
+      "type": "success",
+      "narration": "You flee with the member, heart racing. The night air feels liberating as you escape the clutches of the cult. You have saved a life, but the shadows of your experience linger.",
+      "image": "",
+      "weight": 4
+    },
+    {
+      "endingId": "node4",
+      "title": "Node4",
+      "type": "mixed",
+      "narration": "The recording captures the chilling atmosphere, but suddenly, the cult leader locks eyes with you. 'You there! What are you doing?' Panic surges through you. Do you confess or deny?"
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You help the member slip away from the gathering, but as you reach the exit, the cult leader's voice booms behind you. 'You cannot leave!' The atmosphere shifts, and you realize the danger you're in. Do you fight or flee?"
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

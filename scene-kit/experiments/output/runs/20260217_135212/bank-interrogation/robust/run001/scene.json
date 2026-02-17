@@ -1,0 +1,172 @@
+{
+  "sceneId": "you-are-thrust-into-a-room-with-no-preparation-and-interrogated-about-a-large-bank-robbery",
+  "variantId": "Government-interrogation",
+  "title": "Under the Harsh Light",
+  "intro": {
+    "narration": "The fluorescent lights buzz overhead as you sit in the cold metal chair. A heavyset man in a suit leans forward, his eyes piercing through the tension. You know why you’re here, and the weight of the truth presses down on you."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "The interrogator slides a file across the table, photographs of the robbery scattered like fallen leaves. He smirks, waiting for your reaction. You can either deny knowing anything or admit you were there, but the consequences of either choice loom large.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Deny everything.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Admit you were there.",
+          "to": "node3",
+          "effects": [
+            "stat:trust-2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You shake your head vigorously, insisting you have no idea what he’s talking about. The interrogator’s expression darkens, and he leans back, crossing his arms. You sense the tension rising; he’s not buying it.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Stick to your story.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Offer a small detail to appease him.",
+          "to": "node5",
+          "effects": [
+            "stat:trust+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "The words slip out before you can stop them. You were there, but you didn’t participate. The interrogator’s eyes narrow, and he leans in closer, intrigued. You can feel the stakes rising.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Explain your innocence.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Name a co-conspirator.",
+          "to": "node6",
+          "effects": [
+            "goal:interrogator.getConfession+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You maintain your innocence, but the interrogator’s patience wears thin. He stands abruptly, pacing the room, his frustration palpable. You realize you’re running out of time.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Try to reason with him.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Stay silent.",
+          "to": "node7",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You offer a small detail, hoping it will satisfy him. The interrogator’s demeanor softens slightly, but you can tell he’s still skeptical. The atmosphere is thick with uncertainty.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Ask for a deal.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Reveal a crucial fact.",
+          "to": "node8",
+          "effects": [
+            "fact:alibi_verified=verified"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "You name a co-conspirator, and the interrogator’s eyes light up with interest. He scribbles notes furiously, but you feel a pang of regret. You’ve just implicated someone else.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Stand firm in your decision.",
+          "to": "node8"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Take it back.",
+          "to": "node7",
+          "effects": [
+            "stat:trust-1"
+          ]
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Weight of Truth",
+      "type": "success",
+      "narration": "You confess everything, the burden lifting from your shoulders. The interrogator nods, satisfied, and you feel a strange sense of relief wash over you.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "Silence is Golden",
+      "type": "failure",
+      "narration": "You refuse to say more, and the interrogator’s frustration boils over. He leaves you in the room, the silence deafening, as you realize you’ve sealed your fate.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "A New Alliance",
+      "type": "mixed",
+      "narration": "You offer to cooperate fully, and the interrogator agrees to a deal. You walk out with a sense of purpose, but the shadows of your past linger.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "A Dangerous Bargain",
+      "type": "twist",
+      "narration": "You demand protection in exchange for your information. The interrogator hesitates, but ultimately agrees, leaving you to navigate a treacherous path ahead.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "The room feels colder as you sit in silence, the interrogator’s gaze boring into you. You can sense the shift in power; he’s waiting for you to break."
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "You reveal a crucial fact that could change everything. The interrogator’s expression shifts from skepticism to intrigue. He leans in, eager for more."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

@@ -1,0 +1,6 @@
+### STDOUT ###
+Wrote expanded scene: C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\experiments\output\runs\20260217_135828\halloween-fair\robust\run001\scene.json
+Updated previewer: C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\previewer\public\latest.json
+
+
+### STDERR ###

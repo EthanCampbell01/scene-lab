@@ -1,0 +1,152 @@
+{
+  "sceneId": "you-are-thrust-into-a-room-with-no-preparation-and-interrogated-about-a-large-bank-robbery",
+  "variantId": "Government-interrogation",
+  "title": "Under the Harsh Light",
+  "intro": {
+    "narration": "The fluorescent lights buzz overhead, casting a harsh glare on the cold metal table. You sit, heart racing, as the door swings open. A stern-faced interrogator steps in, eyes locked onto you, demanding answers about the bank robbery that has shaken the city."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "The interrogator leans in, his voice low and menacing. 'You know something, don't you? We have evidence that ties you to the scene.' You feel the sweat trickle down your back as you consider your options.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Deny everything.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Admit you were there but claim you were just a bystander.",
+          "to": "node3",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You shake your head vigorously, insisting on your innocence. The interrogator's expression darkens. 'We have witnesses who saw you.' You realize your denial only fuels his anger.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Stick to your story.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Plead for a lawyer.",
+          "to": "node5",
+          "effects": [
+            "goal:interrogator.getConfession+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You confess to being present but emphasize your role as a mere observer. The interrogator narrows his eyes, clearly unconvinced. 'Then why did you run when the police arrived?'",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Say you were scared.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Claim you were trying to help.",
+          "to": "node5",
+          "effects": [
+            "stat:trust+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "The tension in the room thickens. You can feel the interrogator's frustration boiling over. 'Your story doesn't add up. We know you were involved.' You must decide how to navigate this tight spot.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Offer to cooperate in exchange for leniency.",
+          "to": "node6",
+          "effects": [
+            "goal:interrogator.getConfession+1"
+          ]
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Refuse to say anything more.",
+          "to": "node7",
+          "guards": [
+            "stat:trust<2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You demand legal representation, hoping to buy time. The interrogator smirks, 'You think that will save you? We can hold you indefinitely.' Your heart sinks as you realize the gravity of your situation.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Stand firm and wait for your lawyer.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Change your mind and offer information.",
+          "to": "node7",
+          "effects": [
+            "stat:trust-1"
+          ]
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Truth Sets You Free",
+      "type": "success",
+      "narration": "Your honesty pays off. The interrogator appreciates your cooperation and offers a deal. You walk away with a lighter heart, knowing you did the right thing.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "Half-Truths",
+      "type": "mixed",
+      "narration": "You share some information but hold back crucial details. The interrogator is not satisfied, leaving you in a precarious position as you leave the room.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "Silence is Golden",
+      "type": "failure",
+      "narration": "Your refusal to speak leads to a lengthy detention. The interrogator's threats become reality, and you find yourself trapped in a web of suspicion.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "The Weight of Guilt",
+      "type": "twist",
+      "narration": "In a moment of weakness, you confess everything. The interrogator's eyes gleam with triumph, but you feel the heavy burden of your choices weighing on your conscience.",
+      "weight": 1
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You decide to cooperate, revealing what you know about the robbery. The interrogator's demeanor shifts slightly, intrigued by your willingness to talk. 'Now we're getting somewhere.'"
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You refuse to divulge any more information. The interrogator's frustration peaks. 'You think this will end well for you? You're making a mistake.'"
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

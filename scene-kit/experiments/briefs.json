@@ -8,5 +8,41 @@
     "briefId": "halloween-fair",
     "variantId": "spooky-campsite",
     "brief": "A Halloween fair turns dangerous as rides malfunction with people trapped onboard."
-  }
+  },
+  {
+  "briefId": "political-blackmail",
+  "variantId": "embassy-crisis",
+  "brief": "You are a senior intelligence officer summoned to a sealed conference room inside a foreign embassy at night. A junior diplomat has been caught leaking classified negotiation documents during a fragile peace summit. The leak may have been coerced through blackmail involving a hidden personal scandal. The building is under quiet lockdown, and if this situation becomes public it could collapse the treaty talks and trigger military escalation. You must extract the truth while preserving diplomatic stability. The diplomat may be lying, panicking, or protecting someone more powerful."
+  },
+  {
+  "briefId": "biotech-containment",
+  "variantId": "deep-lab",
+  "brief": "You are the head of security inside a subterranean biotech research facility when an emergency alarm signals a containment breach in a restricted laboratory. A genetically engineered pathogen prototype may have been exposed. Surveillance footage is incomplete. A lead scientist insists it was a false alarm, but a technician is missing. The ventilation system is beginning a purge cycle that will seal entire sections permanently. You must decide whether to trust your staff, override protocols, or initiate full lockdown — knowing that each choice affects lives and future accountability."
+},
+{
+  "briefId": "royal-court-intrigue",
+  "variantId": "midnight-accusation",
+  "brief": "You are a royal advisor in a medieval court when the heir to the throne is accused of orchestrating the poisoning of a rival noble. The accusation surfaces during a midnight council session with only a handful of witnesses present. The accused denies everything but evidence appears compelling. Several council members have hidden agendas, and a single wrong move could destabilize succession. You must interrogate loyalties, weigh fragile alliances, and uncover whether the accusation is a political trap."
+},
+{
+  "briefId": "orbital-ai-failure",
+  "variantId": "drift-protocol",
+  "brief": "You are the mission commander aboard a deep-space research vessel when the ship’s AI begins deviating from navigation protocols during a critical orbital insertion maneuver around an unstable exoplanet. The AI claims it has detected a previously unknown gravitational anomaly. Engineering insists the data is corrupted. Communications with Earth are delayed by 22 minutes. Fuel reserves are limited. You must decide whether to override the AI, trust the anomaly, or investigate a potential sabotage from within the crew."
+},
+{
+  "briefId": "cult-infiltration",
+  "variantId": "hidden-ritual",
+  "brief": "You are an undercover investigative journalist infiltrating a secluded rural cult compound. You have spent months gaining partial trust, but tonight is the final initiation ritual. You suspect illegal financial fraud and possible coercion of members. The cult leader has begun to question your loyalty. A vulnerable member quietly signals for help. If exposed, you may not leave alive. You must decide whether to gather evidence, rescue someone, or protect your cover — knowing each action changes how the group perceives you."
+},
+{
+  "briefId": "corporate-whistleblower",
+  "variantId": "boardroom-hearing",
+  "brief": "You are the chair of an emergency corporate ethics tribunal investigating a whistleblower who claims the company knowingly concealed a fatal product defect. Senior executives deny wrongdoing. Legal advisors warn that admitting fault could bankrupt the company. The whistleblower presents partial evidence but may have personal motives. Media leaks are already circulating. You must question both sides under pressure, balancing truth, liability, and public safety."
+}
+
+
+
+
+
+
 ]

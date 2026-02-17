@@ -1,0 +1,138 @@
+{
+  "sceneId": "a-halloween-fair-turns-dangerous-as-rides-malfunction-with-people-trapped-onboard",
+  "variantId": "spooky-campsite",
+  "title": "The Frightening Fairground",
+  "intro": {
+    "narration": "The air is thick with the scent of caramel apples and popcorn. Laughter echoes through the fairground, but an unsettling chill creeps in as the Ferris wheel creaks ominously. Suddenly, a scream pierces the festive atmosphere, sending a wave of panic through the crowd."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You stand at the entrance, watching as the Ferris wheel jerks violently. A child screams from the top, clinging to the safety bar. The operator seems oblivious, distracted by his phone. Do you rush to help or alert the staff?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Rush to help the child.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Alert the staff.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You sprint towards the Ferris wheel, heart racing. As you reach the base, the ride lurches again, and you spot a harness that’s come loose. You shout for the child to hold on tight. Do you try to climb up or find a way to stop the ride?",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Climb up to rescue the child.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Find a way to stop the ride.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You rush to the nearest staff member, breathless. You explain the situation, but they dismiss you, thinking it’s just a malfunction. As you turn back, the ride jerks again, and the child screams louder. Do you confront the staff or take matters into your own hands?",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Confront the staff.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Take matters into your own hands.",
+          "to": "node2"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You begin to climb, adrenaline fueling your ascent. The wind whips around you as you reach the top, where the child is terrified but safe. You reassure them, but the ride suddenly stops, leaving you both hanging. Do you wait for help or try to climb down?",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Wait for help.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Try to climb down.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You shout for the operator to stop the ride, but he finally looks up, panic in his eyes. He fumbles with the controls, but it’s too late. The ride jerks violently, and you see the child slip. Do you jump in to catch them or try to pull the operator away?",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Jump in to catch the child.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Pull the operator away.",
+          "to": "node7"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "Hero of the Fair",
+      "type": "success",
+      "narration": "You bask in the glory of your bravery, hailed as a hero. The fair continues, but the memory of the child's fear lingers. You vow to always stand up for those in need.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "Haunted by Chaos",
+      "type": "mixed",
+      "narration": "Though you saved the child, the chaos of the fair haunts you. You wonder if you could have done more, and the thrill of the fair is forever tainted by the fear you witnessed.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "A Costly Rescue",
+      "type": "failure",
+      "narration": "You help the child, but the fall injures you both. The fair is shut down, and you are left with scars, both physical and emotional, questioning your choices.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "Escape from Fear",
+      "type": "twist",
+      "narration": "You flee the scene, leaving the chaos behind. But the guilt eats at you, and the fair becomes a reminder of your cowardice. You wonder if you could have made a difference.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "Help arrives just in time. Firefighters secure the Ferris wheel, and you’re lowered to safety with the child. The crowd cheers, but you feel a weight in your chest. You saved them, but at what cost? Do you celebrate your victory or reflect on the chaos?"
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You attempt to climb down, but the ride jolts again, throwing you off balance. You barely manage to grab the child, but both of you tumble to the ground. The crowd gasps, and you feel the sting of pain. Do you stay and help the child or flee the scene?"
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

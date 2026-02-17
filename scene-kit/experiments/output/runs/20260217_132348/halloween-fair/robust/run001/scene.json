@@ -1,0 +1,219 @@
+{
+  "sceneId": "a-halloween-fair-turns-dangerous-as-rides-malfunction-with-people-trapped-onboard",
+  "variantId": "spooky-campsite",
+  "title": "The Haunting of the Halloween Fair",
+  "intro": {
+    "narration": "As the moon rises, the Halloween fair is in full swing. The air is thick with laughter and excitement, but something sinister lurks beneath the surface."
+  },
+  "initialState": {
+    "tags": [
+      "halloween",
+      "fair",
+      "danger"
+    ],
+    "stats": {},
+    "facts": {},
+    "goals": {}
+  },
+  "nodes": [
+    {
+      "nodeId": "n1",
+      "narration": "The Ferris wheel suddenly comes to a grinding halt, trapping riders high above the ground. Panic ensues as people scream for help.",
+      "choices": [
+        {
+          "choiceId": "c1-1",
+          "text": "Rush to the scene and attempt to free the trapped riders.",
+          "to": "n2",
+          "moveType": "act1",
+          "weight": 50
+        },
+        {
+          "choiceId": "c1-2",
+          "text": "Stay back and call for emergency services.",
+          "to": "n2",
+          "moveType": "act1",
+          "weight": 50
+        }
+      ]
+    },
+    {
+      "nodeId": "n2",
+      "narration": "Upon reaching the Ferris wheel, you find that the safety bars have jammed, trapping riders inside. You must act quickly to free them.",
+      "choices": [
+        {
+          "choiceId": "c2-1",
+          "text": "Force the safety bars open with brute strength.",
+          "to": "n3",
+          "effects": [
+            "stat:strength+1"
+          ],
+          "moveType": "act1",
+          "weight": 40
+        },
+        {
+          "choiceId": "c2-2",
+          "text": "Search for a tool to pry the safety bars open.",
+          "to": "n3",
+          "effects": [
+            "fact:tool_found=verified"
+          ],
+          "moveType": "act1",
+          "weight": 60
+        }
+      ]
+    },
+    {
+      "nodeId": "n3",
+      "narration": "After successfully freeing the trapped riders, you notice that another ride has malfunctioned. The choice is yours on how to proceed.",
+      "choices": [
+        {
+          "choiceId": "c3-1",
+          "text": "Rush to the new malfunction and attempt to fix it.",
+          "to": "n4",
+          "moveType": "act2",
+          "weight": 50
+        },
+        {
+          "choiceId": "c3-2",
+          "text": "Stay with the freed riders and ensure they are safe.",
+          "to": "n4",
+          "effects": [
+            "fact:rider_safety_confirmed=verified"
+          ],
+          "moveType": "act2",
+          "weight": 50
+        }
+      ]
+    },
+    {
+      "nodeId": "n4",
+      "narration": "As you approach the malfunctioning ride, you realize that it is beyond repair. You must decide whether to evacuate the riders or attempt a risky fix.",
+      "choices": [
+        {
+          "choiceId": "c4-1",
+          "text": "Evacuate the riders immediately.",
+          "to": "n5",
+          "effects": [
+            "fact:rider_evacuated=verified"
+          ],
+          "moveType": "act2",
+          "weight": 60
+        },
+        {
+          "choiceId": "c4-2",
+          "text": "Attempt a risky fix to save the riders.",
+          "to": "n5",
+          "effects": [
+            "stat:risk+1"
+          ],
+          "moveType": "act3",
+          "weight": 40
+        }
+      ]
+    },
+    {
+      "nodeId": "n5",
+      "narration": "Your risky fix fails, causing the ride to collapse. The riders are injured, and you must decide how to proceed.",
+      "choices": [
+        {
+          "choiceId": "c5-1",
+          "text": "Apologize sincerely and offer assistance to the injured riders.",
+          "to": "n6",
+          "effects": [
+            "fact:apology_given=verified"
+          ],
+          "moveType": "act3",
+          "weight": 60
+        },
+        {
+          "choiceId": "c5-2",
+          "text": "Blame the malfunction on external factors and leave the scene.",
+          "to": "n6",
+          "effects": [
+            "stat:deception+1"
+          ],
+          "moveType": "act3",
+          "weight": 40
+        }
+      ]
+    },
+    {
+      "nodeId": "n6",
+      "narration": "Your actions at the Halloween fair have left a lasting impression. The consequences of your choices will be felt long after the night ends.",
+      "choices": [
+        {
+          "choiceId": "c6-1",
+          "text": "Reflect on the events of the night and learn from your mistakes.",
+          "to": "n7",
+          "moveType": "endings"
+        },
+        {
+          "choiceId": "c6-2",
+          "text": "Brush off the events as a mere coincidence and move on.",
+          "to": "n7",
+          "moveType": "endings"
+        }
+      ]
+    },
+    {
+      "nodeId": "n7",
+      "narration": "Your sincere apology and assistance have earned you the admiration of the injured riders. They share their gratitude and offer a reward.",
+      "choices": [
+        {
+          "choiceId": "c7-1",
+          "text": "Accept the reward graciously.",
+          "to": "n1",
+          "moveType": "endings"
+        },
+        {
+          "choiceId": "c7-2",
+          "text": "Decline the reward, stating that helping others is its own reward.",
+          "to": "n1",
+          "moveType": "endings"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "e1",
+      "title": "The Hero",
+      "type": "success",
+      "narration": "You are hailed as a hero for your quick thinking and selfless actions. The night ends on a high note, with the community praising your bravery.",
+      "image": "hero_ending.jpg",
+      "weight": 50
+    },
+    {
+      "endingId": "e2",
+      "title": "The Coward",
+      "type": "failure",
+      "narration": "Your attempts to shift blame and leave the scene have left a lasting negative impression. The community views you as reckless and uncaring.",
+      "image": "coward_ending.jpg",
+      "weight": 30
+    },
+    {
+      "endingId": "e3",
+      "title": "The Deceiver",
+      "type": "mixed",
+      "narration": "Your deception has earned you a temporary victory, but the truth will eventually come out. The community remains wary of your actions.",
+      "image": "deceiver_ending.jpg",
+      "weight": 10
+    },
+    {
+      "endingId": "e4",
+      "title": "The Altruist",
+      "type": "success",
+      "narration": "Your selflessness and humility have earned you the respect of the community. You are remembered as a kind and compassionate individual.",
+      "image": "altruist_ending.jpg",
+      "weight": 10
+    }
+  ],
+  "uiHints": [
+    "immersive",
+    "present_tense"
+  ],
+  "themeSignals": [
+    "danger",
+    "halloween"
+  ]
+}

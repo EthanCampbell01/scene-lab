@@ -1,0 +1,156 @@
+{
+  "sceneId": "you-are-the-head-of-security-inside-a-subterranean-biotech-research-facility-when-an-emergency-alarm-signals-a-containment-breach-in-a-restricted-laboratory-a-genetically-engineered-pathogen-prototype-may-have-been-exposed-surveillance-footage-is-incomplete-a-lead-scientist-insists-it-was-a-false-alarm-but-a-technician-is-missing-the-ventilation-system-is-beginning-a-purge-cycle-that-will-seal-entire-sections-permanently-you-must-decide-whether-to-trust-your-staff-override-protocols-or-initiate-full-lockdown-knowing-that-each-choice-affects-lives-and-future-accountability",
+  "variantId": "deep-lab",
+  "title": "Containment Breach: Trust or Lockdown",
+  "intro": {
+    "narration": "The alarm blares through the sterile halls of the facility, a shrill reminder of the chaos that has erupted. You stand at the security console, eyes darting across the screens displaying the lab's interior. A lead scientist insists it's a false alarm, but the missing technician weighs heavily on your mind."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You scan the surveillance footage, but the images are fragmented and unclear. The scientist argues passionately, claiming the pathogen is secure. Yet, the technician's absence gnaws at you. Do you trust the scientist's judgment or take immediate action?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Trust the scientist and ignore the alarm.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Initiate lockdown protocols immediately.",
+          "to": "node3",
+          "effects": [
+            "stat:suspicion+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You decide to trust the scientist, but as you relax, the ventilation system begins its purge cycle. Alarms blare louder, and the lights flicker ominously. You feel a chill of doubt creeping in. Was this the right choice?",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Investigate the lab yourself.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Call for backup to secure the area.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You initiate lockdown protocols, sealing off sections of the facility. The scientist's protests echo in your ears, but you feel a sense of control. As the doors slam shut, you realize the technician is still unaccounted for.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Search for the technician in the restricted area.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Review the security footage again.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You enter the lab, the air thick with tension. The containment unit stands ominously in the center, lights blinking. You hear a faint sound, a whimper perhaps, coming from behind the unit. Your heart races as you approach.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Investigate the sound cautiously.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Retreat and call for help.",
+          "to": "node8"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You call for backup, but the response is delayed. Tension mounts as you wait, the alarms still blaring. The scientist's face twists in frustration, and you wonder if you made the right choice.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Reassess the situation and check the lab.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Stay put and monitor the security feeds.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "You review the footage again, and this time, you catch a glimpse of the technician entering the lab just before the alarm. Your stomach drops as you realize the urgency of the situation. Time is running out.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Rush to the lab to find the technician.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Override the lockdown and search the facility.",
+          "to": "node8",
+          "effects": [
+            "stat:trust-1"
+          ]
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Narrow Escape",
+      "type": "success",
+      "narration": "You manage to free the technician just in time. Together, you escape the lab as the alarms blare. The containment breach is averted, and you feel a sense of accomplishment, knowing you saved a life.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Lab Sealed",
+      "type": "mixed",
+      "narration": "You secure the lab, but the technician is left behind. As the doors seal shut, you realize the cost of your decision. Lives are forever changed, and the truth remains hidden.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "Chaos Unleashed",
+      "type": "failure",
+      "narration": "In your haste, you find the technician, but the alarms trigger a full lockdown. The facility descends into chaos, and you are left to face the consequences of your choices.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "The Facility Lost",
+      "type": "twist",
+      "narration": "You evacuate the facility, sealing it off forever. The truth of the containment breach remains buried, and the world outside remains oblivious to the horrors within.",
+      "weight": 1
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You cautiously approach the source of the sound and find the technician, trembling and trapped under debris. Relief floods through you, but the containment unit's alarms grow louder. You must act quickly."
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "You override the lockdown, but the alarms scream in protest. The facility is in chaos, and you feel the weight of your decision. As you search for the technician, you realize the consequences of your actions may be dire."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

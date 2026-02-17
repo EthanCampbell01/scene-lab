@@ -1,0 +1,143 @@
+{
+  "sceneId": "you-are-a-senior-intelligence-officer-summoned-to-a-sealed-conference-room-inside-a-foreign-embassy-at-night-a-junior-diplomat-has-been-caught-leaking-classified-negotiation-documents-during-a-fragile-peace-summit-the-leak-may-have-been-coerced-through-blackmail-involving-a-hidden-personal-scandal-the-building-is-under-quiet-lockdown-and-if-this-situation-becomes-public-it-could-collapse-the-treaty-talks-and-trigger-military-escalation-you-must-extract-the-truth-while-preserving-diplomatic-stability-the-diplomat-may-be-lying-panicking-or-protecting-someone-more-powerful",
+  "variantId": "embassy-crisis",
+  "title": "The Tipping Point",
+  "intro": {
+    "narration": "The air is thick with tension as you step into the dimly lit conference room. Shadows dance across the walls, reflecting the gravity of the situation. A junior diplomat sits at the table, visibly shaken, clutching a stack of documents that could unravel the fragile peace."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You approach the diplomat, your presence commanding yet calm. The weight of the classified documents looms over both of you. You need to gauge their state of mind before diving into the interrogation.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Ask directly about the leak.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Inquire about their personal life.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "The diplomat's eyes widen, panic flickering across their face. They stammer, trying to defend their actions, but you sense a deeper fear. You must decide how to press further.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Accuse them of betrayal.",
+          "to": "node4",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Reassure them of confidentiality.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You shift the conversation to their personal life, hoping to uncover hidden motives. The diplomat hesitates, glancing at the door as if fearing eavesdroppers. They seem torn between loyalty and self-preservation.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Press them about a rumored scandal.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Offer to help them escape this mess.",
+          "to": "node5",
+          "effects": [
+            "goal:interrogator.getConfession+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "The atmosphere thickens as you confront the diplomat with accusations. They crumble under pressure, revealing a secret that could change everything. But their fear of repercussions is palpable.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Promise protection if they cooperate.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Threaten to expose them.",
+          "to": "node7",
+          "guards": [
+            "stat:trust<2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You offer a lifeline, suggesting that cooperation could lead to a favorable outcome. The diplomat's demeanor shifts, a glimmer of hope sparking in their eyes. They seem ready to divulge more.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Ask for details about the blackmail.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Request the names of those involved.",
+          "to": "node7"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Fragile Peace",
+      "type": "success",
+      "narration": "You manage to negotiate a resolution that preserves the treaty talks. The diplomat feels relieved, and you leave the embassy knowing you averted a crisis.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "Into the Shadows",
+      "type": "mixed",
+      "narration": "Confronting the blackmailers leads to a dangerous standoff. You uncover deeper conspiracies but at a great personal risk.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "Trust Earned",
+      "type": "success",
+      "narration": "Using the revealed names, you build a case that strengthens your position. The diplomat feels grateful, and you both walk away with a sense of accomplishment.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "The Scandal Unleashed",
+      "type": "failure",
+      "narration": "Going public with the scandal backfires, leading to diplomatic fallout. The treaty talks collapse, and you are left to face the consequences.",
+      "weight": 1
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "With newfound resolve, the diplomat shares the details of the blackmail scheme. Their voice trembles as they recount the threats made against them. You realize the stakes are higher than you thought."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "The diplomat's face pales as you threaten exposure. They reluctantly reveal names, but their fear is evident. You sense that this could lead to dire consequences for everyone involved."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

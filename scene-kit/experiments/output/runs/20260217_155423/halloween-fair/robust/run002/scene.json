@@ -1,0 +1,138 @@
+{
+  "sceneId": "a-halloween-fair-turns-dangerous-as-rides-malfunction-with-people-trapped-onboard",
+  "variantId": "spooky-campsite",
+  "title": "The Frightening Fairground",
+  "intro": {
+    "narration": "The air is thick with the scent of caramel apples and popcorn. Laughter echoes as families wander through the Halloween fair, but an unsettling chill creeps in. Suddenly, the lights flicker, and a scream pierces the festive atmosphere."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You stand at the entrance, watching the Ferris wheel spin erratically. A child cries as the ride jerks violently. You feel a knot in your stomach, knowing something is wrong. Do you rush to help or call for assistance?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Rush to help the trapped riders.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Call for help from the staff.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You sprint towards the Ferris wheel, adrenaline pumping. As you reach the base, you see terrified faces above. You shout for them to hold on, but the ride shudders again. You can either climb up to assist or look for a way to stop the ride.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Climb up to help.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Look for a way to stop the ride.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You grab your phone and dial the fair's emergency number. As you explain the situation, the operator sounds calm but distant. You glance back at the Ferris wheel, and your heart sinks as you see it lurch again. You can either stay on the line or run to find a staff member.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Stay on the line.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Run to find a staff member.",
+          "to": "node4"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You scramble up the Ferris wheel, your hands slipping on the cold metal. As you reach the top, you see the riders are panicking. You can either reassure them or try to unbuckle their safety harnesses.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Reassure the riders.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Try to unbuckle their harnesses.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You spot a control panel nearby, wires exposed and sparking. You can either attempt to fix it or search for a fire extinguisher in case of an emergency.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Attempt to fix the control panel.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Search for a fire extinguisher.",
+          "to": "node7"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Hero's Rescue",
+      "type": "success",
+      "narration": "You help the riders down safely, and the crowd erupts in applause. The fair staff arrives, and you feel a sense of pride for your bravery. The fair continues, but you know you made a difference.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Unseen Danger",
+      "type": "mixed",
+      "narration": "While you help the riders, another ride malfunctions in the distance. You realize the fair is not as safe as it seems. You saved lives today, but the fair's chaos continues.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "A Costly Decision",
+      "type": "failure",
+      "narration": "In your haste, you push the riders to safety, but the ride crashes down. You watch in horror as the fair descends into chaos. You saved some, but at a great cost.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "A Missed Opportunity",
+      "type": "twist",
+      "narration": "You jump down to find help, but by the time you return, the ride has stopped. The riders are safe, but you feel a pang of regret for not being there when it mattered most.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You manage to calm the riders, telling them help is on the way. Suddenly, the ride jolts one last time before coming to a halt. You feel a wave of relief wash over you, but the danger isn't over yet. You can either help the riders down or check for other emergencies."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "As you try to unbuckle the harnesses, the ride suddenly starts moving again. Panic ensues, and you realize you need to act fast. You can either push the riders to safety or jump down to find help."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

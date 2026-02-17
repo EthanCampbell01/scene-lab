@@ -1,0 +1,164 @@
+{
+  "sceneId": "you-are-thrust-into-a-room-with-no-preparation-and-interrogated-about-a-large-bank-robbery",
+  "variantId": "Government-interrogation",
+  "title": "Under the Harsh Light",
+  "intro": {
+    "narration": "The fluorescent lights hum overhead, casting a stark glow on the cold metal table. You sit alone, heart racing, as the door creaks open. A stern-faced interrogator steps in, eyes piercing, ready to unravel your secrets."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "The interrogator leans forward, fingers steepled. 'We know you were at the bank during the robbery. Start talking.' You feel the weight of his gaze, the pressure mounting. Do you tell the truth or fabricate a story?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Confess to being there but deny involvement.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Lie and claim you were miles away.",
+          "to": "node3",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You admit your presence, but insist you were just a bystander. The interrogator's expression shifts, intrigued yet skeptical. 'Bystander, huh? What did you see?' Your heart pounds as you weigh your next words.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Describe a suspicious figure you noticed.",
+          "to": "node4",
+          "effects": [
+            "fact:suspicious_figure=verified"
+          ]
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Stay silent and let him press you.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "The lie slips from your lips, but the interrogator narrows his eyes. 'We have witnesses placing you at the scene.' Panic rises as you realize your deception may backfire. How do you salvage this?",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Admit the lie and offer a new story.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Double down on your alibi, insisting it's true.",
+          "to": "node6",
+          "effects": [
+            "stat:trust-1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You describe the figure, a shadowy presence lurking near the exit. The interrogator scribbles notes, his interest piqued. 'Interesting. And what else did you notice?' You sense a shift in the room's tension.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Mention a getaway vehicle you saw.",
+          "to": "node7",
+          "effects": [
+            "fact:getaway_vehicle=verified"
+          ]
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Claim you were too scared to remember more.",
+          "to": "node8"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "Silence hangs heavy as you refuse to speak. The interrogator's patience wanes. 'You think this will help you? You're only digging your own grave.' The atmosphere thickens with tension.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Finally reveal a small detail about the robbery.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Maintain your silence, hoping for a break.",
+          "to": "node8",
+          "effects": [
+            "stat:trust-2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "You insist on your fabricated alibi, but the interrogator's expression hardens. 'Lies will only get you deeper into trouble.' You feel the walls closing in, the stakes rising.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Try to change the subject to another suspect.",
+          "to": "node8"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Desperately plead for a deal.",
+          "to": "node7",
+          "effects": [
+            "goal:interrogator.getConfession+1"
+          ]
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Fragile Alliance",
+      "type": "success",
+      "narration": "You negotiate a deal, offering protection in exchange for your cooperation. The interrogator nods, a flicker of respect in his eyes. You leave the room, uncertain but alive."
+    },
+    {
+      "endingId": "ending2",
+      "title": "Turning the Tables",
+      "type": "success",
+      "narration": "You testify against the mastermind, securing your freedom. The interrogator smiles, impressed by your bravery. You walk out, a survivor of the ordeal."
+    },
+    {
+      "endingId": "ending3",
+      "title": "The Weight of Truth",
+      "type": "mixed",
+      "narration": "You confess everything, feeling the burden lift. But the interrogator's satisfaction is chilling. You realize the truth may not set you free after all."
+    },
+    {
+      "endingId": "ending4",
+      "title": "Silence is Golden",
+      "type": "failure",
+      "narration": "You refuse to speak, and the interrogator's patience runs out. You're left alone in the dark, the consequences of your silence echoing in your mind."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You provide the details about the getaway vehicle, and the interrogator's demeanor shifts. 'Now we're getting somewhere. This could help you.' Hope flickers, but the danger remains."
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "You choose to remain silent, but the interrogator's frustration boils over. 'This is your last chance. Speak up, or face the consequences.' The tension is palpable, and your fate hangs in the balance."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

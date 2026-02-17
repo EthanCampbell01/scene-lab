@@ -1,0 +1,14 @@
+### STDOUT ###
+Model output was not usable.
+Saved raw output to:
+C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\output\BAD_MODEL_OUTPUT_1771335064_try0.txt
+Error: Model output missing nodes[]. Regenerate.
+Model output was not usable.
+Saved raw output to:
+C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\output\BAD_MODEL_OUTPUT_1771335111_try1.txt
+Error: JSON appears truncated (no matching closing bracket found).
+Wrote expanded scene: C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\experiments\output\runs\20260217_132348\halloween-fair\robust\run001\scene.json
+Updated previewer: C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\previewer\public\latest.json
+
+
+### STDERR ###

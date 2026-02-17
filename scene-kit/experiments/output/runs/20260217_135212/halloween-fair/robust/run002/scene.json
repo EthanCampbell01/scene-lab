@@ -1,0 +1,144 @@
+{
+  "sceneId": "a-halloween-fair-turns-dangerous-as-rides-malfunction-with-people-trapped-onboard",
+  "variantId": "spooky-campsite",
+  "title": "The Frightening Fairground",
+  "intro": {
+    "narration": "The air is thick with excitement and the scent of caramel apples. Laughter echoes as children dart between colorful booths. Suddenly, a loud crack splits the night, and the Ferris wheel shudders ominously, leaving riders suspended high above the ground."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You stand at the base of the Ferris wheel, heart racing. The operator is frantically trying to fix the machinery, but panic spreads among the crowd. Do you rush to help the operator or comfort the frightened children nearby?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Help the operator fix the ride.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Comfort the frightened children.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You sprint towards the operator, adrenaline pumping. Together, you pull at the tangled wires, but the ride jerks violently. A scream pierces the air as one of the riders slips. You feel the weight of responsibility. Do you keep trying to fix it or call for help?",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Keep trying to fix it.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Call for help.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You kneel beside the children, their eyes wide with fear. You reassure them, but the sound of metal grinding makes your heart drop. Suddenly, the ride lurches again. Do you stay with the children or investigate the source of the noise?",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Stay with the children.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Investigate the noise.",
+          "to": "node4"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You feel the tension rise as you struggle with the machinery. The operator shouts for you to pull a lever, but you hesitate. A sudden jolt sends the ride spinning. Do you pull the lever or abandon the effort?",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Pull the lever.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Abandon the effort.",
+          "to": "node8"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You shout for help, your voice barely cutting through the chaos. A few bystanders rush over, but the operator's face pales as the ride continues to malfunction. Do you join the operator in trying to fix it or help the children escape?",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Join the operator.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Help the children escape.",
+          "to": "node6"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Safe Escape",
+      "type": "success",
+      "narration": "You lead the children to safety, their relieved faces a balm for your racing heart. The chaos fades behind you, and you vow to always protect those in need.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "A Hero's Sacrifice",
+      "type": "mixed",
+      "narration": "You turn back, risking your safety to help the operator. In the end, you manage to save them, but the ride's chaos leaves a mark on your soul.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "The Price of Ignorance",
+      "type": "failure",
+      "narration": "In your rush to celebrate, you overlook the trapped riders. The fairground becomes a scene of horror, and you are left to grapple with the consequences of your choices.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "The Unseen Cost",
+      "type": "twist",
+      "narration": "You check on the riders, only to discover that they are unharmed but shaken. The true horror lies in the secrets revealed during the chaos, forever changing your view of the fair.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You gather the children, urging them to stay calm. As you lead them away, the Ferris wheel creaks ominously. Suddenly, a bolt flies off, narrowly missing you. Do you continue to safety or turn back to help others?"
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "With a deep breath, you pull the lever. The ride shudders violently before it finally grinds to a halt. The crowd erupts in cheers, but you feel a pang of guilt for the riders still trapped. Do you celebrate the victory or check on the riders?"
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "You step back, heart pounding. The operator's frantic movements only seem to worsen the situation. As the ride spins out of control, you realize you must act. Do you try to save the operator or warn the crowd?"
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

@@ -1,0 +1,118 @@
+{
+  "sceneId": "you-are-an-undercover-investigative-journalist-infiltrating-a-secluded-rural-cult-compound-you-have-spent-months-gaining-partial-trust-but-tonight-is-the-final-initiation-ritual-you-suspect-illegal-financial-fraud-and-possible-coercion-of-members-the-cult-leader-has-begun-to-question-your-loyalty-a-vulnerable-member-quietly-signals-for-help-if-exposed-you-may-not-leave-alive-you-must-decide-whether-to-gather-evidence-rescue-someone-or-protect-your-cover-knowing-each-action-changes-how-the-group-perceives-you",
+  "variantId": "hidden-ritual",
+  "title": "The Final Initiation",
+  "intro": {
+    "narration": "The air is thick with tension as the cult members gather around a flickering bonfire. Shadows dance across their faces, revealing a mix of devotion and fear. You know tonight is pivotal; your cover is at stake, and the truth lies just beneath the surface."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You stand at the edge of the gathering, your heart racing. The cult leader, a charismatic figure, begins to speak about loyalty and sacrifice. You notice a member, eyes wide with desperation, subtly gestures for help. The choice weighs heavily on you.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Approach the vulnerable member.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Stay hidden and observe.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You step closer, heart pounding. The member whispers about financial fraud, revealing documents hidden in the woods. As you listen, the cult leader's gaze shifts, suspicion creeping into his eyes. You must act quickly.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Gather the evidence immediately.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Signal for help from another member.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "Remaining in the shadows, you overhear the cult leader's speech intensifying. He questions your loyalty, and the atmosphere grows hostile. You realize your cover is at risk, and the vulnerable member's fate hangs in the balance.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Reveal your true intentions.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Continue to gather information.",
+          "to": "node4"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You quickly gather the documents, feeling the weight of the evidence in your hands. Just as you turn to leave, the cult leader catches your eye, a knowing smirk on his face. You realize you’ve been exposed.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Confront the cult leader.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Flee into the woods.",
+          "to": "ending1"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "Escape into the Night",
+      "type": "failure",
+      "narration": "You flee into the woods, heart racing. The evidence slips from your grasp, but your life remains intact. The cult's shadows loom behind you, a haunting reminder of your failure.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "Truth Prevails",
+      "type": "success",
+      "narration": "With the members rallied, you expose the cult leader's lies. The group turns against him, and you escape with the evidence. The truth will be revealed, and justice served.",
+      "weight": 2
+    },
+    {
+      "endingId": "ending3",
+      "title": "Betrayal",
+      "type": "failure",
+      "narration": "You betray the vulnerable member, securing your safety. The cult leader's grip tightens, and you realize you’ve lost your humanity in the process. The darkness consumes you.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "A Hollow Apology",
+      "type": "mixed",
+      "narration": "You apologize, hoping to save face. The cult leader's smirk deepens, and you become a puppet in his game. You live, but at what cost?",
+      "weight": 1
+    },
+    {
+      "endingId": "node5",
+      "title": "Node5",
+      "type": "mixed",
+      "narration": "You signal to another member, who hesitates but eventually approaches. Together, you discuss the cult's dark secrets. The tension rises as the cult leader's voice booms, demanding loyalty. You must decide quickly."
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You confront the cult leader, accusing him of manipulation and fraud. The crowd gasps, and tension escalates. He smiles, revealing his true power over the group. You realize the danger of your words."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

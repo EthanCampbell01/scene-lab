@@ -1,0 +1,150 @@
+{
+  "sceneId": "you-are-thrust-into-a-room-with-no-preparation-and-interrogated-about-a-large-bank-robbery",
+  "variantId": "Government-interrogation",
+  "title": "Under the Harsh Light",
+  "intro": {
+    "narration": "The fluorescent lights buzz overhead, casting a stark glow on the cold metal table. You sit alone, heart racing, as the door creaks open. A stern-faced interrogator steps in, eyes piercing through the silence, demanding answers about the bank robbery."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "The interrogator leans in, his voice low and threatening. 'We know you were there. Start talking.' You feel the weight of his gaze, the pressure mounting. Do you stick to your story or reveal what you know?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Stick to your story.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Reveal what you know.",
+          "to": "node3",
+          "guards": [
+            "stat:trust<2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You maintain your innocence, insisting you were nowhere near the bank. The interrogator's expression darkens, and he slams his fist on the table. 'Lying won't save you. We have witnesses.' Your heart sinks as you realize the stakes.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Challenge his evidence.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Plead for mercy.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You decide to come clean, revealing a small part of the truth. The interrogator's eyes narrow, intrigued. 'Interesting. But why should I believe you?' You sense a shift in his demeanor, a glimmer of hope.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Offer to cooperate fully.",
+          "to": "node5",
+          "effects": [
+            "stat:trust+1"
+          ]
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Stick to your original story.",
+          "to": "node2"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You confront the interrogator, demanding proof of his claims. He smirks, leaning back in his chair. 'You think you can outsmart me? You're in deeper than you realize.' The tension escalates, and you feel the walls closing in.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Stand your ground.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Change your story.",
+          "to": "node5",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You plead for mercy, your voice trembling. The interrogator's expression softens slightly, but he remains firm. 'You need to give me something I can work with.' The room feels suffocating as you weigh your options.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Provide a name.",
+          "to": "node7",
+          "effects": [
+            "goal:interrogator.getConfession+1"
+          ]
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Refuse to say anything.",
+          "to": "node6"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "Silent Resolve",
+      "type": "failure",
+      "narration": "You remain silent, and the interrogator's frustration boils over. He leaves you in the room, a prisoner of your own stubbornness. The truth remains buried, and so do you.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Weight of Truth",
+      "type": "mixed",
+      "narration": "You break down and confess, revealing everything. The interrogator nods, satisfied, but you know the price of your honesty. Freedom comes at a cost.",
+      "image": "",
+      "weight": 2
+    },
+    {
+      "endingId": "ending3",
+      "title": "A Dangerous Bargain",
+      "type": "success",
+      "narration": "You reveal more details, striking a deal with the interrogator. He agrees to lessen your charges in exchange for your cooperation. You walk out, but the shadows of your choices linger.",
+      "image": "",
+      "weight": 3
+    },
+    {
+      "endingId": "ending4",
+      "title": "The Half-Truth",
+      "type": "twist",
+      "narration": "You stick to the name, but the interrogator sees through your facade. He knows there's more to the story. As you leave, you realize the game has just begun.",
+      "image": "",
+      "weight": 2
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You refuse to say anything more, feeling a mix of defiance and fear. The interrogator's patience wears thin. 'This isn't a game. You will regret this.' His words hang heavy in the air, and you brace for the consequences."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You provide a name, a risky move that could either save you or seal your fate. The interrogator's eyes light up with interest. 'Now we're getting somewhere. But is it the whole truth?' You feel a mix of relief and dread."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

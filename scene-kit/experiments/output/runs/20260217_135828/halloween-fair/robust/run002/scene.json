@@ -1,0 +1,140 @@
+{
+  "sceneId": "a-halloween-fair-turns-dangerous-as-rides-malfunction-with-people-trapped-onboard",
+  "variantId": "spooky-campsite",
+  "title": "The Frightening Fairground",
+  "intro": {
+    "narration": "The air is thick with the scent of caramel apples and popcorn. Laughter echoes as families wander through the Halloween fair, unaware of the lurking danger. Suddenly, a loud crash shatters the festive atmosphere, drawing everyone's attention to the Ferris wheel."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You rush towards the Ferris wheel, where a car hangs precariously, swaying in the wind. A crowd gathers, their faces painted with fear. You spot a child crying for their parent, trapped inside the car. Do you help the child or try to calm the crowd?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Help the child",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Calm the crowd",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You climb onto the Ferris wheel's base, adrenaline pumping. As you reach for the child, the ride jolts violently, and you barely maintain your grip. The child looks at you with wide eyes, trusting you to save them. Do you pull them to safety or call for help?",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Pull them to safety",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Call for help",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You step forward, raising your hands to calm the crowd. 'Stay back! We need to help!' you shout, but panic spreads. Some people start to flee, while others push closer. You notice a group of teenagers filming the chaos. Do you confront them or focus on the crowd?",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Confront the teenagers",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Focus on the crowd",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "With a swift motion, you pull the child to safety just as the ride lurches again. The crowd erupts in cheers, but your heart races. You realize the ride is malfunctioning, and more people are trapped. Do you investigate the ride or help others?",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Investigate the ride",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Help others",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You decide to help others, guiding people away from the Ferris wheel. Suddenly, a loud bang echoes, and the ride collapses, sending debris flying. You feel a rush of guilt for not acting sooner. Do you check for injuries or escape the area?",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Check for injuries",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Escape the area",
+          "to": "ending1"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "You approach the teenagers, demanding they stop filming and help instead. They roll their eyes but reluctantly put their phones away. You feel a sense of camaraderie as they join you in calming the crowd. Do you lead them to help or stay with the crowd?",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Lead them to help",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Stay with the crowd",
+          "to": "node5"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Narrow Escape",
+      "type": "success",
+      "narration": "You escape the chaos, heart pounding. The fairground is in disarray, but you know you made the right choice to leave. Safety is your priority, and you vow to return when things settle down.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Call for Help",
+      "type": "success",
+      "narration": "You alert the authorities just in time. They arrive and manage to evacuate everyone safely. The fairground is saved, and you feel a sense of relief wash over you.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "A Risky Fix",
+      "type": "mixed",
+      "narration": "You attempt to fix the cable, but the ride jerks violently. You manage to save a few, but chaos ensues. The fairground is forever changed, and you carry the weight of your decision.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You investigate the Ferris wheel, noticing a frayed cable. Panic rises as you realize the danger is greater than you thought. You must act quickly. Do you alert the authorities or try to fix it yourself?"
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

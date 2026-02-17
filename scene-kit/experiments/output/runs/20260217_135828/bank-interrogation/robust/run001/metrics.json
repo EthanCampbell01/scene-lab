@@ -1,0 +1,12 @@
+{
+  "sceneId": "you-are-thrust-into-a-room-with-no-preparation-and-interrogated-about-a-large-bank-robbery",
+  "variantId": "Government-interrogation",
+  "nodeCount": 6,
+  "endingCount": 4,
+  "choicesPerNodeMin": 2,
+  "choicesPerNodeMax": 2,
+  "reachableNodesCount": 6,
+  "reachableEndingsCount": 2,
+  "invalidChoiceTargetsPreNormalize": 0,
+  "invalidChoiceTargetsPostNormalize": 0
+}

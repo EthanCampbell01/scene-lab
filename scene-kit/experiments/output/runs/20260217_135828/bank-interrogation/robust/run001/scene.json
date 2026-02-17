@@ -1,0 +1,152 @@
+{
+  "sceneId": "you-are-thrust-into-a-room-with-no-preparation-and-interrogated-about-a-large-bank-robbery",
+  "variantId": "Government-interrogation",
+  "title": "Under the Harsh Light",
+  "intro": {
+    "narration": "The fluorescent lights buzz overhead, casting a harsh glare on the cold metal table. You sit alone, heart racing, as the door creaks open. A stern-faced interrogator steps in, eyes piercing through you, demanding answers about the bank robbery."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "The interrogator leans closer, his voice low and threatening. 'We know you were there. Deny it, and things will get worse for you.' You feel the weight of his gaze, the pressure mounting. Do you stick to your story or reveal what you know?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Deny involvement.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Admit to being present.",
+          "to": "node3",
+          "effects": [
+            "stat:trust-1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You shake your head vehemently, insisting on your innocence. The interrogator's expression darkens. 'Lying will only make this worse,' he warns, pulling out a file with your name on it. You sense the stakes rising.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Stick to your story.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Change your story slightly.",
+          "to": "node3",
+          "effects": [
+            "stat:suspicion+2"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You confess to being at the scene but claim you were just a bystander. The interrogator narrows his eyes, sensing your fear. 'What did you see?' he presses, leaning back, calculating your next move.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Describe the robbery in detail.",
+          "to": "node5",
+          "effects": [
+            "goal:interrogator.getConfession+1"
+          ]
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Claim you saw nothing important.",
+          "to": "node4"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "The interrogator slams his fist on the table, rattling your nerves. 'You think this is a game?' he barks. You realize that your silence is only fueling his anger. The tension in the room thickens.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Break down and plead for mercy.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Stand firm and refuse to talk.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You hold your ground, but the interrogator's patience wears thin. He leans in, whispering threats of what could happen if you don't cooperate. The fear grips you, but you know you must choose wisely.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Reveal a small detail about the robbery.",
+          "to": "node7",
+          "effects": [
+            "stat:trust+1"
+          ]
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Refuse to say anything more.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "The interrogator's frustration boils over. He stands abruptly, pacing the room. 'You think you can outsmart me? You’ll regret this.' The door slams shut behind him, leaving you in silence, heart pounding.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Wait for him to return.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Try to escape through the window.",
+          "to": "ending1"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Escape",
+      "type": "failure",
+      "narration": "You make a desperate dash for the window, but the guards catch you. The interrogator's laughter echoes as you are dragged back into the room, your fate sealed.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Truth Revealed",
+      "type": "success",
+      "narration": "With a deep breath, you spill everything. The interrogator listens intently, and as you finish, he nods. 'You did the right thing,' he says, and you feel a weight lift off your shoulders.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "The Stalemate",
+      "type": "mixed",
+      "narration": "You refuse to budge, and the interrogator grows frustrated. He leaves, but not without a final threat. You sit in silence, knowing this battle is far from over.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "When the interrogator returns, he seems calmer, almost amused. 'Let’s try this again. You can help yourself by being honest.' The atmosphere shifts, and you feel a glimmer of hope. Will you take the risk?"
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

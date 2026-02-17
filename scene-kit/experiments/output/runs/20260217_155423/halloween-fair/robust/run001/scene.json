@@ -1,0 +1,152 @@
+{
+  "sceneId": "a-halloween-fair-turns-dangerous-as-rides-malfunction-with-people-trapped-onboard",
+  "variantId": "spooky-campsite",
+  "title": "The Frightening Fairground",
+  "intro": {
+    "narration": "The air is thick with the scent of caramel apples and popcorn as laughter echoes through the Halloween fair. Brightly colored lights flicker, casting eerie shadows on the ground. Suddenly, a loud crash reverberates, and the Ferris wheel jerks violently, leaving riders suspended in mid-air."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You stand frozen, watching the Ferris wheel sway ominously. A child screams from the top, and panic spreads among the crowd. You feel a surge of responsibility to act.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Run to the control booth and try to stop the ride.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Help the people below by calming the crowd.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You dash towards the control booth, heart racing. The operator is nowhere to be found, but the emergency stop button glows red. You hesitate, knowing that pressing it could cause the ride to drop.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Press the emergency stop button.",
+          "to": "node4",
+          "effects": [
+            "stat:trust+1"
+          ]
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Search for the operator first.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You rush to the crowd, urging them to stay calm. A woman clutches her child, panic in her eyes. You try to reassure them, but the fear is palpable.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Lead the crowd away from the ride.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Encourage them to help you find the operator.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You slam your hand on the button, and the Ferris wheel screeches to a halt. The riders sway dangerously but remain suspended. Relief washes over you, but the operator still hasn't appeared.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Climb up to help the riders down.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Look for the operator to assess the situation.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You search frantically for the operator, weaving through the chaos. You overhear whispers of a malfunction and see a figure hiding behind a booth. They look terrified.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Confront the operator and demand answers.",
+          "to": "node8",
+          "guards": [
+            "stat:trust<2"
+          ]
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Reassure them and ask for help.",
+          "to": "node4"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "You guide the crowd away, but the screams from the Ferris wheel haunt you. You glance back, feeling a mix of guilt and fear as the situation escalates.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Return to help the trapped riders.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Call for emergency services.",
+          "to": "ending1"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "Emergency Services Arrive",
+      "type": "success",
+      "narration": "As you call for help, sirens wail in the distance. The crowd begins to disperse, and you feel a sense of relief wash over you. The riders are saved, and the fair continues, albeit with a lingering sense of danger."
+    },
+    {
+      "endingId": "ending2",
+      "title": "Bravery in the Face of Fear",
+      "type": "success",
+      "narration": "You manage to help the riders down, one by one. Cheers erupt from the crowd as you descend, feeling like a hero. The fairgoers rally together, and the operator vows to fix the issues."
+    },
+    {
+      "endingId": "ending3",
+      "title": "A Call for Help",
+      "type": "mixed",
+      "narration": "You signal for help, but the chaos overwhelms you. The riders remain trapped, and the fair is shut down. You feel the weight of failure, but you know you did your best."
+    },
+    {
+      "endingId": "ending4",
+      "title": "A Risky Fix",
+      "type": "twist",
+      "narration": "You force the operator to help you fix the ride, but in the process, you accidentally trigger another malfunction. The ride jerks violently, and chaos ensues. You realize that sometimes, taking risks can lead to unforeseen consequences."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You climb up the Ferris wheel, adrenaline coursing through your veins. The riders look at you with hope, but the height makes your stomach churn. You need to act fast."
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "You confront the operator, demanding to know what happened. They stammer, revealing that a wiring issue caused the malfunction. Time is running out."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

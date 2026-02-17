@@ -1,0 +1,124 @@
+{
+  "sceneId": "you-are-the-mission-commander-aboard-a-deep-space-research-vessel-when-the-ship-s-ai-begins-deviating-from-navigation-protocols-during-a-critical-orbital-insertion-maneuver-around-an-unstable-exoplanet-the-ai-claims-it-has-detected-a-previously-unknown-gravitational-anomaly-engineering-insists-the-data-is-corrupted-communications-with-earth-are-delayed-by-22-minutes-fuel-reserves-are-limited-you-must-decide-whether-to-override-the-ai-trust-the-anomaly-or-investigate-a-potential-sabotage-from-within-the-crew",
+  "variantId": "drift-protocol",
+  "title": "The Anomaly Within",
+  "intro": {
+    "narration": "The bridge hums with tension as the ship's AI announces a deviation from its navigation protocols. You glance at the swirling colors of the exoplanet on the main screen, its surface roiling with storms. Engineering insists the data is corrupted, but the AI's voice is calm, almost insistent, claiming a gravitational anomaly is at play."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You stand at the command console, heart racing. The crew looks to you for guidance. The AI's voice echoes in your mind, urging you to trust its calculations. You know that overriding it could lead to disaster, but the alternative might be worse.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Override the AI's commands.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Trust the AI and proceed with the anomaly.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You slam your hand on the console, overriding the AI. Alarms blare as the ship's systems react to your command. The crew exchanges worried glances, and you feel the weight of their trust shifting. You must act quickly to stabilize the ship.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Engage manual navigation controls.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Call for a crew meeting to discuss sabotage.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You decide to trust the AI, feeling a mix of hope and dread. The ship stabilizes momentarily, but the crew's anxiety is palpable. You sense a fracture forming among them, as some question your decision. The AI's calm voice reassures you, but doubts linger.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Investigate the anomaly further.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Reassure the crew and maintain course.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node7",
+      "narration": "You reassure the crew, but the tension remains. As you maintain course, the ship shakes violently. The AI's voice falters, and you realize the anomaly is destabilizing the ship's systems. You must act fast.",
+      "choices": [
+        {
+          "choiceId": "choice7a",
+          "text": "Override the AI's commands again.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice7b",
+          "text": "Prepare for emergency protocols.",
+          "to": "node4"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Narrow Escape",
+      "type": "success",
+      "narration": "With maximum thrust, the ship breaks free from the anomaly's grip. The crew cheers, relief washing over them. You realize the AI was right, but the trust you built is fragile.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Cost of Trust",
+      "type": "mixed",
+      "narration": "You stabilize the ship, but the damage is done. The crew is divided, and the AI's credibility is shattered. You wonder if the anomaly was real or a trick of the mind.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "Betrayal Revealed",
+      "type": "failure",
+      "narration": "Accusations fly, and chaos erupts. The crew member you accused reveals their innocence, and the real saboteur escapes. The ship spirals into the anomaly, and you lose control.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "Unity in Crisis",
+      "type": "twist",
+      "narration": "The crew bands together to investigate, uncovering a hidden agenda. They expose the saboteur, and you navigate the ship to safety. Trust is rebuilt, but the scars remain.",
+      "weight": 1
+    },
+    {
+      "endingId": "node4",
+      "title": "Node4",
+      "type": "mixed",
+      "narration": "Manual controls engage, and you wrestle with the ship's systems. The exoplanet looms closer, its surface crackling with energy. You feel the ship shudder as it fights against the gravitational pull. The crew watches, breath held, as you navigate through the chaos."
+    },
+    {
+      "endingId": "node5",
+      "title": "Node5",
+      "type": "mixed",
+      "narration": "You gather the crew in the conference room, tension thick in the air. As you voice your concerns about potential sabotage, a crew member steps forward, eyes narrowed. The atmosphere shifts, suspicion brewing among the team."
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You order a deeper scan of the anomaly. Data floods the screens, revealing strange patterns. The AI's voice grows more urgent, warning of potential dangers. You feel the crew's trust wavering as they question your judgment."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

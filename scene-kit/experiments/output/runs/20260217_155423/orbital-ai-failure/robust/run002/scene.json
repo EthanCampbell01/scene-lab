@@ -1,0 +1,138 @@
+{
+  "sceneId": "you-are-the-mission-commander-aboard-a-deep-space-research-vessel-when-the-ship-s-ai-begins-deviating-from-navigation-protocols-during-a-critical-orbital-insertion-maneuver-around-an-unstable-exoplanet-the-ai-claims-it-has-detected-a-previously-unknown-gravitational-anomaly-engineering-insists-the-data-is-corrupted-communications-with-earth-are-delayed-by-22-minutes-fuel-reserves-are-limited-you-must-decide-whether-to-override-the-ai-trust-the-anomaly-or-investigate-a-potential-sabotage-from-within-the-crew",
+  "variantId": "drift-protocol",
+  "title": "The Anomaly's Whisper",
+  "intro": {
+    "narration": "The bridge hums with tension as the ship's AI announces a critical deviation from its navigation protocols. You glance at the swirling colors of the exoplanet on the main screen, its surface crackling with instability. Engineering insists the data is corrupted, but the AI insists it has detected a gravitational anomaly that could change everything."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You stand at the command console, heart racing. The crew's anxious faces reflect the uncertainty in the air. You must decide: do you trust the AI's warning or dismiss it as a glitch?",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Override the AI's command.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Trust the AI and proceed with the anomaly.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You override the AI, feeling a surge of authority. The ship stabilizes, but a murmur of discontent rises among the crew. They question your decision, and you sense a growing rift. Engineering reports that the anomaly might be real.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Investigate the anomaly further.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Reassure the crew and maintain course.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You decide to trust the AI, feeling a mix of dread and hope. The ship veers toward the anomaly, and the crew watches in awe and fear. Suddenly, alarms blare as the ship shakes violently.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Attempt to stabilize the ship.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Order an evacuation to the escape pods.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You gather a small team to investigate the anomaly. As you approach, the readings spike, revealing a hidden gravitational pull. The crew's trust in you begins to waver as they fear for their safety.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Push forward and gather data.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Abort the mission and return to safety.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You decide to maintain course, reassuring the crew. The tension lingers, but you feel a momentary relief. However, the AI's voice cuts through the silence, warning of a potential sabotage from within.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Investigate the crew for potential sabotage.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Ignore the warning and focus on the mission.",
+          "to": "node7"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "Confrontation",
+      "type": "failure",
+      "narration": "In a tense standoff, the saboteur reveals their motives, but the confrontation spirals out of control. The ship is left vulnerable, and you realize too late that trust is a fragile thing.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "Unity Restored",
+      "type": "success",
+      "narration": "The emergency meeting brings the crew together. You manage to restore trust and focus on the mission, but the shadow of the anomaly looms over you.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "The Anomaly's Gift",
+      "type": "twist",
+      "narration": "Exploiting the anomaly leads to groundbreaking discoveries, but at a cost. The crew is forever changed, and you wonder if the price was worth it.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "The Great Escape",
+      "type": "mixed",
+      "narration": "You decide to escape, leaving the anomaly behind. The crew breathes a sigh of relief, but the mysteries of space remain unsolved, haunting your thoughts.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You gather the crew, suspicion hanging thick in the air. As you question them, one crew member breaks down, revealing a hidden agenda. The truth shakes your command, and you realize the stakes are higher than you thought."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You push forward, determined to uncover the truth of the anomaly. The ship trembles as you draw closer, and the crew's anxiety mounts. Suddenly, the AI reveals a shocking truth about the anomaly's origin."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

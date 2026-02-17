@@ -1,0 +1,155 @@
+{
+  "sceneId": "you-are-the-head-of-security-inside-a-subterranean-biotech-research-facility-when-an-emergency-alarm-signals-a-containment-breach-in-a-restricted-laboratory-a-genetically-engineered-pathogen-prototype-may-have-been-exposed-surveillance-footage-is-incomplete-a-lead-scientist-insists-it-was-a-false-alarm-but-a-technician-is-missing-the-ventilation-system-is-beginning-a-purge-cycle-that-will-seal-entire-sections-permanently-you-must-decide-whether-to-trust-your-staff-override-protocols-or-initiate-full-lockdown-knowing-that-each-choice-affects-lives-and-future-accountability",
+  "variantId": "deep-lab",
+  "title": "Containment Breach: A Choice of Trust",
+  "intro": {
+    "narration": "The emergency alarm blares through the sterile halls of the facility, a stark reminder of the chaos that lurks within. You stand at the security console, eyes darting between the flashing lights and the incomplete surveillance footage. A lead scientist insists it’s a false alarm, but the absence of a technician weighs heavily on your conscience."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You scan the room, the tension palpable. The lead scientist, Dr. Hargrove, pleads with you to trust her judgment. She believes the alarm is a malfunction, a mere glitch in the system. Yet, the technician's disappearance gnaws at you, a dark shadow of doubt.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Trust Dr. Hargrove and ignore the alarm.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Initiate full lockdown immediately.",
+          "to": "node3",
+          "effects": [
+            "stat:suspicion+1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "You decide to trust Dr. Hargrove, overriding the lockdown protocols. As you relax slightly, the ventilation system begins its purge cycle. The air grows thick with tension, and you can almost hear the clock ticking down to an unknown fate.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Investigate the technician's last known location.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Check the surveillance footage again for any clues.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You hit the lockdown button, sealing the facility. Alarms blare louder, echoing your decision. Dr. Hargrove's face twists in anger, but you feel a sense of control. The air grows stale, and you know you must act quickly.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Send a team to search for the technician.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Review the security logs for any anomalies.",
+          "to": "node5",
+          "effects": [
+            "stat:trust-1"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You lead a team to the technician's last known location, a dimly lit lab filled with equipment. The door creaks open, revealing a chaotic scene. Papers are strewn everywhere, and the technician's workstation is eerily quiet.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Search for clues about the technician's whereabouts.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Call for backup and secure the area.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "As you sift through the surveillance footage, a chilling realization dawns on you. The last frame shows the technician entering the lab just before the alarm sounded. You feel a knot tighten in your stomach.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Rush to the lab to investigate further.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Alert the team about the technician's last movements.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "In the lab, you find a hidden compartment with a vial labeled 'Prototype X'. Panic surges through you as you realize the potential danger. Just then, you hear a noise behind you.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Confront the source of the noise.",
+          "to": "node8"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Secure the vial and retreat.",
+          "to": "node8",
+          "effects": [
+            "fact:prototype_x=discovered"
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "node7",
+      "narration": "You call for backup, but the air grows heavier with each passing second. The ventilation system continues its purge, and you can feel the walls closing in. The team arrives, but time is running out.",
+      "choices": [
+        {
+          "choiceId": "choice7a",
+          "text": "Split up to search the facility.",
+          "to": "node8"
+        },
+        {
+          "choiceId": "choice7b",
+          "text": "Stay together and secure the main control room.",
+          "to": "node8"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Truth Revealed",
+      "type": "success",
+      "narration": "The technician explains the situation, revealing a conspiracy to cover up the prototype's instability. With this knowledge, you manage to avert disaster and secure the facility, restoring order.",
+      "image": "success_image.png"
+    },
+    {
+      "endingId": "ending2",
+      "title": "A Costly Mistake",
+      "type": "failure",
+      "narration": "You take the technician into custody, but the situation spirals out of control. The prototype escapes containment, leading to chaos and irreversible consequences for the facility.",
+      "image": "failure_image.png"
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "You turn to face the source of the noise, and a figure emerges from the shadows. It's the missing technician, disheveled and frantic. 'You have to listen! It’s not what you think!' they shout, panic in their eyes."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

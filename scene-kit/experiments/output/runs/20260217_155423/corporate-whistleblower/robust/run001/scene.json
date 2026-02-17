@@ -1,0 +1,128 @@
+{
+  "sceneId": "you-are-the-chair-of-an-emergency-corporate-ethics-tribunal-investigating-a-whistleblower-who-claims-the-company-knowingly-concealed-a-fatal-product-defect-senior-executives-deny-wrongdoing-legal-advisors-warn-that-admitting-fault-could-bankrupt-the-company-the-whistleblower-presents-partial-evidence-but-may-have-personal-motives-media-leaks-are-already-circulating-you-must-question-both-sides-under-pressure-balancing-truth-liability-and-public-safety",
+  "variantId": "boardroom-hearing",
+  "title": "The Weight of Truth",
+  "intro": {
+    "narration": "The boardroom is tense, filled with the weight of unspoken accusations. You sit at the head of the table, surrounded by senior executives, their faces a mix of defiance and fear. The whistleblower, a former employee, sits across from them, clutching a folder of documents. The media buzzes outside, eager for any hint of scandal."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You lean forward, your gaze piercing through the executives. 'Did you knowingly conceal the defect?' The room falls silent, eyes darting. The CEO shifts uncomfortably, sweat beading on his forehead. You sense the stakes rising.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Press the CEO for a direct answer.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Turn to the whistleblower for their evidence.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "The CEO's facade cracks as you press harder. 'We acted in the best interest of the company,' he stammers, but you see the fear in his eyes. The tension thickens, and you can almost hear the ticking clock of public scrutiny.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Challenge him on the timeline of decisions.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Ask about the safety protocols in place.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "The whistleblower's hands tremble as they present the documents. 'This proves the defect was known,' they assert, their voice shaking. You notice the executives exchanging worried glances, the atmosphere charged with uncertainty.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Examine the documents closely.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Question the whistleblower's motives.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You scrutinize the documents, noting discrepancies in the dates. The CEO's expression darkens. 'Those were preliminary findings,' he defends, but you sense a crack in his confidence. The room feels electric with anticipation.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Confront the CEO about the discrepancies.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Shift focus back to the whistleblower's evidence.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "The CEO's voice rises defensively. 'Our protocols are industry-leading!' he claims, but you notice the cracks in his bravado. The whistleblower's eyes narrow, sensing an opportunity to strike.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Ask for specific examples of these protocols.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Redirect to the whistleblower's claims.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node6",
+      "narration": "You question the whistleblower's motives, sensing their desperation. 'I just want the truth,' they reply, but doubt lingers in the air. The executives seem to regain some composure, ready to counterattack.",
+      "choices": [
+        {
+          "choiceId": "choice6a",
+          "text": "Press further on their personal history.",
+          "to": "node7"
+        },
+        {
+          "choiceId": "choice6b",
+          "text": "Return to the executives for their defense.",
+          "to": "node2"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Confession",
+      "type": "success",
+      "narration": "The CEO breaks down, admitting the truth. The room erupts in chaos, but you feel a sense of justice. The company will face consequences, but the truth has prevailed.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "The Cover-Up Continues",
+      "type": "failure",
+      "narration": "The CEO deflects blame, and the tribunal is left with more questions than answers. The whistleblower's evidence is dismissed, and the company continues its dangerous path, leaving you with a heavy heart.",
+      "weight": 1
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You confront the CEO with the evidence, the room holding its breath. 'You knew, didn't you?' The CEO's face pales, and for a moment, the truth hangs in the balance. The weight of the moment is palpable."
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "sceneId": "you-are-a-royal-advisor-in-a-medieval-court-when-the-heir-to-the-throne-is-accused-of-orchestrating-the-poisoning-of-a-rival-noble-the-accusation-surfaces-during-a-midnight-council-session-with-only-a-handful-of-witnesses-present-the-accused-denies-everything-but-evidence-appears-compelling-several-council-members-have-hidden-agendas-and-a-single-wrong-move-could-destabilize-succession-you-must-interrogate-loyalties-weigh-fragile-alliances-and-uncover-whether-the-accusation-is-a-political-trap",
+  "variantId": "midnight-accusation",
+  "title": "Midnight Shadows of Betrayal",
+  "intro": {
+    "narration": "The council chamber is dimly lit, flickering candles casting long shadows on the stone walls. Tension hangs thick in the air as you sit among the council members, the heir to the throne at the center of the storm. Accusations of treachery swirl like the smoke from the torches, and you must navigate this perilous web of deceit."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You lean forward, studying the heir's face, searching for signs of guilt or innocence. The council members whisper among themselves, their eyes darting with suspicion. You sense a hidden agenda in the room, and the weight of the moment presses down on you.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Demand the heir's explanation.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Question the council members' motives.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "The heir's voice trembles as they recount their innocence, eyes wide with desperation. You notice a flicker of doubt in their expression, but the evidence against them is damning. The council shifts uncomfortably, sensing the tension rise.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Press for more details about the night of the poisoning.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Suggest a vote of confidence in the heir.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "You turn your gaze to the council members, challenging their loyalty. A murmur of discontent ripples through the room. One member, Lady Elara, shifts uncomfortably, her eyes betraying a hidden agenda.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Confront Lady Elara directly.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Divert attention to another council member.",
+          "to": "node7"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "The heir's story grows more intricate, revealing a web of alliances and rivalries. As they speak, you catch a glimpse of a hidden truth. The council listens intently, their expressions shifting from skepticism to intrigue.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Reveal your own findings about the rival noble.",
+          "to": "node8"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Ask for witnesses to corroborate the heir's story.",
+          "to": "ending1"
+        }
+      ]
+    },
+    {
+      "nodeId": "node7",
+      "narration": "You shift the focus to another council member, sowing seeds of doubt. The room buzzes with speculation, but you feel the heir's gaze on you, pleading for support.",
+      "choices": [
+        {
+          "choiceId": "choice7a",
+          "text": "Encourage the heir to defend themselves.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice7b",
+          "text": "Propose an investigation into all council members.",
+          "to": "ending3"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "The Truth Unveiled",
+      "type": "success",
+      "narration": "The council convenes, and your findings lead to a thorough investigation. The heir is exonerated, and the true traitors are revealed. Peace returns to the court, but the scars of betrayal linger.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "A Vote of Confidence",
+      "type": "mixed",
+      "narration": "The council votes in favor of the heir, but the divisions remain. Trust is fragile, and while the heir retains their position, the threat of betrayal looms ever closer.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "The Council Divided",
+      "type": "failure",
+      "narration": "The council's open debate spirals into chaos. The heir is left vulnerable, and factions emerge, threatening the stability of the throne. Your influence wanes as mistrust spreads.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "Exile and Regret",
+      "type": "twist",
+      "narration": "In a shocking turn, the heir is exiled based on your suggestion. The council is left in turmoil, and you grapple with the consequences of your actions. The true traitors remain hidden, and the kingdom teeters on the brink.",
+      "image": "",
+      "weight": 1
+    },
+    {
+      "endingId": "node5",
+      "title": "Node5",
+      "type": "mixed",
+      "narration": "You propose a vote, but the council is divided. Some support the heir, while others are swayed by the evidence. The atmosphere thickens with uncertainty, and you realize the stakes have never been higher."
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "Lady Elara's facade crumbles under your scrutiny. She stammers, revealing her own ambitions for power. The council gasps, and you sense the tide of loyalty shifting."
+    },
+    {
+      "endingId": "node8",
+      "title": "Node8",
+      "type": "mixed",
+      "narration": "You share your findings, revealing a deeper conspiracy that implicates several council members. The atmosphere shifts as the council realizes the complexity of the situation. Trust is fraying, and alliances are tested."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}

@@ -1,0 +1,134 @@
+{
+  "sceneId": "you-are-the-chair-of-an-emergency-corporate-ethics-tribunal-investigating-a-whistleblower-who-claims-the-company-knowingly-concealed-a-fatal-product-defect-senior-executives-deny-wrongdoing-legal-advisors-warn-that-admitting-fault-could-bankrupt-the-company-the-whistleblower-presents-partial-evidence-but-may-have-personal-motives-media-leaks-are-already-circulating-you-must-question-both-sides-under-pressure-balancing-truth-liability-and-public-safety",
+  "variantId": "boardroom-hearing",
+  "title": "The Weight of Truth",
+  "intro": {
+    "narration": "The boardroom is tense, filled with the weight of accusations and the flicker of cameras. You sit at the head of the table, the air thick with anticipation. Whispers of scandal swirl around you as the whistleblower prepares to present their case against the company."
+  },
+  "nodes": [
+    {
+      "nodeId": "node1",
+      "narration": "You glance at the whistleblower, a nervous figure clutching a folder of documents. They claim the company hid a dangerous flaw in a popular product. As you lean forward, the executives across the table exchange uneasy glances, their confidence wavering. You must decide how to proceed.",
+      "choices": [
+        {
+          "choiceId": "choice1a",
+          "text": "Ask the whistleblower for specific evidence.",
+          "to": "node2"
+        },
+        {
+          "choiceId": "choice1b",
+          "text": "Question the executives about their knowledge of the defect.",
+          "to": "node3"
+        }
+      ]
+    },
+    {
+      "nodeId": "node2",
+      "narration": "The whistleblower presents a document, shaky hands revealing a report that suggests negligence. You notice the executives shifting uncomfortably, their legal advisor whispering urgently. The atmosphere thickens as you weigh the implications of this evidence.",
+      "choices": [
+        {
+          "choiceId": "choice2a",
+          "text": "Probe deeper into the whistleblower's motives.",
+          "to": "node4"
+        },
+        {
+          "choiceId": "choice2b",
+          "text": "Challenge the executives to respond to the evidence.",
+          "to": "node5"
+        }
+      ]
+    },
+    {
+      "nodeId": "node3",
+      "narration": "The executives deny any wrongdoing, their voices steady but their eyes betraying anxiety. You sense a crack in their facade. The legal advisor interjects, warning that admitting fault could lead to bankruptcy. The stakes are rising.",
+      "choices": [
+        {
+          "choiceId": "choice3a",
+          "text": "Press them on the potential risks of their product.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice3b",
+          "text": "Ask about their internal safety protocols.",
+          "to": "node4"
+        }
+      ]
+    },
+    {
+      "nodeId": "node4",
+      "narration": "You challenge the whistleblower about their past grievances with the company. They reveal a history of being overlooked, their voice trembling with emotion. The executives watch, their expressions hardening as they prepare their defense.",
+      "choices": [
+        {
+          "choiceId": "choice4a",
+          "text": "Return to the executives and demand accountability.",
+          "to": "node5"
+        },
+        {
+          "choiceId": "choice4b",
+          "text": "Consider the whistleblower's emotional state before proceeding.",
+          "to": "node6"
+        }
+      ]
+    },
+    {
+      "nodeId": "node5",
+      "narration": "You turn back to the executives, pressing them for answers. The tension escalates as they realize the gravity of the situation. One executive finally admits to knowing about the defect but insists it was a minor issue. The room falls silent.",
+      "choices": [
+        {
+          "choiceId": "choice5a",
+          "text": "Demand a full disclosure of all safety reports.",
+          "to": "node6"
+        },
+        {
+          "choiceId": "choice5b",
+          "text": "Suggest a temporary halt on the product until further investigation.",
+          "to": "node7"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "ending1",
+      "title": "A Step Towards Accountability",
+      "type": "success",
+      "narration": "The company issues a public statement acknowledging the defect, restoring some trust with the public. The whistleblower feels vindicated, and you sense a shift towards ethical responsibility.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending2",
+      "title": "A Delayed Reckoning",
+      "type": "mixed",
+      "narration": "The company conducts an internal investigation, but the public remains skeptical. The whistleblower's claims linger in the air, and you know this isn't the end of the story.",
+      "weight": 0
+    },
+    {
+      "endingId": "ending3",
+      "title": "Crisis Averted",
+      "type": "success",
+      "narration": "Your insistence on a thorough investigation prevents a potential disaster. The company learns from its mistakes, and the whistleblower gains recognition for their courage.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "Profit Over Safety",
+      "type": "failure",
+      "narration": "The product continues with a warning label, but the public outcry grows. The company faces backlash, and the whistleblower's fears are realized as more incidents arise.",
+      "weight": -1
+    },
+    {
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "You weigh the implications of the executives' admission. The whistleblower's evidence is compelling, but the executives' fear of financial ruin looms large. You must decide how to balance truth and corporate responsibility."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "You suggest a halt on the product, and the room erupts in chaos. Executives argue about the financial implications while the whistleblower watches, a mix of hope and fear in their eyes. The weight of your decision hangs heavy."
+    }
+  ],
+  "uiHints": [],
+  "themeSignals": []
+}
