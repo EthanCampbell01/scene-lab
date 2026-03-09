@@ -1,0 +1,8 @@
+### STDOUT ###
+
+
+### STDERR ###
+Traceback (most recent call last):
+  File "C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\pipeline.py", line 35, in <module>
+    from workflows.self_critique import run_self_critique
+ImportError: cannot import name 'run_self_critique' from 'workflows.self_critique' (C:\Users\ethan\Documents\FinalYearProjectversions\Ethan Campbell final year project\scene-lab\scene-kit\workflows\self_critique.py). Did you mean: 'self_critique'?

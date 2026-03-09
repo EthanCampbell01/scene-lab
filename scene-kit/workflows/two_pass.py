@@ -1,5 +1,5 @@
 import json
-from pipeline import _model_call
+from model_client import model_call
 
 
 def run_two_pass(provider, schema_text, scene_id, variant_id, brief, timeout, retries):
@@ -22,7 +22,7 @@ Scene brief:
 {brief}
 """
 
-    outline_raw = _model_call(provider, system, user, timeout_s=timeout, retries=retries)
+    outline_raw = model_call(provider, system, user, timeout_s=timeout, retries=retries)
 
     outline = json.loads(outline_raw)
 
@@ -50,4 +50,4 @@ Constraints:
 - 2–4 endings
 """
 
-    return _model_call(provider, system2, user2, timeout_s=timeout, retries=retries)
+    return model_call(provider, system2, user2, timeout_s=timeout, retries=retries)

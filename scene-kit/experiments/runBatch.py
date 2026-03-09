@@ -52,7 +52,7 @@ def main() -> int:
     ap.add_argument("--provider", default="ollama", choices=["ollama", "openrouter"])
     ap.add_argument("--briefs", default=os.path.join(here, "briefs.json"))
     ap.add_argument("--runsPerBrief", type=int, default=5)
-    ap.add_argument("--workflow", default="robust", choices=["robust"])
+    ap.add_argument("--workflow",choices=["robust", "baseline", "two_pass", "self_critique"],default="robust",help="Generation workflow to use",)
     ap.add_argument("--timeout", type=int, default=600)
     ap.add_argument("--retries", type=int, default=2)
     ap.add_argument("--outDir", default=os.path.join(here, "output", "runs"))

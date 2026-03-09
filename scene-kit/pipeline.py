@@ -29,9 +29,11 @@ import shutil
 import subprocess
 import time
 import webbrowser
+from model_client import model_call
 from scene_normalizer import normalize_scene_targets
 from workflows.robust import build_prompts as robust_prompts
 from workflows.baseline import build_prompts as baseline_prompts
+from workflows.self_critique import run_self_critique
 from workflows.two_pass import run_two_pass
 from typing import Any, Dict, Optional
 
@@ -233,23 +235,6 @@ def _call_ollama(system: str, user: str, timeout_s: int) -> str:
 
     # fallback
     return data.get("response", "")
-
-
-def _model_call(provider: str, system: str, user: str, timeout_s: int, retries: int = 2) -> str:
-    last_err: Optional[Exception] = None
-    for attempt in range(retries + 1):
-        try:
-            if provider == "openrouter":
-                return _call_openrouter(system, user, timeout_s)
-            return _call_ollama(system, user, timeout_s)
-        except Exception as e:
-            last_err = e
-            if attempt < retries:
-                time.sleep(1.5 * (attempt + 1))
-            else:
-                raise
-    raise last_err  # pragma: no cover
-
 
 def _validate_or_repair(scene: Dict[str, Any]) -> Dict[str, Any]:
     """
@@ -487,7 +472,7 @@ def main() -> int:
     ap.add_argument("--brief", required=True, help="Short description of the scene you want")
     ap.add_argument("--variant", default="default", help="Variant id label to embed in output")
     ap.add_argument("--provider", choices=["ollama", "openrouter"], default="ollama")
-    ap.add_argument("--workflow",choices=["robust", "baseline", "two_pass"],default="robust",help="Generation workflow to use",)
+    ap.add_argument("--workflow",choices=["robust", "baseline", "two_pass", "self_critique"],default="robust",help="Generation workflow to use",)
     ap.add_argument("--out", default=None, help="Optional output path; default is scene-kit/output/<sceneId>.<variant>.json")
     ap.add_argument("--timeout", type=int, default=600, help="HTTP timeout seconds (Ollama can be slow)")
     ap.add_argument("--retries", type=int, default=2)
@@ -533,14 +518,19 @@ def main() -> int:
             retries=args.retries,
         )
 
-    if workflow != "two_pass":
-        raw = _model_call(
-            args.provider,
-            system,
-            user,
-            timeout_s=args.timeout,
-            retries=args.retries
-        )
+    elif workflow == "self_critique":
+        self_critique_result = run_self_critique(
+        provider=args.provider,
+        schema_text=schema_text,
+        scene_id=scene_id,
+        variant_id=variant_id,
+        brief=args.brief,
+        timeout=args.timeout,
+        retries=0,
+        model_call=model_call,
+    )
+
+    raw = self_critique_result["revised_raw"]
 
     def _json_salvage(s: str) -> str:
         # Remove trailing commas before } or ]
@@ -550,16 +540,48 @@ def main() -> int:
 
     last_err: Optional[Exception] = None
     obj: Optional[Dict[str, Any]] = None
+    self_critique_result: Optional[Dict[str, Any]] = None
 
     for attempt in range(args.retries + 1):
-        raw = _model_call(args.provider, system, user, timeout_s=args.timeout, retries=0)
+
+        if workflow in {"robust", "baseline"}:
+            raw = model_call(
+                args.provider,
+                system,
+                user,
+                timeout_s=args.timeout,
+                retries=0
+            )
+
+        elif workflow == "two_pass":
+            raw = run_two_pass(
+                provider=args.provider,
+                schema_text=schema_text,
+                scene_id=scene_id,
+                variant_id=variant_id,
+                brief=args.brief,
+                timeout=args.timeout,
+                retries=0,
+            )
+
+        elif workflow == "self_critique":
+            self_critique_result = run_self_critique(
+            provider=args.provider,
+            schema_text=schema_text,
+            scene_id=scene_id,
+            variant_id=variant_id,
+            brief=args.brief,
+            timeout=args.timeout,
+            retries=0,
+            model_call=model_call,
+            )
+        raw = self_critique_result["revised_raw"]
 
         try:
             extracted = _extract_first_json(raw)
             extracted = _json_salvage(extracted)
             candidate = json.loads(extracted)
 
-            # Make sure output is usable by previewer/schema shape
             candidate = _validate_or_repair(candidate)
 
             obj = candidate
@@ -569,7 +591,6 @@ def main() -> int:
         except Exception as e:
             last_err = e
 
-            # Save raw model output for inspection
             out_dir = os.path.join(os.path.dirname(__file__), "output")
             os.makedirs(out_dir, exist_ok=True)
             bad_path = os.path.join(out_dir, f"BAD_MODEL_OUTPUT_{int(time.time())}_try{attempt}.txt")
@@ -580,10 +601,7 @@ def main() -> int:
             print(f"Saved raw output to:\n{bad_path}")
             print(f"Error: {e}")
 
-            # On next attempt, slightly simplify the ask (helps Ollama a lot)
             if attempt < args.retries:
-                user = user.replace("12 to 22 nodes.", "8 to 14 nodes.")
-                user = user.replace("Each node narration must be 2–6 sentences", "Each node narration must be 1–4 sentences")
                 time.sleep(1.0)
 
     if obj is None:
@@ -617,6 +635,36 @@ def main() -> int:
 
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(obj, f, ensure_ascii=False, indent=2)
+
+    if workflow == "self_critique":
+        debug_dir = os.path.join(os.path.dirname(out_path), "self_critique_debug")
+        os.makedirs(debug_dir, exist_ok=True)
+
+        # Save first draft raw output
+        with open(os.path.join(debug_dir, "draft_raw.txt"), "w", encoding="utf-8") as f:
+            f.write(self_critique_result.get("draft_raw", "") or "")
+
+        # Save parsed first draft if available
+        draft_obj = self_critique_result.get("draft_obj")
+        if isinstance(draft_obj, dict):
+            with open(os.path.join(debug_dir, "draft_scene.json"), "w", encoding="utf-8") as f:
+                json.dump(draft_obj, f, ensure_ascii=False, indent=2)
+
+        # Save critic feedback
+        critic_obj = self_critique_result.get("critic")
+        if isinstance(critic_obj, dict):
+            with open(os.path.join(debug_dir, "critic_feedback.json"), "w", encoding="utf-8") as f:
+                json.dump(critic_obj, f, ensure_ascii=False, indent=2)
+
+        # Save revised raw before pipeline repair/normalisation
+        with open(os.path.join(debug_dir, "revised_raw.txt"), "w", encoding="utf-8") as f:
+            f.write(self_critique_result.get("revised_raw", "") or "")
+
+        # revised critic score
+        revised_critic = self_critique_result.get("critic_after")
+        if isinstance(revised_critic, dict):
+            with open(os.path.join(debug_dir, "critic_after.json"), "w", encoding="utf-8") as f:
+                json.dump(revised_critic, f, ensure_ascii=False, indent=2)            
 
 
     # Copy to previewer/public/latest.json
