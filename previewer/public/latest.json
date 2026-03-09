@@ -1,285 +1,146 @@
 {
-  "sceneId": "you-are-thrust-into-a-room-with-no-preparation-and-interrogated-about-a-large-bank-robbery",
-  "variantId": "Government-interrogation",
-  "title": "The Unseen Hands of Justice",
+  "sceneId": "you-are-a-senior-intelligence-officer-summoned-to-a-sealed-conference-room-inside-a-foreign-embassy-at-night-a-junior-diplomat-has-been-caught-leaking-classified-negotiation-documents-during-a-fragile-peace-summit-the-leak-may-have-been-coerced-through-blackmail-involving-a-hidden-personal-scandal-the-building-is-under-quiet-lockdown-and-if-this-situation-becomes-public-it-could-collapse-the-treaty-talks-and-trigger-military-escalation-you-must-extract-the-truth-while-preserving-diplomatic-stability-the-diplomat-may-be-lying-panicking-or-protecting-someone-more-powerful",
+  "variantId": "embassy-crisis",
+  "title": "The Tipping Point",
   "intro": {
-    "narration": "In the cold, sterile confines of a government interrogation room, you find yourself confronted with allegations of involvement in a massive bank heist. The weight of the accusations presses down on your chest as the interrogator's piercing gaze never wavers."
-  },
-  "initialState": {
-    "tags": [],
-    "stats": {},
-    "facts": {},
-    "goals": {}
+    "narration": "The air is thick with tension as you step into the dimly lit conference room. Shadows dance along the walls, and the faint hum of the building's ventilation system is the only sound. A junior diplomat sits at the table, visibly shaken, clutching a stack of documents that could unravel the fragile peace talks."
   },
   "nodes": [
     {
-      "nodeId": "1",
-      "narration": "The interrogator lays out the evidence against you, a chilling account of stolen funds and a trail that leads straight to you. Your heart races as you steel yourself for what's to come.",
+      "nodeId": "node1",
+      "narration": "You take a seat across from the diplomat, your gaze steady. You can sense their fear, but you need to know the truth. The stakes are high, and every moment counts.",
       "choices": [
         {
-          "choiceId": "1A",
-          "text": "Deny any involvement, claim innocence.",
-          "to": "2A",
-          "moveType": "denial",
-          "weight": 60
+          "choiceId": "choice1a",
+          "text": "Calmly ask about the documents.",
+          "to": "node2"
         },
         {
-          "choiceId": "1B",
-          "text": "Admit to a minor role in the heist, offer cooperation.",
-          "to": "2A",
-          "moveType": "cooperation",
-          "weight": 40
+          "choiceId": "choice1b",
+          "text": "Accuse them of leaking information.",
+          "to": "node3",
+          "guards": [
+            "stat:trust<2"
+          ]
         }
       ]
     },
     {
-      "nodeId": "2A",
-      "narration": "You vehemently deny any involvement in the heist. The interrogator's expression remains impassive as they press on, seeking to uncover inconsistencies.",
+      "nodeId": "node2",
+      "narration": "The diplomat hesitates, their eyes darting to the door. You lean in, urging them to speak. They finally admit that they were approached by someone threatening to expose a personal scandal.",
       "choices": [
         {
-          "choiceId": "2AA",
-          "text": "Stick to your story, refuse to back down.",
-          "to": "2B",
-          "moveType": "defiance",
-          "weight": 60
+          "choiceId": "choice2a",
+          "text": "Press for details about the threat.",
+          "to": "node4"
         },
         {
-          "choiceId": "2AB",
-          "text": "Admit to a small lie, hoping to buy time.",
-          "to": "2B",
+          "choiceId": "choice2b",
+          "text": "Reassure them of confidentiality.",
+          "to": "node5",
           "effects": [
-            "tag:deception"
-          ],
-          "moveType": "lie",
-          "weight": 40
+            "stat:trust+1"
+          ]
         }
       ]
     },
     {
-      "nodeId": "2B",
-      "narration": "You admit to a minor role in the heist, offering cooperation. The interrogator's demeanor softens slightly as they consider your offer.",
+      "nodeId": "node3",
+      "narration": "The accusation hangs in the air, and the diplomat's face pales. They stammer, trying to defend themselves, but you can see the panic rising. This could push them further into silence.",
       "choices": [
         {
-          "choiceId": "2BA",
-          "text": "Insist on full immunity in exchange for information.",
-          "to": "3",
-          "effects": [
-            "tag:negotiation"
-          ],
-          "moveType": "immunity",
-          "weight": 60
+          "choiceId": "choice3a",
+          "text": "Back off and change your approach.",
+          "to": "node2"
         },
         {
-          "choiceId": "2BB",
-          "text": "Agree to cooperate without conditions.",
-          "to": "3",
-          "moveType": "cooperation",
-          "weight": 40
+          "choiceId": "choice3b",
+          "text": "Threaten to escalate the situation.",
+          "to": "node4",
+          "effects": [
+            "stat:suspicion+2"
+          ]
         }
       ]
     },
     {
-      "nodeId": "3",
-      "narration": "As the interrogation continues, you find yourself caught in a web of lies and half-truths. The pressure mounts as the stakes grow higher.",
+      "nodeId": "node4",
+      "narration": "The diplomat's resolve crumbles as they reveal the name of a powerful figure involved in the blackmail. You realize this could lead to a diplomatic disaster if mishandled.",
       "choices": [
         {
-          "choiceId": "3A",
-          "text": "Double down on your lies, hoping to outmaneuver them.",
-          "to": "4A",
+          "choiceId": "choice4a",
+          "text": "Use this information to negotiate.",
+          "to": "node6",
           "effects": [
-            "tag:deception"
-          ],
-          "moveType": "deception",
-          "weight": 60
+            "goal:interrogator.getConfession+1"
+          ]
         },
         {
-          "choiceId": "3B",
-          "text": "Confess to the full extent of your involvement, hoping for leniency.",
-          "to": "4A",
-          "effects": [
-            "tag:honesty"
-          ],
-          "moveType": "confession",
-          "weight": 40
+          "choiceId": "choice4b",
+          "text": "Confront the diplomat about their involvement.",
+          "to": "node5"
         }
       ]
     },
     {
-      "nodeId": "4A",
-      "narration": "You double down on your lies, trying to outmaneuver the interrogator. They seem unphased, continuing their relentless pursuit of the truth.",
+      "nodeId": "node5",
+      "narration": "You assure the diplomat that their safety is your priority. They seem to relax slightly, revealing more about the coercion they faced. The truth is coming to light.",
       "choices": [
         {
-          "choiceId": "4AA",
-          "text": "Stick to your story, refuse to back down.",
-          "to": "4B",
-          "moveType": "defiance",
-          "weight": 60
+          "choiceId": "choice5a",
+          "text": "Ask for proof of the blackmail.",
+          "to": "node6"
         },
         {
-          "choiceId": "4AB",
-          "text": "Admit to a small lie, hoping to buy time.",
-          "to": "4B",
-          "effects": [
-            "tag:deception"
-          ],
-          "moveType": "lie",
-          "weight": 40
-        }
-      ]
-    },
-    {
-      "nodeId": "4B",
-      "narration": "You confess to the full extent of your involvement, hoping for leniency. The interrogator's expression remains unreadable as they process your confession.",
-      "choices": [
-        {
-          "choiceId": "4BA",
-          "text": "Apologize sincerely, express remorse.",
-          "to": "5",
-          "effects": [
-            "tag:remorse"
-          ],
-          "moveType": "apology",
-          "weight": 60
-        },
-        {
-          "choiceId": "4BB",
-          "text": "Attempt to justify your actions, minimize your role.",
-          "to": "5",
-          "effects": [
-            "tag:self-defense"
-          ],
-          "moveType": "justification",
-          "weight": 40
-        }
-      ]
-    },
-    {
-      "nodeId": "5",
-      "narration": "As the interrogation reaches its climax, you find yourself at a crossroads. The consequences of your actions loom large, and the stakes have never been higher.",
-      "choices": [
-        {
-          "choiceId": "5A",
-          "text": "Stand firm in your lies, refusing to back down.",
-          "to": "6A",
-          "moveType": "defiance",
-          "weight": 60
-        },
-        {
-          "choiceId": "5B",
-          "text": "Admit to your crimes, seeking redemption.",
-          "to": "6A",
-          "effects": [
-            "tag:redemption"
-          ],
-          "moveType": "redemption",
-          "weight": 40
-        }
-      ]
-    },
-    {
-      "nodeId": "6A",
-      "narration": "You stand firm in your lies, refusing to back down. The interrogator's expression hardens as they continue their relentless pursuit of the truth.",
-      "choices": [
-        {
-          "choiceId": "6AA",
-          "text": "Double down on your lies, hoping to outmaneuver them.",
-          "to": "6B",
-          "effects": [
-            "tag:deception"
-          ],
-          "moveType": "deception",
-          "weight": 60
-        },
-        {
-          "choiceId": "6AB",
-          "text": "Admit to a small lie, hoping to buy time.",
-          "to": "6B",
-          "effects": [
-            "tag:deception"
-          ],
-          "moveType": "lie",
-          "weight": 40
-        }
-      ]
-    },
-    {
-      "nodeId": "6B",
-      "narration": "You admit to your crimes, seeking redemption. The interrogator's expression softens slightly as they consider your confession.",
-      "choices": [
-        {
-          "choiceId": "6BA",
-          "text": "Apologize sincerely, express remorse.",
-          "to": "7",
-          "effects": [
-            "tag:remorse"
-          ],
-          "moveType": "apology",
-          "weight": 60
-        },
-        {
-          "choiceId": "6BB",
-          "text": "Attempt to justify your actions, minimize your role.",
-          "to": "7",
-          "effects": [
-            "tag:self-defense"
-          ],
-          "moveType": "justification",
-          "weight": 40
-        }
-      ]
-    },
-    {
-      "nodeId": "7",
-      "narration": "The interrogation reaches its conclusion. The consequences of your actions will soon be revealed.",
-      "choices": [
-        {
-          "choiceId": "7A",
-          "text": "Prepare for the worst, bracing yourself for the fallout.",
-          "to": "1",
-          "moveType": "preparation",
-          "weight": 60
-        },
-        {
-          "choiceId": "7B",
-          "text": "Hold onto hope, believing in a chance at redemption.",
-          "to": "1",
-          "effects": [
-            "tag:hope"
-          ],
-          "moveType": "hope",
-          "weight": 40
+          "choiceId": "choice5b",
+          "text": "Suggest they come clean to the authorities.",
+          "to": "node7"
         }
       ]
     }
   ],
   "endings": [
     {
-      "endingId": "success",
-      "title": "A Chance at Redemption",
+      "endingId": "ending1",
+      "title": "The Blackmailer Exposed",
       "type": "success",
-      "narration": "Despite your involvement in the bank heist, your honesty and cooperation lead to a lenient sentence. You're given a second chance, a beacon of hope amidst the darkness.",
-      "image": "success.png",
-      "effects": [
-        "tag:redemption"
-      ]
+      "narration": "With the evidence in hand, you confront the blackmailer. The truth comes out, saving the peace talks and securing the diplomat's future. You breathe a sigh of relief, knowing you made the right choice.",
+      "weight": 1
     },
     {
-      "endingId": "failure",
-      "title": "The Fallout",
+      "endingId": "ending2",
+      "title": "A Dangerous Secret",
+      "type": "mixed",
+      "narration": "You destroy the evidence, choosing to protect the diplomat. The blackmailer remains at large, and the peace talks hang by a thread. You wonder if you made the right decision.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending3",
+      "title": "The Authorities Arrive",
+      "type": "success",
+      "narration": "Backup arrives just in time. The diplomat's confession leads to the arrest of the blackmailer, and the peace talks are saved. You feel a sense of accomplishment.",
+      "weight": 1
+    },
+    {
+      "endingId": "ending4",
+      "title": "A Risky Gamble",
       "type": "failure",
-      "narration": "Your lies and deceit catch up to you. The consequences of your actions are severe, leaving you to face the fallout head-on.",
-      "image": "failure.png",
-      "effects": []
+      "narration": "You handle the situation alone, but it spirals out of control. The diplomat's involvement is leaked, and the peace talks collapse. You are left to pick up the pieces.",
+      "weight": 1
     },
     {
-      "endingId": "twist",
-      "title": "The Twist",
-      "type": "twist",
-      "narration": "As the interrogation concludes, it's revealed that you were being manipulated all along. The stakes were higher than you ever imagined, and the truth is far more complex.",
-      "image": "twist.png",
-      "effects": [
-        "tag:manipulation"
-      ]
+      "endingId": "node6",
+      "title": "Node6",
+      "type": "mixed",
+      "narration": "The diplomat hands you a USB drive containing incriminating evidence. This could change everything. You weigh the risks of using this information against the potential fallout."
+    },
+    {
+      "endingId": "node7",
+      "title": "Node7",
+      "type": "mixed",
+      "narration": "The diplomat looks conflicted but nods. They understand the gravity of the situation. You prepare to make a call to the authorities, hoping for a resolution."
     }
-  ]
+  ],
+  "uiHints": [],
+  "themeSignals": []
 }
