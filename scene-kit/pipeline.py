@@ -30,6 +30,9 @@ import subprocess
 import time
 import webbrowser
 from scene_normalizer import normalize_scene_targets
+from workflows.robust import build_prompts as robust_prompts
+from workflows.baseline import build_prompts as baseline_prompts
+from workflows.two_pass import run_two_pass
 from typing import Any, Dict, Optional
 
 import requests
@@ -484,6 +487,7 @@ def main() -> int:
     ap.add_argument("--brief", required=True, help="Short description of the scene you want")
     ap.add_argument("--variant", default="default", help="Variant id label to embed in output")
     ap.add_argument("--provider", choices=["ollama", "openrouter"], default="ollama")
+    ap.add_argument("--workflow",choices=["robust", "baseline", "two_pass"],default="robust",help="Generation workflow to use",)
     ap.add_argument("--out", default=None, help="Optional output path; default is scene-kit/output/<sceneId>.<variant>.json")
     ap.add_argument("--timeout", type=int, default=600, help="HTTP timeout seconds (Ollama can be slow)")
     ap.add_argument("--retries", type=int, default=2)
@@ -500,61 +504,43 @@ def main() -> int:
     scene_id = _slugify(args.brief)
     variant_id = args.variant
 
-    system = (
-    "You are a JSON generator. Output ONLY valid JSON. "
-    "Do not use markdown fences. Do not add commentary. "
-    "Do not include // comments or /* */ comments. "
-    "Do not include placeholder text like 'More nodes can be added here'. "
-    "Return a COMPLETE JSON object."
-   )
+    workflow = args.workflow
 
-    user = f"""
-Generate a branching interactive scene as JSON that matches this JSON Schema exactly:
+    if workflow == "robust":
+        system, user = robust_prompts(
+            schema_text=schema_text,
+            scene_id=scene_id,
+            variant_id=variant_id,
+            brief=args.brief,
+        )
 
-{schema_text}
+    elif workflow == "baseline":
+        system, user = baseline_prompts(
+            schema_text=schema_text,
+            scene_id=scene_id,
+            variant_id=variant_id,
+            brief=args.brief,
+        )
 
-Constraints:
-- Use sceneId: "{scene_id}" and variantId: "{variant_id}".
-- 6 to 8 nodes.
-- Exactly 2 choices per node.
-- Each node narration must be 1-3 sentences (longer prose, more detail).
-- Every node should include concrete action + environment detail + character intent (no filler).
-- Maintain continuity: consequences, discovered facts, and emotional tone should carry forward.
-- Use a clear 3-act structure:
-  - Act 1  setup, hook, first complication.
-  - Act 2  escalation + midpoint reversal 
-  - Act 3  climax + resolution.
-- Include 2 to 4 endings.
-- All choice.to values must point to an existing nodeId OR an endingId.
-- Effects may be used but keep them rare and meaningful (aim ~6–10 total across the whole scene).
-- Guards may be used but must not soft-lock the story:
-  - Never guard BOTH choices in the same node.
-  - Only guard ~1 in every 4 nodes at most.
-- Effects must be an array of strings using these formats (optional):
-  - tag:someTag / tag:!someTag
-  - stat:trust+1 / stat:suspicion-2 / stat:leverage+1
-  - goal:interrogator.getConfession+1
-  - fact:some_fact_key=verified
-- Guards must be an array of strings using these formats (optional):
-  - tag:someTag or tag:!someTag
-  - stat:trust>=2
-  - goal:interrogator.getConfession>=1
+    elif workflow == "two_pass":
+        raw = run_two_pass(
+            provider=args.provider,
+            schema_text=schema_text,
+            scene_id=scene_id,
+            variant_id=variant_id,
+            brief=args.brief,
+            timeout=args.timeout,
+            retries=args.retries,
+        )
 
-
-Scene brief:
-Writing style:
-- Present tense, immersive.
-- Short paragraphs.
-- Minimal repetition.
-- Make each choice feel emotionally and strategically distinct.
-- Prefer dilemmas (risk vs safety, truth vs deception, self vs others).
-- Include a short, evocative scene title in a top-level field called "title".
-  The title should feel like a real story title, not a summary or prompt.
-
-"{args.brief}"
-""".strip()
-
-    raw = _model_call(args.provider, system, user, timeout_s=args.timeout, retries=args.retries)
+    if workflow != "two_pass":
+        raw = _model_call(
+            args.provider,
+            system,
+            user,
+            timeout_s=args.timeout,
+            retries=args.retries
+        )
 
     def _json_salvage(s: str) -> str:
         # Remove trailing commas before } or ]
